@@ -1,5 +1,4 @@
 // Lottie animation properties
-
 var rocketAnim = bodymovin.loadAnimation({
 	container: document.getElementById('rocket'),
 	renderer: 'svg',
@@ -18,7 +17,6 @@ var splashAnim = bodymovin.loadAnimation({
 
 
 // Thousands separator for numbers
-
 function numberFormatting(numberToFormat) {
 
 	var numberToFormat = 1500483;
