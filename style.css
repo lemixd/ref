@@ -610,28 +610,31 @@ footer {
 }
 
 #faq h2 {
-  font-size: 26px;
-  line-height: 34px;
-  font-weight: 300;
+  line-height: 1.6rem;
+  font-weight: 400;
   letter-spacing: 1px;
   display: block;
   background-color: #fefffa;
   margin: 0;
+  border-radius: 0.8rem;
+  padding: 3.2rem;
+  -webkit-box-shadow: 0px 6px 32px rgba(29, 107, 178, 0.12);
+          box-shadow: 0px 6px 32px rgba(29, 107, 178, 0.12);
   cursor: pointer;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
 #faq p {
   color: rgba(48, 69, 92, 0.8);
-  font-size: 17px;
-  line-height: 26px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
   letter-spacing: 1px;
   position: relative;
   overflow: hidden;
   max-height: 800px;
-  opacity: 1;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  margin-top: 14px;
+  margin-top: 1.6rem;
+  padding: 0 3.2rem;
   z-index: 2;
 }
 
@@ -639,7 +642,7 @@ footer {
   list-style: none;
   -webkit-perspective: 900;
           perspective: 900;
-  padding: 0;
+  padding: 4rem 4rem 0 7%;
   margin: 0;
 }
 
@@ -648,8 +651,12 @@ footer {
   padding: 0;
   margin: 0;
   padding-bottom: 4px;
-  padding-top: 18px;
+  padding-top: 1.8rem;
   border-top: 1px dotted #dce7eb;
+}
+
+#faq ul li:hover h2 {
+  background-color: #f4f8fb;
 }
 
 #faq ul li:nth-of-type(1) {
@@ -671,33 +678,34 @@ footer {
   padding-bottom: 0;
 }
 
-#faq ul li i {
+#faq li i {
   position: absolute;
   -webkit-transform: translate(-6px, 0);
           transform: translate(-6px, 0);
-  margin-top: 16px;
-  right: 0;
+  margin-top: 3.2rem;
+  right: 3.2rem;
 }
 
-#faq ul li i:before, #faq ul li i:after {
+#faq i:before,
+#faq i:after {
   content: "";
   position: absolute;
-  background-color: #ff6873;
+  background-color: #0A994A;
   width: 3px;
   height: 9px;
 }
 
-#faq ul li i:before {
+#faq i:before {
   -webkit-transform: translate(-2px, 0) rotate(45deg);
           transform: translate(-2px, 0) rotate(45deg);
 }
 
-#faq ul li i:after {
+#faq i:after {
   -webkit-transform: translate(2px, 0) rotate(-45deg);
           transform: translate(2px, 0) rotate(-45deg);
 }
 
-#faq ul li input[type=checkbox] {
+#faq li input[type=checkbox] {
   position: absolute;
   cursor: pointer;
   width: 100%;
@@ -706,7 +714,7 @@ footer {
   opacity: 0;
 }
 
-#faq ul li input[type=checkbox]:checked ~ p {
+#faq li input[type=checkbox]:checked ~ p {
   margin-top: 0;
   max-height: 0;
   opacity: 0;
@@ -714,12 +722,12 @@ footer {
           transform: translate(0, 50%);
 }
 
-#faq ul li input[type=checkbox]:checked ~ i:before {
+#faq li input[type=checkbox]:checked ~ i:before {
   -webkit-transform: translate(2px, 0) rotate(45deg);
           transform: translate(2px, 0) rotate(45deg);
 }
 
-#faq ul li input[type=checkbox]:checked ~ i:after {
+#faq li input[type=checkbox]:checked ~ i:after {
   -webkit-transform: translate(-2px, 0) rotate(-45deg);
           transform: translate(-2px, 0) rotate(-45deg);
 }
@@ -789,7 +797,7 @@ footer {
 #ready {
   -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  padding: 8.8rem 7%;
+  padding: 0 8.8rem 8.8rem 7%;
 }
 
 #ready h1 {
