@@ -17,7 +17,6 @@ var splashAnim = bodymovin.loadAnimation({
 	});
 
 
-
 // Thousands separator for numbers
 
 function numberFormatting(numberToFormat) {
