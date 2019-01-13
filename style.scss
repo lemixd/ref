@@ -76,6 +76,16 @@ a {
         pointer-events: none;
     }
 
+    #spacegirl {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: -50%;
+        margin: 0px auto;
+        z-index: -1;
+        width: 70rem;    
+    }
+
     & h1 {
         color: #fff;
         // font-size: 4rem;
@@ -470,7 +480,7 @@ h2 {
 
 h3 {
     font-size: 1.4rem;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 2.4rem;
     text-transform: uppercase;
     margin-top: 2.6rem;
