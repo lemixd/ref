@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#1487cf">
 	<title>Ref</title>
 	<link href="style.css" rel="stylesheet">
 </head>
@@ -17,7 +18,7 @@
 
 	<div class="header">
 		<nav class="content-align">
-			<a href="#" class="logo">
+			<a href="#" class="logo" aria-label="logo">
 				<svg class="logo" viewBox="0 0 125 40">
 					<use xlink:href="#logo"></use>
 				</svg>
@@ -42,6 +43,12 @@
 					</li>
 				</ul>
 			</div>
+
+			<div class="mobile-nav-container">
+				<a href="#" class="nav-link-mobile" aria-label="cabinet"></a>
+				<a href="#" class="nav-link-mobile" aria-label="menu"></a>
+			</div>
+
 		</nav>
 
 		<div id="spacegirl" class="scroll" data-rate="-3" data-direction="vertical"></div>
@@ -51,10 +58,16 @@
 			<p class="counter" id="paymentCounter" data-text="₴ "></p>
 			<span>Выплачено кешбека по партнёрской программе</span>
 			<div class="btn-wrap">
-				<a href="#" class="btn btn--secondary">Присоединиться</a>
+				<a href="#" class="btn btn--secondary" aria-label="button">Присоединиться</a>
 				<div id="splash" class="splash"></div>
 			</div>
-			<a href="#" class="video-btn"></a>
+			<a href="#" onClick="toggleVideo();" class="video-btn" aria-label="video button"></a>
+			<span>Как это работает? Жми!</span>
+		</div>
+
+		<div id="popup-video" style="display:none;">
+			<iframe src="https://www.youtube.com/embed/nKMCy-MI69c?enablejsapi=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen></iframe>
+			<a href="javascript:;" onClick="toggleVideo('hide');">закрыть</a>
 		</div>
 
 		<div class="step grid">
@@ -81,7 +94,7 @@
 		</div>
 
 
-		<!-- <a href="#" class="scrollDown"></a> -->
+		<!-- <a href="#" class="scrollDown" aria-label="scroll down"></a> -->
 
 		<div id="rocket"></div>
 		<svg class="cloud scroll" viewBox="0 0 184 48" data-rate="2" data-direction="vertical">
@@ -93,7 +106,7 @@
 	</div>
 	
 
-	<section id="benefits" class="content-align">
+	<section id="benefits" class="content-align wow fadeInUp">
 
 		<h1>Преимущества</h1>
 		<span>Подзаголовок</span>
@@ -126,24 +139,24 @@
 		<h1>Как это работает?</h1>
 		<span>Подзаголовок</span>
 
-			<div class="grid">
-				<object class="grid-item svg-object" type="image/svg+xml" data="img/laptop.svg"></object>
+			<div class="grid wow fadeInUp">
+				<object class="grid-item svg-object" type="image/svg+xml" data="img/laptop.svg" alt="laptop"></object>
 				<div>
 					<h2>Получи промокоды в личном кабинете</h2>
 					<p>Просто так и совершенно бесплатно! Никакого подвоха и лишних обязательств. Мы ценим наших Клиентов!</p>
 				</div>
 			</div>
 
-			<div class="grid">
-				<object class="grid-item svg-object" type="image/svg+xml" data="img/msgs.svg"></object>
+			<div class="grid wow fadeInUp">
+				<object class="grid-item svg-object" type="image/svg+xml" data="img/msgs.svg" alt="messengers"></object>
 				<div>
 					<h2>Отправляй код друзьям и знакомым</h2>
 					<p>Копируй код / ссылку и отправляй своим друзьям-автомобилистам. Каждый получит скидку 10% по твоей рекомендации!</p>
 				</div>
 			</div>
 
-			<div class="grid">
-				<object class="grid-item svg-object" type="image/svg+xml" data="img/cards.svg"></object>
+			<div class="grid wow fadeInUp">
+				<object class="grid-item svg-object" type="image/svg+xml" data="img/cards.svg" alt="cards"></object>
 				<div>
 					<h2>Получай кешбек 10%</h2>
 					<p>Воспользовавшись кодом, твой друг принесёт тебе дополнительные 10% кешбека от своего платежа. У тебя ведь много знакомых? Предложи им в следующий раз оформить полис у нас!</p>
@@ -153,7 +166,7 @@
 	</section>
 
 
-	<section id="who" class="content-align">
+	<section id="who" class="content-align wow fadeInUp">
 
 		<h1>Для кого эта программа?</h1>
 		<span>Подзаголовок</span>
@@ -181,14 +194,14 @@
 			</div>
 
 			<div class="btn-wrap">
-				<a href="#" class="btn btn--primary">Я готов!</a>
+				<a href="#" class="btn btn--primary" aria-label="button">Я готов!</a>
 				<div class="splash"></div>
 			</div>
 
 		</section>
 
 	
-		<section id="feedback" class="content-align">
+		<section id="feedback" class="content-align wow fadeInUp">
 
 			<h1>Отзывы Клиентов</h1>
 			<span>О работе в нашей партнёрской программе</span>
@@ -196,24 +209,24 @@
 		</section>
 
 
-		<section id="faq" class="content-align">
+		<section id="faq" class="content-align wow fadeInUp">
 
 			<h1>Часто задаваемые вопросы</h1>
 
 			<ul>
-				<li>
+				<li class="wow flipdown">
 					<input type="checkbox" checked>
 					<i></i>
 					<h2>Languages Used</h2>
 					<p>This page was written in HTML and CSS. The CSS was compiled from SASS. I used Normalize as my CSS reset and -prefix-free to save myself some headaches. I haven't quite gotten the hang of Slim for compiling into HTML, but someday I'll use it since its syntax compliments that of SASS. Regardless, this could all be done in plain HTML and CSS.</p>
 				</li>
-				<li>
+				<li class="wow flipdown">
 					<input type="checkbox" checked>
 					<i></i>
 					<h2>How it Works</h2>
 					<p>Using the sibling and checked selectors, we can determine the styling of sibling elements based on the checked state of the checkbox input element. One use, as demonstrated here, is an entirely CSS and HTML accordion element. Media queries are used to make the element responsive to different screen sizes.</p>
 				</li>
-				<li>
+				<li class="wow flipdown">
 					<input type="checkbox" checked>
 					<i></i>
 					<h2>Points of Interest</h2>
@@ -224,7 +237,7 @@
 		</section>
 
 
-		<section id="ready" class="grid content-align">
+		<section id="ready" class="grid content-align wow fadeInUp">
 
 			<div>
 				<h1>Готовы начать?</h1>
@@ -232,7 +245,7 @@
 			</div>
 
 			<div class="btn-wrap">
-				<a href="#" class="btn btn--primary">Подключиться</a>
+				<a href="#" class="btn btn--primary" aria-label="button">Подключиться</a>
 				<div class="splash"></div>
 			</div>
 				
@@ -245,6 +258,7 @@
 
 
 <script src="js/lottie.js" type="text/javascript"></script>
+<script src="js/wow.min.js"></script>
 <script src="js/script.js" type="text/javascript"></script>
 
 </body>
