@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Ref</title>
 	<link href="style.css" rel="stylesheet">
 </head>
@@ -44,81 +43,24 @@
 			</div>
 		</nav>
 
-		<div id="spacegirl" class="scroll" data-rate="-3" data-direction="vertical"></div>
-
-		<div class="grid content scroll" data-rate="-2" data-direction="vertical">
-			<h1>Возвращаем 10% от платежей!</h1>
-			<p class="counter" id="paymentCounter" data-text="₴ "></p>
-			<span>Выплачено кешбека по партнёрской программе</span>
+		<div class="flex-container flex-container--column">
+			<p class="counter" data-text="₴ ">1 500 483</p>
+			<span>Выплачено кешбека нашим Клиентам по партнёрской программе</span>
 			<div class="btn-wrap">
 				<a href="#" class="btn btn--secondary">Присоединиться</a>
-				<div id="splash" class="splash"></div>
+				<div id="splash"></div>
 			</div>
 			<a href="#" class="video-btn"></a>
 		</div>
 
-		<div class="step grid">
-			<div class="step__one">
-				<h1 class="number">01</h1>
-				<p>Получи промокоды в личном кабинете</p>
-			</div>
-
-			<img src="img/arrow-1.svg"
-				 alt="arrow-up">
-
-			<div class="step__two">
-				<h1 class="number">02</h1>
-				<p>Рекомендуй оформлять автогражданку на PolisUA</p>
-			</div>
-
-			<img src="img/arrow-2.svg"
-				 alt="arrow-down">
-
-			<div class="step__three">
-				<h1 class="number">03</h1>
-				<p>Получай кешбек 10% от успешных платежей</p>
-			</div>
-		</div>
-
-
-		<!-- <a href="#" class="scrollDown"></a> -->
-
 		<div id="rocket"></div>
-		<svg class="cloud scroll" viewBox="0 0 184 48" data-rate="2" data-direction="vertical">
+		<svg class="cloud" viewBox="0 0 184 48">
 			<use xlink:href="#cloud"></use>
 		</svg>
-		<svg class="cloud scroll" viewBox="0 0 184 48"  data-rate="2" data-direction="vertical">
+		<svg class="cloud" viewBox="0 0 184 48">
 			<use xlink:href="#cloud"></use>
 		</svg>
 	</div>
-	
-
-	<section id="benefits" class="content-align">
-
-		<h1>Преимущества</h1>
-		<span>Подзаголовок</span>
-
-		<div class="grid">
-			<div class="grid-item">
-				<img src="img/card.svg" alt="">
-				<h3>Без вложений</h3>
-				<p>Вы ничем не рискуете. Участие в программе абсолютно беслатное</p>
-			</div>
-
-			<div class="grid-item">
-				<img src="img/origami-bird.svg" alt="">
-				<h3>Без обязательств</h3>
-				<p>Вам не нужно отчитываться перед кем-то за результаты. Полная свобода</p>
-			</div>
-
-			<div class="grid-item">
-				<img src="img/icon-users2.svg" alt="">
-				<h3>Без забот</h3>
-				<p>Есть друзья-автомобилисты? Предложите им промокод при следующей встрече</p>
-			</div>
-		</div>
-
-	</section>
 	
 
 	<section id="how" class="content-align">
@@ -126,122 +68,31 @@
 		<h1>Как это работает?</h1>
 		<span>Подзаголовок</span>
 
-			<div class="grid">
-				<object class="grid-item svg-object" type="image/svg+xml" data="img/laptop.svg"></object>
-				<div>
-					<h2>Получи промокоды в личном кабинете</h2>
-					<p>Просто так и совершенно бесплатно! Никакого подвоха и лишних обязательств. Мы ценим наших Клиентов!</p>
-				</div>
+		<div class="flex-container flex-container--row">
+			<object class="svg-object" type="image/svg+xml" data="img/laptop.svg"></object>
+			<div>
+				<h2>Получи промокоды в личном кабинете</h2>
+				<p>Просто так и совершенно бесплатно! Никакого подвоха и лишних обязательств. Мы ценим наших Клиентов!</p>
 			</div>
+		</div>
 
-			<div class="grid">
-				<object class="grid-item svg-object" type="image/svg+xml" data="img/msgs.svg"></object>
-				<div>
-					<h2>Отправляй код друзьям и знакомым</h2>
-					<p>Копируй код / ссылку и отправляй своим друзьям-автомобилистам. Каждый получит скидку 10% по твоей рекомендации!</p>
-				</div>
+		<div class="flex-container flex-container--row">
+			<object class="svg-object" type="image/svg+xml" data="img/msgs.svg"></object>
+			<div>
+				<h2>Отправляй код друзьям и знакомым</h2>
+				<p>Копируй код / ссылку и отправляй своим друзьям-автомобилистам. Каждый получит скидку 10% по твоей рекомендации!</p>
 			</div>
+		</div>
 
-			<div class="grid">
-				<object class="grid-item svg-object" type="image/svg+xml" data="img/cards.svg"></object>
-				<div>
-					<h2>Получай кешбек 10%</h2>
-					<p>Воспользовавшись кодом, твой друг принесёт тебе дополнительные 10% кешбека от своего платежа. У тебя ведь много знакомых? Предложи им в следующий раз оформить полис у нас!</p>
-				</div>
+		<div class="flex-container flex-container--row">
+			<object class="svg-object" type="image/svg+xml" data="img/cards.svg"></object>
+			<div>
+				<h2>Получай кешбек 10%</h2>
+				<p>Воспользовавшись кодом, твой друг принесёт тебе дополнительные 10% кешбека от своего платежа. У тебя ведь много знакомых? Предложи им в следующий раз оформить полис у нас!</p>
 			</div>
+		</div>
 			
 	</section>
-
-
-	<section id="who" class="content-align">
-
-		<h1>Для кого эта программа?</h1>
-		<span>Подзаголовок</span>
-
-			<div class="grid">
-				<div class="grid-item">
-					<h3>Для активных</h3>
-					<p>Второй клиент по рекомендации оформляет полис осаго</p>
-				</div>
-				<div class="grid-item">
-					<h3>Для целеустремлённых</h3>
-					<p>Второй клиент по рекомендации оформляет полис осаго</p>
-				</div>
-				<div class="grid-item">
-					<img src="img/fans.svg" alt="fans">
-				</div>
-				<div class="grid-item">
-					<h3>Для особенных</h3>
-					<p>Второй клиент по рекомендации оформляет полис осаго</p>
-				</div>
-				<div class="grid-item">
-					<h3>Для тебя</h3>
-					<p>Второй клиент по рекомендации оформляет полис осаго</p>
-				</div>
-			</div>
-
-			<div class="btn-wrap">
-				<a href="#" class="btn btn--primary">Я готов!</a>
-				<div class="splash"></div>
-			</div>
-
-		</section>
-
-	
-		<section id="feedback" class="content-align">
-
-			<h1>Отзывы Клиентов</h1>
-			<span>О работе в нашей партнёрской программе</span>
-				
-		</section>
-
-
-		<section id="faq" class="content-align">
-
-			<h1>Часто задаваемые вопросы</h1>
-
-			<ul>
-				<li>
-					<input type="checkbox" checked>
-					<i></i>
-					<h2>Languages Used</h2>
-					<p>This page was written in HTML and CSS. The CSS was compiled from SASS. I used Normalize as my CSS reset and -prefix-free to save myself some headaches. I haven't quite gotten the hang of Slim for compiling into HTML, but someday I'll use it since its syntax compliments that of SASS. Regardless, this could all be done in plain HTML and CSS.</p>
-				</li>
-				<li>
-					<input type="checkbox" checked>
-					<i></i>
-					<h2>How it Works</h2>
-					<p>Using the sibling and checked selectors, we can determine the styling of sibling elements based on the checked state of the checkbox input element. One use, as demonstrated here, is an entirely CSS and HTML accordion element. Media queries are used to make the element responsive to different screen sizes.</p>
-				</li>
-				<li>
-					<input type="checkbox" checked>
-					<i></i>
-					<h2>Points of Interest</h2>
-					<p>By making the open state default for when :checked isn't detected, we can make this system accessable for browsers that don't recognize :checked. The fallback is simply an open accordion. The accordion can be manipulated with Javascript (if needed) by changing the "checked" property of the input element.</p>
-				</li>
-				</ul>
-				
-		</section>
-
-
-		<section id="ready" class="grid content-align">
-
-			<div>
-				<h1>Готовы начать?</h1>
-				<p>Подключитесь к системе одним кликом</p>
-			</div>
-
-			<div class="btn-wrap">
-				<a href="#" class="btn btn--primary">Подключиться</a>
-				<div class="splash"></div>
-			</div>
-				
-		</section>
-
-	
-		<footer>
-
-		</footer>
 
 
 <script src="js/lottie.js" type="text/javascript"></script>
