@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#1487cf">
 	<title>Ref</title>
 	<link href="style.css" rel="stylesheet">
 </head>
@@ -18,7 +17,7 @@
 
 	<div class="header">
 		<nav class="content-align">
-			<a href="#" class="logo" aria-label="logo">
+			<a href="#" class="logo">
 				<svg class="logo" viewBox="0 0 125 40">
 					<use xlink:href="#logo"></use>
 				</svg>
@@ -43,12 +42,6 @@
 					</li>
 				</ul>
 			</div>
-
-			<div class="mobile-nav-container">
-				<a href="#" class="nav-link-mobile" aria-label="cabinet"></a>
-				<a href="#" class="nav-link-mobile" aria-label="menu"></a>
-			</div>
-
 		</nav>
 
 		<div id="spacegirl" class="scroll" data-rate="-3" data-direction="vertical"></div>
@@ -58,16 +51,10 @@
 			<p class="counter" id="paymentCounter" data-text="₴ "></p>
 			<span>Выплачено кешбека по партнёрской программе</span>
 			<div class="btn-wrap">
-				<a href="#" class="btn btn--secondary" aria-label="button">Присоединиться</a>
+				<a href="#" class="btn btn--secondary">Присоединиться</a>
 				<div id="splash" class="splash"></div>
 			</div>
-			<a href="#" onClick="toggleVideo();" class="video-btn" aria-label="video button"></a>
-			<span>Как это работает? Жми!</span>
-		</div>
-
-		<div id="popup-video" style="display:none;">
-			<iframe src="https://www.youtube.com/embed/nKMCy-MI69c?enablejsapi=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen></iframe>
-			<a href="javascript:;" onClick="toggleVideo('hide');">закрыть</a>
+			<a href="#" class="video-btn"></a>
 		</div>
 
 		<div class="step grid">
@@ -94,7 +81,7 @@
 		</div>
 
 
-		<!-- <a href="#" class="scrollDown" aria-label="scroll down"></a> -->
+		<!-- <a href="#" class="scrollDown"></a> -->
 
 		<div id="rocket"></div>
 		<svg class="cloud scroll" viewBox="0 0 184 48" data-rate="2" data-direction="vertical">
@@ -140,7 +127,7 @@
 		<span>Подзаголовок</span>
 
 			<div class="grid">
-				<object class="grid-item svg-object" type="image/svg+xml" data="img/laptop.svg" alt="laptop"></object>
+				<object class="grid-item svg-object" type="image/svg+xml" data="img/laptop.svg"></object>
 				<div>
 					<h2>Получи промокоды в личном кабинете</h2>
 					<p>Просто так и совершенно бесплатно! Никакого подвоха и лишних обязательств. Мы ценим наших Клиентов!</p>
@@ -148,7 +135,7 @@
 			</div>
 
 			<div class="grid">
-				<object class="grid-item svg-object" type="image/svg+xml" data="img/msgs.svg" alt="messengers"></object>
+				<object class="grid-item svg-object" type="image/svg+xml" data="img/msgs.svg"></object>
 				<div>
 					<h2>Отправляй код друзьям и знакомым</h2>
 					<p>Копируй код / ссылку и отправляй своим друзьям-автомобилистам. Каждый получит скидку 10% по твоей рекомендации!</p>
@@ -156,7 +143,7 @@
 			</div>
 
 			<div class="grid">
-				<object class="grid-item svg-object" type="image/svg+xml" data="img/cards.svg" alt="cards"></object>
+				<object class="grid-item svg-object" type="image/svg+xml" data="img/cards.svg"></object>
 				<div>
 					<h2>Получай кешбек 10%</h2>
 					<p>Воспользовавшись кодом, твой друг принесёт тебе дополнительные 10% кешбека от своего платежа. У тебя ведь много знакомых? Предложи им в следующий раз оформить полис у нас!</p>
@@ -194,7 +181,7 @@
 			</div>
 
 			<div class="btn-wrap">
-				<a href="#" class="btn btn--primary" aria-label="button">Я готов!</a>
+				<a href="#" class="btn btn--primary">Я готов!</a>
 				<div class="splash"></div>
 			</div>
 
@@ -245,7 +232,7 @@
 			</div>
 
 			<div class="btn-wrap">
-				<a href="#" class="btn btn--primary" aria-label="button">Подключиться</a>
+				<a href="#" class="btn btn--primary">Подключиться</a>
 				<div class="splash"></div>
 			</div>
 				

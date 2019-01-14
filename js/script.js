@@ -42,6 +42,7 @@ window.addEventListener('scroll', function(e) {
 
 	const target = document.querySelectorAll('.scroll');
 
+
 	var index = 0, length = target.length;
 	for (index; index < length; index++) {
 		var pos = window.pageYOffset * target[index].dataset.rate;
@@ -55,16 +56,6 @@ window.addEventListener('scroll', function(e) {
 			target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
 		}
 	}
+
+
 });
-
-
-
-// Video modal toggle
-function toggleVideo(state) {
-    // if state == 'hide', hide. Else: show video
-    var div = document.getElementById("popup-video");
-    var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
-    div.style.display = state == 'hide' ? 'none' : '';
-    func = state == 'hide' ? 'pauseVideo' : 'playVideo';
-    iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
-}
