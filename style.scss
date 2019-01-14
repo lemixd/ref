@@ -133,7 +133,7 @@ a {
         bottom: -50%;
         margin: 0px auto;
         z-index: -1;
-        width: 70rem;    
+        max-width: 70rem;    
     }
 
     & h1 {
@@ -593,7 +593,7 @@ footer {
 
     .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         grid-gap: 2.4rem;
         text-align: center;
         padding: 5.6rem 7%;
@@ -620,7 +620,7 @@ footer {
 
     .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         align-items: center;
         padding: 0 7%;
 
@@ -836,7 +836,7 @@ footer {
 // SECTION 'READY'
 
 #ready {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     padding: 0 8.8rem 8.8rem 7%;
 
     h1 {
@@ -864,13 +864,27 @@ footer {
 }
 
 
-
-
 // MOBILE
 @media screen and (max-width: 768px) {
 
+    section {
+        padding: 3.2rem 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
     .header {
         min-height: 100vh;
+
+        nav {
+            padding: 2.4rem;
+        }
     }
 
     .step {
@@ -881,9 +895,9 @@ footer {
         display: none;
     }
 
-    #spacegirl {
-        display: none;
-    }
+    // #spacegirl {
+    //     display: none;
+    // }
 
     .header {
         .nav-link-container {
@@ -936,7 +950,7 @@ footer {
             text-align: center;
 
             .grid-item {
-                padding: 0;
+                padding: 0 3.2rem;
 
                 &:nth-of-type(1),
                 &:nth-of-type(2) {
@@ -951,4 +965,52 @@ footer {
             }
         }
     }
+
+    #faq {
+
+        ul {
+            padding: 4rem 1.6rem 0 1.6rem;
+        }
+    }
+
+    #ready {
+        padding: 0 1.6rem 8rem 1.6rem;
+        text-align: center;
+
+        h1 {
+            text-align: center;
+        }
+
+        .btn-wrap {
+            justify-content: center;
+        }
+    }
 }
+
+
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }

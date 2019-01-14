@@ -115,7 +115,7 @@ a {
   bottom: -50%;
   margin: 0px auto;
   z-index: -1;
-  width: 70rem;
+  max-width: 70rem;
 }
 
 .header h1 {
@@ -592,8 +592,8 @@ footer {
 #benefits .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-gap: 2.4rem;
   text-align: center;
   padding: 5.6rem 7%;
@@ -616,8 +616,8 @@ footer {
 #how .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -879,8 +879,8 @@ footer {
 }
 
 #ready {
-  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   padding: 0 8.8rem 8.8rem 7%;
 }
 
@@ -911,16 +911,25 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  section {
+    padding: 3.2rem 0;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
   .header {
     min-height: 100vh;
+  }
+  .header nav {
+    padding: 2.4rem;
   }
   .step {
     display: none;
   }
   #rocket {
-    display: none;
-  }
-  #spacegirl {
     display: none;
   }
   .header .nav-link-container {
@@ -964,7 +973,7 @@ footer {
     text-align: center;
   }
   #who .grid .grid-item {
-    padding: 0;
+    padding: 0 3.2rem;
   }
   #who .grid .grid-item:nth-of-type(1), #who .grid .grid-item:nth-of-type(2) {
     text-align: center;
@@ -976,5 +985,45 @@ footer {
     -ms-grid-row: 3;
     grid-row: 3;
   }
+  #faq ul {
+    padding: 4rem 1.6rem 0 1.6rem;
+  }
+  #ready {
+    padding: 0 1.6rem 8rem 1.6rem;
+    text-align: center;
+  }
+  #ready h1 {
+    text-align: center;
+  }
+  #ready .btn-wrap {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
 }
 /*# sourceMappingURL=style.css.map */
