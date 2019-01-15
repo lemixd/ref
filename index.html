@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#1487cf">
 	<title>Ref</title>
-	<link href="style.css" rel="stylesheet">
+	<link href="css/swiper.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -71,12 +72,12 @@
 
 		<!-- End of main navigation -->
 
-		<div id="spacegirl" class="scroll" data-rate="-3" data-direction="vertical"></div>
+		<div id="spacegirl" class="scroll" data-rate="-1.5" data-direction="vertical"></div>
 
 
 		<!-- Header main content -->
 
-		<div class="content scroll" data-rate="-2" data-direction="vertical">
+		<div class="content scroll" data-rate="-1" data-direction="vertical">
 			<h1>Возвращаем 10% от платежей!</h1>
 			<p class="counter" id="paymentCounter" data-text="₴ "></p>
 			<span>Выплачено кешбека по партнёрской программе</span>
@@ -271,10 +272,78 @@
 
 		<!-- Feedback section start -->
 	
-		<section id="feedback" class="content-align wow fadeInUp">
+		<section id="feedback" class="wow fadeInUp">
 
 			<h1>Отзывы Клиентов</h1>
 			<span>О работе в нашей партнёрской программе</span>
+
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+
+					<div class="swiper-slide">
+						<div class="swiper-slide-container">
+							<div class="feedback-user-info">
+								<img class="user-pic" src="img/person-7@2x.jpg" alt="user">
+								<ul>
+									<li>
+										<span class="feedback-user-name">Василиса Прекрасная</span>
+									</li>
+									<li>
+										<span class="feedback-date">17.12.2018</span>
+									</li>
+								</ul>
+								<a href="#" class="social-link">
+									<img src="img/facebook.svg" alt="fb">
+								</a>
+							</div>
+							<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. С другой стороны, постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке новых предложений.</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide">
+							<div class="swiper-slide-container">
+								<div class="feedback-user-info">
+									<img class="user-pic" src="img/person-7@2x.jpg" alt="user">
+									<ul>
+										<li>
+											<span class="feedback-user-name">Василиса Прекрасная</span>
+										</li>
+										<li>
+											<span class="feedback-date">17.12.2018</span>
+										</li>
+									</ul>
+									<a href="#" class="social-link">
+										<img src="img/facebook.svg" alt="fb">
+									</a>
+								</div>
+								<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. С другой стороны, постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке новых предложений.</p>
+							</div>
+						</div>
+
+						<div class="swiper-slide">
+								<div class="swiper-slide-container">
+									<div class="feedback-user-info">
+										<img class="user-pic" src="img/person-7@2x.jpg" alt="user">
+										<ul>
+											<li>
+												<span class="feedback-user-name">Василиса Прекрасная</span>
+											</li>
+											<li>
+												<span class="feedback-date">17.12.2018</span>
+											</li>
+										</ul>
+										<a href="#" class="social-link">
+											<img src="img/facebook.svg" alt="fb">
+										</a>
+									</div>
+									<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. С другой стороны, постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке новых предложений.</p>
+								</div>
+							</div>
+
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+			</div>
 				
 		</section>
 
@@ -341,8 +410,9 @@
 
 		<!-- Footer end -->
 
-<script src="js/lottie.js" type="text/javascript"></script>
+<script src="js/lottie_svg.min.js" type="text/javascript"></script>
 <script src="js/wow.min.js"></script>
+<script src="js/swiper.min.js"></script>
 <script src="js/script.js" type="text/javascript"></script>
 
 </body>

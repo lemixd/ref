@@ -106,6 +106,8 @@ function toggleVideo(state) {
     iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
 }
 
+
+// Animation on scroll
 var wow = new WOW(
 	{
 		boxClass:     'wow',      // default
@@ -116,3 +118,35 @@ var wow = new WOW(
 		}
 	)
 wow.init();
+
+
+
+// Swiper slider init
+var swiper = new Swiper('.swiper-container', {
+	slidesPerView: 3,
+	spaceBetween: 24,
+	centeredSlides: true,
+	loop: true,
+	pagination: {
+	  el: '.swiper-pagination',
+	  clickable: true,
+	},
+	breakpoints: {
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        },
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        }
+      }
+});
