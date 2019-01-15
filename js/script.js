@@ -68,14 +68,3 @@ function toggleVideo(state) {
     func = state == 'hide' ? 'pauseVideo' : 'playVideo';
     iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
 }
-
-var wow = new WOW(
-	{
-		boxClass:     'wow',      // default
-		animateClass: 'animated', // default
-		offset:       0,          // default
-		mobile:       true,       // default
-		live:         true        // default
-		}
-	)
-wow.init();

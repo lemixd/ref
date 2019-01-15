@@ -741,15 +741,15 @@ footer {
             }
 
             &:nth-of-type(1) {
-                animation-delay: 0.2s;
+                animation-delay: 0.5s;
             }
 
             &:nth-of-type(2) {
-                animation-delay: 0.4s;
+                animation-delay: 0.75s;
             }
 
             &:nth-of-type(3) {
-                animation-delay: 0.6s;
+                animation-delay: 1s;
             }
 
             &:last-of-type {
@@ -861,34 +861,6 @@ footer {
 footer {
     background-color: #fff;
     border-top: 1px solid #E8E9EB;
-}
-
-
-// Wow animation on page scroll
-.animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeInUp {
-from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-}
-
-to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    }
-}
-
-.fadeInUp {
-    -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp;
 }
 
 
@@ -1014,3 +986,31 @@ to {
         }
     }
 }
+
+
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }
