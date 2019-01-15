@@ -7,13 +7,50 @@ var rocketAnim = bodymovin.loadAnimation({
 	path: 'js/rocket.json'
 	});
 
-var splashAnim = bodymovin.loadAnimation({
-	container: document.getElementById('splash'),
-	renderer: 'svg',
-	loop: true,
-	autoplay: true,
-	path: 'js/splash.json'
-	});
+// var splashAnim = bodymovin.loadAnimation({
+// 	container: document.getElementById('splash'),
+// 	renderer: 'svg',
+// 	loop: true,
+// 	autoplay: true,
+// 	path: 'js/splash.json'
+// 	});
+
+	
+    // var params = {
+	// 	container: document.getElementById('splash'),
+	// 	renderer: 'svg',
+	// 	loop: true,
+	// 	autoplay: true,
+	// 	path: 'js/splash.json'
+	// };
+
+    // var anim = lottie.loadAnimation(params);
+    // let splash = document.getElementById('splash');
+    // splash.addEventListener("mouseenter", function () {
+	// // anim.setSpeed(3);
+	// // anim.play();
+    // });
+
+    // splash.addEventListener("mouseleave", function () {
+	// // anim.setSpeed(1);
+	// // anim.pause();
+    // });
+
+
+
+	
+	// var observer = new MutationObserver(function(mutations) {
+	// 	mutations.forEach(function(mutationRecord) {
+	// 		console.log(mutationRecord.type);
+	// 	});    
+	// });
+
+	// var config = { attributes: true, childList: true, characterData: true }
+
+	// observer.observe(rocket, config);
+
+
+
 
 var spacegirlAnim = bodymovin.loadAnimation({
 	container: document.getElementById('spacegirl'),
@@ -68,3 +105,14 @@ function toggleVideo(state) {
     func = state == 'hide' ? 'pauseVideo' : 'playVideo';
     iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
 }
+
+var wow = new WOW(
+	{
+		boxClass:     'wow',      // default
+		animateClass: 'animated', // default
+		offset:       0,          // default
+		mobile:       false,      
+		live:         true        // default
+		}
+	)
+wow.init();
