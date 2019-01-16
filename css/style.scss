@@ -100,6 +100,11 @@ a {
     cursor: pointer;
 }
 
+.scroll {
+    transition: transform 0.1s linear;
+    will-change: transform;
+}
+
 
 // HEADER
 
@@ -595,17 +600,30 @@ footer {
 #benefits {
 
     .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        grid-gap: 2.4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
         text-align: center;
-        padding: 5.6rem 7%;
+        padding: 5.6rem 0;
+
+        @supports (display: grid) {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 32.4rem);
+            grid-gap: 2.4rem;
+        }
 
         .grid-item {
+            max-width: 29.2rem;
+            margin: 1.2rem;
             background: #fff;
             border-radius: $border-radius;
             padding: 5.6rem 2.4rem 1.6rem;
             box-shadow: 0px 6px 24px rgba(29, 107, 178, 0.26);
+
+            @supports (display: grid) {
+                margin: initial;
+            }
 
             &:nth-of-type(even) {
                 background-color: #FFD83A;
@@ -629,10 +647,14 @@ footer {
 #how {
 
     .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        display: flex;
         align-items: center;
         padding: 0 7%;
+
+        @supports (display: grid) {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
 
         &:first-of-type {
             padding-top: 2.4rem;

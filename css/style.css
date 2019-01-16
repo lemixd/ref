@@ -83,6 +83,14 @@ a {
   cursor: pointer;
 }
 
+.scroll {
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+  will-change: transform;
+}
+
 .header {
   position: relative;
   width: 100%;
@@ -601,21 +609,46 @@ footer {
 }
 
 #benefits .grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  grid-gap: 2.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   text-align: center;
-  padding: 5.6rem 7%;
+  padding: 5.6rem 0;
+}
+
+@supports (display: grid) {
+  #benefits .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (32.4rem)[auto-fit];
+        grid-template-columns: repeat(auto-fit, 32.4rem);
+    grid-gap: 2.4rem;
+  }
 }
 
 #benefits .grid .grid-item {
+  max-width: 29.2rem;
+  margin: 1.2rem;
   background: #fff;
   border-radius: 0.8rem;
   padding: 5.6rem 2.4rem 1.6rem;
   -webkit-box-shadow: 0px 6px 24px rgba(29, 107, 178, 0.26);
           box-shadow: 0px 6px 24px rgba(29, 107, 178, 0.26);
+}
+
+@supports (display: grid) {
+  #benefits .grid .grid-item {
+    margin: initial;
+  }
 }
 
 #benefits .grid .grid-item:nth-of-type(even) {
@@ -632,14 +665,22 @@ footer {
 }
 
 #how .grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 0 7%;
+}
+
+@supports (display: grid) {
+  #how .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
 }
 
 #how .grid:first-of-type {

@@ -127,6 +127,7 @@ var swiper = new Swiper('.swiper-container', {
 	spaceBetween: 24,
 	centeredSlides: true,
 	loop: true,
+	roundLengths : true,
 	pagination: {
 	  el: '.swiper-pagination',
 	  clickable: true,
