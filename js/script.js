@@ -110,10 +110,10 @@ function toggleVideo(state) {
 // Animation on scroll
 AOS.init({
 	startEvent: 'DOMContentLoaded',
-	offset: 200,
+	offset: 150,
 	delay: 100,
 	duration: 400,
-	easing: 'ease',
+	easing: 'ease-out-back',
 	once: true,
 	anchorPlacement: 'top-bottom',
 });
