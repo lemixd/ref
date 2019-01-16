@@ -108,16 +108,15 @@ function toggleVideo(state) {
 
 
 // Animation on scroll
-var wow = new WOW(
-	{
-		boxClass:     'wow',      // default
-		animateClass: 'animated', // default
-		offset:       0,          // default
-		mobile:       false,      
-		live:         true        // default
-		}
-	)
-wow.init();
+AOS.init({
+	startEvent: 'DOMContentLoaded',
+	offset: 200,
+	delay: 100,
+	duration: 400,
+	easing: 'ease',
+	once: true,
+	anchorPlacement: 'top-bottom',
+});
 
 
 

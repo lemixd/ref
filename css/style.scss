@@ -746,7 +746,7 @@ footer {
       
     .flipIn, 
     ul li {
-        animation: flipdown 0.5s ease both;
+        // animation: flipdown 0.5s ease both;
     }
 
     h2 {
@@ -924,30 +924,6 @@ footer {
         margin: 0 auto;
     }
 }
-
-
-// Wow animation on page scroll
-.animated {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeInUp {
-from {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-}
-
-to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    }
-}
-
-.fadeInUp {
-    animation-name: fadeInUp;
-}
-
 
 .showOnMobile {
     display: none;
