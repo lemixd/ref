@@ -1,11 +1,24 @@
 // Lottie animation properties
-var rocketAnim = bodymovin.loadAnimation({
-	container: document.getElementById('rocket'),
-	renderer: 'svg',
-	loop: true,
-	autoplay: true,
-	path: 'js/rocket.json'
-	});
+
+	var rocketParams = {
+		container: document.getElementById('rocket'),
+		renderer: 'svg',
+		loop: true,
+		autoplay: true,
+		path: 'js/rocket.json'
+	};
+
+	// Disable Anim calculation when hidden
+
+    var rocketAnim = lottie.loadAnimation(rocketParams);
+
+	window.onload = window.onresize = function() {
+		if (window.innerWidth < 1280) {
+			rocketAnim.pause();
+		} else {
+			rocketAnim.play();
+		}
+	};
 
 // var splashAnim = bodymovin.loadAnimation({
 // 	container: document.getElementById('splash'),
@@ -20,12 +33,22 @@ var rocketAnim = bodymovin.loadAnimation({
 	// 	container: document.getElementById('splash'),
 	// 	renderer: 'svg',
 	// 	loop: true,
-	// 	autoplay: true,
+	// 	autoplay: false,
 	// 	path: 'js/splash.json'
 	// };
 
     // var anim = lottie.loadAnimation(params);
-    // let splash = document.getElementById('splash');
+	// let splash = document.getElementById('splash');
+	
+	// var isVisible = document.getElementById('splash').style.display == "block";
+    // var isHidden = document.getElementById('splash').style.display == "none";
+
+    // if (isHidden === true) {
+    //     anim.stop();
+    // } else {
+    //     anim.play();
+    // }
+
     // splash.addEventListener("mouseenter", function () {
 	// // anim.setSpeed(3);
 	// // anim.play();
