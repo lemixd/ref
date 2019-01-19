@@ -34,6 +34,7 @@ html, body {
 }
 
 #popup-video {
+    position: fixed!important;
     display: flex;
     align-items: center;
     position: absolute;
@@ -100,9 +101,11 @@ a {
     cursor: pointer;
 }
 
-.scroll {
-    transition: transform 0.1s linear;
-    will-change: transform;
+.scroll {    
+    @supports (will-change: transform) {
+        transition: transform 0.1s linear;
+        will-change: transform;
+    }
 }
 
 
@@ -115,7 +118,7 @@ a {
     background: url(../img/bg.svg) repeat center -200px, url(../img/city-symbol.svg) repeat-x right 150%, url(../img/planet.svg) no-repeat 85% 70%, linear-gradient(to top, #0771b2 0%, #1487cf 100%);
     background-attachment: fixed;
     overflow: hidden;
-    z-index: 1;
+    z-index: 2;
 
     &:before {
         content: '';
@@ -1144,6 +1147,7 @@ footer {
 
         #spacegirl {
             bottom: -10%;
+            max-width: 30rem;
         }
     }
 
@@ -1163,6 +1167,13 @@ footer {
         }
     }
 
+    #popup-video {
+        iframe {
+            width: 100%;
+            height: 30%;
+        }
+    }
+
     .hideOnMobile {
         display: none;
     }
@@ -1172,6 +1183,8 @@ footer {
     }
 
     .header {
+        background-attachment: initial;
+
         .nav-link-container {
             display: none;
         }

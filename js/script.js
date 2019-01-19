@@ -110,9 +110,13 @@ window.addEventListener('scroll', function(e) {
 			target[index].style.transform = 'translate3d(0px,'+pos+'px, 0px)';
 		} else {
 			var posX = window.pageYOffset * target[index].dataset.ratex;
-			var posY = window.pageYOffset * target[index].dataset.ratey;
+			// var posY = window.pageYOffset * target[index].dataset.ratey;
 			
-			target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+			// target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+		}
+
+		if (pos > 2000 || pos < -2000) {
+			target[index].style.transform = 'none';
 		}
 	}
 });
@@ -159,17 +163,9 @@ var swiper = new Swiper('.swiper-container', {
           slidesPerView: 2,
           spaceBetween: 16,
         },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 16,
-        },
         640: {
           slidesPerView: 1,
           spaceBetween: 16,
         },
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 16,
-        }
       }
 });
