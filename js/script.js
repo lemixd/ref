@@ -1,27 +1,87 @@
 // Lottie animation properties
-var rocketAnim = bodymovin.loadAnimation({
-	container: document.getElementById('rocket'),
-	renderer: 'svg',
-	loop: true,
-	autoplay: true,
-	path: 'js/rocket.json'
-	});
 
-var splashAnim = bodymovin.loadAnimation({
-	container: document.getElementById('splash'),
-	renderer: 'svg',
-	loop: true,
-	autoplay: true,
-	path: 'js/splash.json'
-	});
+	var rocketParams = {
+		container: document.getElementById('rocket'),
+		renderer: 'svg',
+		loop: true,
+		autoplay: true,
+		path: 'js/rocket.json'
+	};
 
-var spacegirlAnim = bodymovin.loadAnimation({
-	container: document.getElementById('spacegirl'),
-	renderer: 'svg',
-	loop: true,
-	autoplay: true,
-	path: 'js/spacegirl.json'
-	});
+	// Disable Anim calculation when hidden
+
+    var rocketAnim = lottie.loadAnimation(rocketParams);
+
+	window.onload = window.onresize = function() {
+		if (window.innerWidth < 1280) {
+			rocketAnim.pause();
+		} else {
+			rocketAnim.play();
+		}
+	};
+
+// var splashAnim = bodymovin.loadAnimation({
+// 	container: document.getElementById('splash'),
+// 	renderer: 'svg',
+// 	loop: true,
+// 	autoplay: true,
+// 	path: 'js/splash.json'
+// 	});
+
+	
+    // var params = {
+	// 	container: document.getElementById('splash'),
+	// 	renderer: 'svg',
+	// 	loop: true,
+	// 	autoplay: false,
+	// 	path: 'js/splash.json'
+	// };
+
+    // var anim = lottie.loadAnimation(params);
+	// let splash = document.getElementById('splash');
+	
+	// var isVisible = document.getElementById('splash').style.display == "block";
+    // var isHidden = document.getElementById('splash').style.display == "none";
+
+    // if (isHidden === true) {
+    //     anim.stop();
+    // } else {
+    //     anim.play();
+    // }
+
+    // splash.addEventListener("mouseenter", function () {
+	// // anim.setSpeed(3);
+	// // anim.play();
+    // });
+
+    // splash.addEventListener("mouseleave", function () {
+	// // anim.setSpeed(1);
+	// // anim.pause();
+    // });
+
+
+
+	
+	// var observer = new MutationObserver(function(mutations) {
+	// 	mutations.forEach(function(mutationRecord) {
+	// 		console.log(mutationRecord.type);
+	// 	});    
+	// });
+
+	// var config = { attributes: true, childList: true, characterData: true }
+
+	// observer.observe(rocket, config);
+
+
+
+
+// var spacegirlAnim = bodymovin.loadAnimation({
+// 	container: document.getElementById('spacegirl'),
+// 	renderer: 'svg',
+// 	loop: true,
+// 	autoplay: true,
+// 	path: 'js/spacegirl.json'
+// 	});
 
 
 // Thousands separator for numbers
@@ -69,13 +129,47 @@ function toggleVideo(state) {
     iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
 }
 
-var wow = new WOW(
-	{
-		boxClass:     'wow',      // default
-		animateClass: 'animated', // default
-		offset:       0,          // default
-		mobile:       true,       // default
-		live:         true        // default
-		}
-	)
-wow.init();
+
+// Animation on scroll
+AOS.init({
+	startEvent: 'DOMContentLoaded',
+	offset: 150,
+	delay: 100,
+	duration: 400,
+	easing: 'ease-out-back',
+	once: true,
+	anchorPlacement: 'top-bottom',
+});
+
+
+
+// Swiper slider init
+var swiper = new Swiper('.swiper-container', {
+	slidesPerView: 3,
+	spaceBetween: 24,
+	centeredSlides: true,
+	loop: true,
+	roundLengths : true,
+	pagination: {
+	  el: '.swiper-pagination',
+	  clickable: true,
+	},
+	breakpoints: {
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        },
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        }
+      }
+});
