@@ -1,4 +1,3 @@
-@import url("https://use.typekit.net/pzv3wmp.css");
 html {
   font-size: 62.5%;
 }
@@ -1250,7 +1249,7 @@ footer .securedBy img {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 1.6rem 0 8rem 1.6rem;
+    padding: 1.6rem 1.6rem 8rem 1.6rem;
   }
   .step .step__two {
     display: -webkit-box;

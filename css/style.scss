@@ -18,7 +18,7 @@ $font-size: 1.6rem;
 
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
 // There is an old version of Lato font family at Goole. Use Adobe typekit instead. 400, 700, 800, 900 
-@import url("https://use.typekit.net/pzv3wmp.css");
+// @import url("https://use.typekit.net/pzv3wmp.css");
 
 html {
     font-size: 62.5%;
@@ -1168,7 +1168,7 @@ footer {
 
     .step {
         flex-direction: column;
-        padding: 1.6rem 0 8rem 1.6rem;
+        padding: 1.6rem 1.6rem 8rem 1.6rem;
 
         .step__two {
             display: flex;
