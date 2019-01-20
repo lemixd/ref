@@ -836,9 +836,9 @@ footer {
     }
       
     .flipIn, 
-    ul li {
+    // ul li {
         // animation: flipdown 0.5s ease both;
-    }
+    // }
 
     h2 {
         line-height: 1.6rem;
@@ -1136,6 +1136,7 @@ footer {
 
     .header {
         min-height: 100vh;
+        background: url(../img/bg.svg) repeat center -100px, url(../img/city-symbol.svg) repeat-x right 120%, url(../img/planet.svg) no-repeat 99% 70%, linear-gradient(to top, #0771b2 0%, #1487cf 100%);
 
         nav {
             padding: 2.4rem;
@@ -1159,14 +1160,15 @@ footer {
         }
 
         #spacegirl {
-            bottom: -10%;
-            max-width: 30rem;
+            display: none;
+            // bottom: -10%;
+            // max-width: 30rem;
         }
     }
 
     .step {
         flex-direction: column;
-        padding: 1.6rem 0 4rem 1.6rem;
+        padding: 1.6rem 0 8rem 1.6rem;
 
         .step__two {
             display: flex;

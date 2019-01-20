@@ -864,6 +864,7 @@ footer {
   transition: all 0.25s ease-in-out;
 }
 
+#faq .flipIn,
 #faq h2 {
   line-height: 1.6rem;
   font-weight: 400;
@@ -1221,6 +1222,8 @@ footer .securedBy img {
   }
   .header {
     min-height: 100vh;
+    background: url(../img/bg.svg) repeat center -100px, url(../img/city-symbol.svg) repeat-x right 120%, url(../img/planet.svg) no-repeat 99% 70%, -webkit-gradient(linear, left bottom, left top, from(#0771b2), to(#1487cf));
+    background: url(../img/bg.svg) repeat center -100px, url(../img/city-symbol.svg) repeat-x right 120%, url(../img/planet.svg) no-repeat 99% 70%, linear-gradient(to top, #0771b2 0%, #1487cf 100%);
   }
   .header nav {
     padding: 2.4rem;
@@ -1240,15 +1243,14 @@ footer .securedBy img {
     margin-top: 0;
   }
   .header #spacegirl {
-    bottom: -10%;
-    max-width: 30rem;
+    display: none;
   }
   .step {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 1.6rem 0 4rem 1.6rem;
+    padding: 1.6rem 0 8rem 1.6rem;
   }
   .step .step__two {
     display: -webkit-box;
