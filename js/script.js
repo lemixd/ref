@@ -1,65 +1,46 @@
 // Lottie animation properties
+// Rocket
+let rocketParams = {
+	container: document.getElementById('rocket'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: true,
+	path: 'js/rocket.json'
+};
 
-	var rocketParams = {
-		container: document.getElementById('rocket'),
-		renderer: 'svg',
-		loop: true,
-		autoplay: true,
-		path: 'js/rocket.json'
+
+// Disable rocket Anim calculation when hidden
+let rocketAnim = lottie.loadAnimation(rocketParams);
+
+window.onload = window.onresize = function() {
+	if (window.innerWidth < 1280) {
+		rocketAnim.pause();
+	} else {
+		rocketAnim.play();
+	}
+};
+
+// Splash animation properties
+let splashParam = {
+	container: document.getElementById('splash'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: false,
+	path: 'js/splash.json'
 	};
 
-	// Disable Anim calculation when hidden
+	let splashAnim = lottie.loadAnimation(splashParam);
+	let splashAnimBtn = document.getElementById('splashAnimBtn');
 
-    var rocketAnim = lottie.loadAnimation(rocketParams);
+    splashAnimBtn.addEventListener("mouseenter", function () {
+		splashAnim.play();
+    });
 
-	window.onload = window.onresize = function() {
-		if (window.innerWidth < 1280) {
-			rocketAnim.pause();
-		} else {
-			rocketAnim.play();
-		}
-	};
+    splashAnimBtn.addEventListener("mouseleave", function () {
+		splashAnim.pause();
+    });
 
-// var splashAnim = bodymovin.loadAnimation({
-// 	container: document.getElementById('splash'),
-// 	renderer: 'svg',
-// 	loop: true,
-// 	autoplay: true,
-// 	path: 'js/splash.json'
-// 	});
-
-	
-    // var params = {
-	// 	container: document.getElementById('splash'),
-	// 	renderer: 'svg',
-	// 	loop: true,
-	// 	autoplay: false,
-	// 	path: 'js/splash.json'
-	// };
-
-    // var anim = lottie.loadAnimation(params);
-	// let splash = document.getElementById('splash');
-	
-	// var isVisible = document.getElementById('splash').style.display == "block";
-    // var isHidden = document.getElementById('splash').style.display == "none";
-
-    // if (isHidden === true) {
-    //     anim.stop();
-    // } else {
-    //     anim.play();
-    // }
-
-    // splash.addEventListener("mouseenter", function () {
-	// // anim.setSpeed(3);
-	// // anim.play();
-    // });
-
-    // splash.addEventListener("mouseleave", function () {
-	// // anim.setSpeed(1);
-	// // anim.pause();
-    // });
-
-
+// Spacegirl animation properties. Used css animation instead
 // var spacegirlAnim = bodymovin.loadAnimation({
 // 	container: document.getElementById('spacegirl'),
 // 	renderer: 'svg',

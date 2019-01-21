@@ -33,6 +33,11 @@ html, body {
     overflow-x: hidden;
 }
 
+::selection {
+    color: color(primary-text);
+    background: #FFCC00;
+  }
+
 #popup-video {
     position: fixed!important;
     display: flex;
