@@ -1,4 +1,3 @@
-/* ICONS */
 #laptop,
 #cards,
 #msgs {
@@ -60,94 +59,5 @@
 	to {
 		opacity: 0.5;
 		transform: scale(1.02);
-	}
-}
-
-/* SPACEGIRL */
-#spinEl-1, #spinEl-2, #spinEl-3, #spinEl-4, #spinEl-5,
-#spinEl-1-2, #spinEl-2-2, #spinEl-3-2, #spinEl-4-2, #spinEl-5-2 {
-	transform-origin: 789px 670px;
-	animation-name: spinScale;
-	animation-duration: 4s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-}
-
-#spinEl-1-2, #spinEl-2-2, #spinEl-3-2, #spinEl-4-2, #spinEl-5-2 {
-	transform-origin: 195px 623px;
-	animation-direction: reverse;
-}
-
-#spinEl-2, #spinEl-3, #spinEl-4, #spinEl-5,
-#spinEl-2-2, #spinEl-3, #spinEl-4-2, #spinEl-5-2 {
-	animation-name: spin;
-	animation-direction: reverse;
-}
-
-#spinEl-4, #spinEl-5,
-#spinEl-4-2, #spinEl-5-2 {
-	animation-direction: normal;
-	animation-duration: 6s;
-}
-
-#spinEl-5,
-#spinEl-5-2 {
-	animation-duration: 8s;
-}
-
-#r-hand {
-	transform-origin: 610px 345px;
-	animation: r-hand-move 2s ease infinite alternate;
-}
-
-#l-hand {
-	transform-origin: 437px 340px;
-	animation: l-hand-move 2s ease infinite alternate;
-}
-
-#spacegirl {
-	transform-origin: 50% 50%;
-	animation: levitation-xl 2s ease-in-out infinite alternate;
-}
-
-@keyframes spin {
-	to {
-		transform: rotate(1turn);
-	}
-}
-
-@keyframes spinScale {
-	0% {
-		transform: scale(1) rotate(0turn);
-	}
-	50% {
-		transform: scale(1.5) rotate(0.5turn);
-	}
-	100% {
-		transform: scale(1) rotate(1turn);
-	}
-}
-
-@keyframes r-hand-move {
-	from {
-		transform: rotate(-9deg);
-	}
-	to {
-		transform: rotate(-5deg);
-	}
-}
-
-@keyframes l-hand-move {
-	from {
-		transform: rotate(5deg);
-	}
-	to {
-		transform: rotate(0deg);
-	}
-}
-
-@keyframes levitation-xl {
-	to {
-		transform: translateY(-80px);
 	}
 }
