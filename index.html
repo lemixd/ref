@@ -4,8 +4,13 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="keywords" content="polis.ua поліс кешбек реферал електронне осаго">
+	<meta name="description" content="Кешбек від Polis.ua">
 	<meta name="theme-color" content="#1487cf">
 	<title>Ref</title>
+	<link rel="icon" type="image/x-icon" href="img/favicon-32x32.png">
+	<link rel="preload" as="style" href="https://use.typekit.net/pzv3wmp.css">
 	<link href="css/swiper.min.css" rel="stylesheet">
 	<link href="css/aos.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
@@ -74,7 +79,8 @@
 
 		<!-- End of main navigation -->
 
-		<div id="spacegirl" class="scroll" data-rate="-1.5" data-direction="vertical"></div>
+		<!-- <div id="spacegirl" class="scroll" data-rate="-1.5" data-direction="vertical"></div> -->
+		<object id="spacegirl" type="image/svg+xml" data="img/spacegirl.svg" alt="spacegirl" class="scroll" data-rate="-1.5" data-direction="vertical"></object>
 
 
 		<!-- Header main content -->
@@ -84,7 +90,7 @@
 			<p class="counter" id="paymentCounter" data-text="₴ "></p>
 			<span>Выплачено кешбека по партнёрской программе</span>
 			<div class="btn-wrap">
-				<a href="#" class="btn btn--secondary" aria-label="button">Присоединиться</a>
+				<a href="#" id="splashAnimBtn" class="btn btn--secondary" aria-label="button">Присоединиться</a>
 				<div id="splash" class="splash"></div>
 			</div>
 			<a href="#" onClick="toggleVideo();" class="video-btn" aria-label="video button"></a>
@@ -238,25 +244,42 @@
 		<span>Подзаголовок</span>
 
 			<div class="grid">
-				<div class="grid-item">
-					<h3>Для активных</h3>
-					<p>Второй клиент по рекомендации оформляет полис осаго</p>
-				</div>
-				<div class="grid-item">
-					<h3>Для целеустремлённых</h3>
-					<p>Второй клиент по рекомендации оформляет полис осаго</p>
-				</div>
+				<ul class="grid-item">
+					<li>
+						<div>
+							<h3>Для активных</h3>
+							<p>Второй клиент по рекомендации оформляет полис осаго</p>
+						</div>
+					</li>
+
+					<li>
+						<div>
+							<h3>Для целеустремлённых</h3>
+							<p>Второй клиент по рекомендации оформляет полис осаго</p>
+						</div>
+					</li>
+				</ul>
+
 				<div class="grid-item">
 					<img src="img/fans.svg" alt="fans">
 				</div>
-				<div class="grid-item">
-					<h3>Для особенных</h3>
-					<p>Второй клиент по рекомендации оформляет полис осаго</p>
-				</div>
-				<div class="grid-item">
-					<h3>Для тебя</h3>
-					<p>Второй клиент по рекомендации оформляет полис осаго</p>
-				</div>
+
+				<ul class="grid-item">
+					<li>
+						<div>
+							<h3>Для особенных</h3>
+							<p>Второй клиент по рекомендации оформляет полис осаго</p>
+						</div>
+					</li>
+
+					<li>
+						<div>
+							<h3>Для тебя</h3>
+							<p>Второй клиент по рекомендации оформляет полис осаго</p>
+						</div>
+					</li>
+				</ul>
+
 			</div>
 
 			<div class="btn-wrap">
@@ -295,7 +318,7 @@
 									</li>
 								</ul>
 								<a href="#" class="social-link">
-									<img src="img/facebook.svg" alt="fb">
+									<img src="img/fk-rect.svg" alt="fb">
 								</a>
 							</div>
 							<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. С другой стороны, постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке новых предложений.</p>
@@ -315,7 +338,7 @@
 										</li>
 									</ul>
 									<a href="#" class="social-link">
-										<img src="img/facebook.svg" alt="fb">
+										<img src="img/fk-rect.svg" alt="fb">
 									</a>
 								</div>
 								<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. С другой стороны, постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке новых предложений.</p>
@@ -335,7 +358,7 @@
 											</li>
 										</ul>
 										<a href="#" class="social-link">
-											<img src="img/facebook.svg" alt="fb">
+											<img src="img/fk-rect.svg" alt="fb">
 										</a>
 									</div>
 									<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. С другой стороны, постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке новых предложений.</p>
@@ -419,13 +442,13 @@
 			<div class="social-conatiner">
 
 				<div class="contact-phone">
-					<a href="#">0 800 508 857</a>
+					<a href="tel:0800508857">0 800 508 857</a>
 				</div>
 
 				<div class="social">
-					<a href="#" aria-label="facebook"></a>
-					<a href="#" aria-label="instagram"></a>
-					<a href="#" aria-label="youtube"></a>
+					<a href="#" aria-label="fk"></a>
+					<a href="#" aria-label="im"></a>
+					<a href="#" aria-label="yb"></a>
 				</div>
 
 				<div class="securedBy">
@@ -439,8 +462,8 @@
 		<!-- Footer end -->
 
 <script src="js/lottie_svg.min.js" type="text/javascript"></script>
-<script src="js/aos.js"></script>
-<script src="js/swiper.min.js"></script>
+<script src="js/aos.js" type="text/javascript"></script>
+<script src="js/swiper.min.js" type="text/javascript"></script>
 <script src="js/script.js" type="text/javascript"></script>
 
 </body>
