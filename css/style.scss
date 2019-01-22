@@ -1141,7 +1141,7 @@ footer {
 
     .header {
         min-height: 100vh;
-        background: url(../img/bg.svg) repeat center -100px, url(../img/city-symbol.svg) repeat-x right 120%, url(../img/planet.svg) no-repeat 99% 70%, linear-gradient(to top, #0771b2 0%, #1487cf 100%);
+        background-position: center -100px, right 120%, 99% 70%;
 
         nav {
             padding: 2.4rem;
