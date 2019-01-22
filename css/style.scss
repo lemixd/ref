@@ -187,10 +187,10 @@ a {
     .nav-link {
         display: inline-block;
         font-size: 1.2rem;
-        font-weight: 700;
+        font-weight: 900;
         color: color(bg-text);
         text-transform: uppercase;
-        letter-spacing: 0.05rem;
+        letter-spacing: 0.1rem;
         text-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.16);
         padding: 0 0.8rem;
         margin: 0 0.8rem;
@@ -1032,7 +1032,8 @@ footer {
         .menu-link {
             color: color(primary-text);
             font-size: 1.4rem;
-            font-weight: 700;
+            font-weight: 900;
+            letter-spacing: 0.05em;
             padding: 0.8rem 1.6rem;
             text-transform: uppercase;
             transition: color 0.4s;
