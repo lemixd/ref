@@ -217,7 +217,7 @@ a {
         letter-spacing: 0.02em;
         text-align: center;
         color: #ffd63b;
-        margin-bottom: 0;
+        margin-bottom: 0.8rem;
         margin-top: 5rem;
     
         &:before {
@@ -1149,6 +1149,11 @@ footer {
 
         nav {
             padding: 2.4rem;
+        }
+
+        .counter + span {
+            font-size: 1.4rem;
+            line-height: 2.4rem;
         }
 
         .content {
