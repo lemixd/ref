@@ -177,10 +177,10 @@ a {
 .header .nav-link {
   display: inline-block;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1rem;
   text-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.16);
   padding: 0 0.8rem;
   margin: 0 0.8rem;
@@ -543,6 +543,7 @@ h1 {
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 1.6rem;
+  letter-spacing: 0.02em;
   font-weight: 700;
 }
 
@@ -565,8 +566,9 @@ h2 + p {
 
 h3 {
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 2.4rem;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   margin-top: 2.6rem;
   margin-bottom: 1.3rem;
@@ -1116,7 +1118,8 @@ footer .menu {
 footer .menu .menu-link {
   color: #374656;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 900;
+  letter-spacing: 0.05em;
   padding: 0.8rem 1.6rem;
   text-transform: uppercase;
   -webkit-transition: color 0.4s;
@@ -1203,7 +1206,7 @@ footer .securedBy {
 }
 
 footer .securedBy img {
-  margin-left: 1.6rem;
+  margin: 0 0.8rem;
 }
 
 .showOnMobile {
@@ -1222,6 +1225,7 @@ footer .securedBy img {
   }
   h1 {
     font-size: 2.8rem;
+    padding: 0 0.8rem;
   }
   h1 + span {
     font-size: 1.6rem;
@@ -1259,6 +1263,18 @@ footer .securedBy img {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 1.6rem 1.6rem 8rem 1.6rem;
+    margin-top: 3.2rem;
+  }
+  .step > div {
+    background: rgba(0, 63, 102, 0.4);
+    border-radius: 8px;
+    mix-blend-mode: hard-light;
+  }
+  .step h1 {
+    margin-bottom: 0.2rem;
+  }
+  .step p {
+    padding: 0 3% 0.8rem 3%;
   }
   .step .step__two {
     display: -webkit-box;
@@ -1273,8 +1289,8 @@ footer .securedBy img {
   }
   .step img {
     padding: 1.6rem 0;
-    -webkit-transform: translateY(0.8rem);
-            transform: translateY(0.8rem);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   #popup-video iframe {
     width: 100%;
@@ -1367,6 +1383,9 @@ footer .securedBy img {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+  }
+  footer .contact-phone a::before {
+    display: none;
   }
   footer .social-conatiner > div {
     padding: 1.6rem 0;
