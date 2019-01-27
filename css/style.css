@@ -177,10 +177,10 @@ a {
 .header .nav-link {
   display: inline-block;
   font-size: 1.2rem;
-  font-weight: 900;
+  font-weight: 700;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
   text-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.16);
   padding: 0 0.8rem;
   margin: 0 0.8rem;
@@ -543,7 +543,6 @@ h1 {
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 1.6rem;
-  letter-spacing: 0.02em;
   font-weight: 700;
 }
 
@@ -566,9 +565,8 @@ h2 + p {
 
 h3 {
   font-size: 1.4rem;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 2.4rem;
-  letter-spacing: 0.02em;
   text-transform: uppercase;
   margin-top: 2.6rem;
   margin-bottom: 1.3rem;
@@ -1118,8 +1116,7 @@ footer .menu {
 footer .menu .menu-link {
   color: #374656;
   font-size: 1.4rem;
-  font-weight: 900;
-  letter-spacing: 0.05em;
+  font-weight: 700;
   padding: 0.8rem 1.6rem;
   text-transform: uppercase;
   -webkit-transition: color 0.4s;
