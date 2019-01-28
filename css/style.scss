@@ -217,7 +217,7 @@ a {
         letter-spacing: 0.02em;
         text-align: center;
         color: #ffd63b;
-        margin-bottom: 0;
+        margin-bottom: 0.8rem;
         margin-top: 5rem;
     
         &:before {
@@ -275,7 +275,7 @@ a {
         transform: translateY(-2rem);
     }
 
-    & h1 {
+    & h2 {
         margin-top: 1.6rem;
         font-size: 3.5rem;
         letter-spacing: initial;
@@ -290,7 +290,7 @@ a {
         display: grid;
         transform: translateY(-6.4rem);
 
-        & h1 {
+        & h2 {
             order: 1;
         }
     }
@@ -531,7 +531,7 @@ ul.language-switch {
 
 // HEADERS
 
-h1 {
+h1, h2 {
     font-size: 3.5rem;
     text-align: center;
     margin-bottom: 1.6rem;
@@ -547,7 +547,7 @@ h1 {
     }
 }
 
-h2 {
+h3 {
     font-size: 2.2rem;
 
     & + p {
@@ -556,7 +556,7 @@ h2 {
     }
 }
 
-h3 {
+h4 {
     font-size: 1.4rem;
     font-weight: 900;
     line-height: 2.4rem;
@@ -847,7 +847,7 @@ footer {
         // animation: flipdown 0.5s ease both;
     // }
 
-    h2 {
+    h3 {
         line-height: 1.6rem;
         font-weight: 400;
         letter-spacing: 1px;
@@ -888,7 +888,7 @@ footer {
             padding-top: 1.8rem;
             border-top: 1px dotted #dce7eb;
 
-            &:hover h2 {
+            &:hover h3 {
                 background-color: #f4f8fb;
             }
 
@@ -994,7 +994,7 @@ footer {
     justify-content: space-around;
     padding: 0 7% 8rem 7%;
 
-    h1 {
+    h2 {
         text-align: left;
         font-weight: 400;
         color: color(accent);
@@ -1107,7 +1107,7 @@ footer {
         text-align: center;
 
         img {
-            margin-left: 1.6rem;
+            margin: 0 0.8rem;
         }
     }
 }
@@ -1130,15 +1130,16 @@ footer {
         padding: 3.2rem 0;
     }
 
-    h1 {
+    h1, h2 {
         font-size: 2.8rem;
+        padding: 0 0.8rem;
 
         & + span {
             font-size: 1.6rem;
         }
     }
 
-    h2 {
+    h3 {
         font-size: 1.6rem;
     }
 
@@ -1148,6 +1149,11 @@ footer {
 
         nav {
             padding: 2.4rem;
+        }
+
+        .counter + span {
+            font-size: 1.4rem;
+            line-height: 2.4rem;
         }
 
         .content {
@@ -1177,6 +1183,21 @@ footer {
     .step {
         flex-direction: column;
         padding: 1.6rem 1.6rem 8rem 1.6rem;
+        margin-top: 3.2rem;
+
+        & > div {
+            background: hsla(203, 100%, 20%, 0.4);
+            border-radius: 8px;
+            mix-blend-mode: hard-light;
+        }
+
+        h2 {
+            margin-bottom: 0.2rem;
+        }
+
+        p {
+            padding: 0 3% 0.8rem 3%;
+        }
 
         .step__two {
             display: flex;
@@ -1186,7 +1207,7 @@ footer {
 
         img {
             padding: 1.6rem 0;
-            transform: translateY(0.8rem);
+            transform: translateY(0);
         }
     }
 
@@ -1194,6 +1215,7 @@ footer {
         iframe {
             width: 100%;
             height: 30%;
+            border: 0;
         }
     }
 
@@ -1269,7 +1291,7 @@ footer {
                     text-align: center;
                 }
 
-                h3, p {
+                h4, p {
                     font-size: 1.6rem;
                 }
             }
@@ -1287,7 +1309,7 @@ footer {
         padding: 0 1.6rem 8rem 1.6rem;
         text-align: center;
 
-        h1 {
+        h2 {
             text-align: center;
         }
 
@@ -1304,6 +1326,10 @@ footer {
 
         .contact-phone {
             order: 1;
+
+            a::before {
+                display: none;
+            }
         }
 
         .social-conatiner {
