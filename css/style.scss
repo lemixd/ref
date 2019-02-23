@@ -1237,7 +1237,6 @@ footer {
         .mobile-nav-container {
             display: flex;
             justify-self: end;
-            transform: translateX(1.6rem);
 
             .nav-link-mobile {
                 width: 4.8rem;
@@ -1251,18 +1250,6 @@ footer {
                 &:nth-of-type(2) {
                     background: url(../img/icon-menu.svg) no-repeat center;
                 }
-            }
-        }
-    }
-
-    #benefits {
-        .grid {
-            grid-template-columns: initial;
-            padding-left: 1.6rem;
-            padding-right: 1.6rem;
-
-            .grid-item {
-                max-width: 100%;
             }
         }
     }

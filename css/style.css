@@ -1318,8 +1318,6 @@ footer .securedBy img {
     display: -ms-flexbox;
     display: flex;
     justify-self: end;
-    -webkit-transform: translateX(1.6rem);
-            transform: translateX(1.6rem);
   }
   .header .mobile-nav-container .nav-link-mobile {
     width: 4.8rem;
@@ -1331,15 +1329,6 @@ footer .securedBy img {
   }
   .header .mobile-nav-container .nav-link-mobile:nth-of-type(2) {
     background: url(../img/icon-menu.svg) no-repeat center;
-  }
-  #benefits .grid {
-    -ms-grid-columns: initial;
-        grid-template-columns: initial;
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
-  }
-  #benefits .grid .grid-item {
-    max-width: 100%;
   }
   #how .svg-object {
     max-height: 320px;
