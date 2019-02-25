@@ -1,5 +1,6 @@
-var charity = bodymovin.loadAnimation({
-	container: document.getElementById('charity-1'),
+let animCont = document.getElementById('charity-1');
+let charityBgRight = bodymovin.loadAnimation({
+	container: animCont,
 	renderer: 'svg',
 	loop: true,
 	autoplay: true,
@@ -7,15 +8,11 @@ var charity = bodymovin.loadAnimation({
 });
 
 
-charity.playSegments([[0, 120]], true);
-
-
-var animCont = document.getElementById('charity-1');
-var cat = document.getElementById('cat');
+charityBgRight.playSegments([[0, 120]], true);
 
 
 setTimeout(function() {
-    charity.playSegments([[120, 150],[150, 270]], true);
+    charityBgRight.playSegments([[120, 150],[150, 270]], true);
 }, 2000);
 
 setTimeout(function() {
@@ -23,19 +20,31 @@ setTimeout(function() {
 }, 2500);
 
 
-charity.addEventListener("loopComplete", function() {
-    animCont.addEventListener("mouseenter", function() {
-        charity.playSegments([[270, 360],[0, 120]], true);
-
-    });
+animCont.addEventListener("mouseenter", function() {
+    charityBgRight.playSegments([[270, 360],[0, 120]], true);
 });
 
-charity.addEventListener("loopComplete", function() {
-    animCont.addEventListener("mouseleave", function() {
-        charity.playSegments([[120, 150], [150, 270]], true);
-    });
+animCont.addEventListener("mouseleave", function() {
+    charityBgRight.playSegments([[120, 150], [150, 270]], true);
 });
 
+
+let charityBgLeft = bodymovin.loadAnimation({
+	container: document.getElementById('charity-2'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: true,
+	path: 'js/charity-2.json'
+});
+
+
+let polisGirlCharity = bodymovin.loadAnimation({
+	container: document.getElementById('polisGirl--charity'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: true,
+	path: 'js/polisGirl--charity.json'
+});
 
 
 
