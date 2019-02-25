@@ -24,6 +24,7 @@ $font-size: 1.6rem;
 .header--charity {
     position: relative;
     width: 100%;
+    height: 100vh;
     min-height: 100vh;
     background: url('../img/charity_bg.svg'), #0A62C7;
     background-size: cover;
@@ -79,11 +80,11 @@ $font-size: 1.6rem;
 
     .charity_bg--polisGirl {
         position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -10%;
+        left: 10%;
+        /* right: 0; */
+        bottom: -6%;
         height: 52.0rem;
-        margin: 0 auto;
+        /* margin: 0 auto; */
     }
 
     .cat {
@@ -101,7 +102,11 @@ $font-size: 1.6rem;
     }
 
     .header-content_position {
-        margin-top: 7%;
+        // margin-top: 12%;
+        display: flex;
+        flex-direction: column;
+        height: 70%;
+        justify-content: center;
     }
 }
 
