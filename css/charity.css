@@ -1,0 +1,135 @@
+.content-align {
+  max-width: 121.6rem;
+  margin: 0 auto;
+}
+
+.header--charity {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  background: url("../img/charity_bg.svg"), #0A62C7;
+  background-size: cover;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.header--charity nav {
+  padding: 7.2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header--charity .logo {
+  width: 12.5rem;
+  max-width: 16rem;
+  max-height: 4rem;
+}
+
+.header--charity .nav-link {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.16);
+  padding: 0 0.8rem;
+  margin: 0 0.8rem;
+  line-height: 3.8rem;
+  border: 1px solid transparent;
+  border-radius: 0.8rem;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.header--charity .nav-link:hover {
+  border-color: #fff;
+}
+
+.header--charity .nav-link-container {
+  text-align: right;
+}
+
+.header--charity .scrollDown {
+  bottom: 4%;
+  pointer-events: initial;
+}
+
+.header--charity .charity_bg--tree {
+  position: absolute;
+  bottom: -8%;
+  left: -28rem;
+  width: 125.6rem;
+  height: 140.4rem;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.header--charity .charity_bg--polisGirl {
+  position: absolute;
+  left: 16rem;
+  bottom: -51.2rem;
+  width: 33.6rem;
+  height: 101.9rem;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.header--charity .cat {
+  position: absolute;
+  right: -16rem;
+  bottom: -24rem;
+  width: 73.6rem;
+  height: 63.2rem;
+  max-width: 100%;
+  max-height: 100%;
+  pointer-events: none;
+}
+
+.header--charity .charity_header--h1 {
+  text-shadow: 0px 0px 6px rgba(29, 107, 178, 0.16);
+}
+
+.header--charity .charity_header--p {
+  font-size: 2rem;
+  padding-bottom: 5.6rem;
+}
+
+.header--charity .header-content_position {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 70%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn--secondary--light {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+/*# sourceMappingURL=charity.css.map */
