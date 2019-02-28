@@ -27,6 +27,9 @@ $font-size: 1.6rem;
     height: 100vh;
     min-height: 100vh;
     background: url('../img/charity_bg.svg'), #0A62C7;
+    // background: radial-gradient(circle farthest-corner at 40% 85%, #2bb9de 0%, rgba(43, 185, 222, 0) 80%),
+    //             radial-gradient(circle farthest-corner at 12% 22%, #7fd1cc 0%, rgba(127, 209, 204, 0) 70%),
+    //             linear-gradient(to top, #fee215 0%, rgba(10, 98, 199, 0) 70%), #0A62C7;
     background-size: cover;
     overflow: hidden;
     box-sizing: border-box;

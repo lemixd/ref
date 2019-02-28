@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>travel loader</title>
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+    <style>
+        body{
+            display: flex;
+            background-image: linear-gradient(#228FD7, #F1F5F8);
+            margin: 0px;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #travelLoader{
+            display:block;
+            width:416px;
+            height:320px;
+            align-self: center;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .loader__rockClr--light {
+            fill: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="travelLoader"></div>
+
+    <script src="../js/lottie_svg.min.js"></script>
+
+    <script>
+    let travelLoaderContainer = document.getElementById('travelLoader');
+    let travelLoaderParams = bodymovin.loadAnimation({
+        container: travelLoaderContainer,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'data.json'
+    });
+
+
+    </script>
+</body>
+</html>

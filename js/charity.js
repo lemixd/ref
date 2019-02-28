@@ -8,11 +8,8 @@ let charityBgRight = bodymovin.loadAnimation({
 });
 
 
-charityBgRight.playSegments([[0, 120]], true);
-
-
 setTimeout(function() {
-    charityBgRight.playSegments([[120, 150],[150, 270]], true);
+	charityBgRight.playSegments([[120, 150],[150, 270]], true);
 }, 2000);
 
 setTimeout(function() {
@@ -21,12 +18,30 @@ setTimeout(function() {
 
 
 animCont.addEventListener("mouseenter", function() {
-    charityBgRight.playSegments([[270, 360],[0, 120]], true);
+	charityBgRight.playSegments([[270, 360],[0, 120]], true);
 });
 
 animCont.addEventListener("mouseleave", function() {
-    charityBgRight.playSegments([[120, 150], [150, 270]], true);
+
+	charityBgRight.addEventListener('loopComplete', function() {
+		this.playSegments([[120, 150], [150, 270]], true);
+	});
+
+	animCont.style.pointerEvents = 'none';
+
+	setTimeout(function() {
+		charityBgRight.addEventListener('loopComplete', function() {
+
+			charityBgRight.playSegments([[120, 150],[150, 270]], true);
+			charityBgRight.removeEventListener('loopComplete');
+			animCont.style.pointerEvents = 'initial';
+
+		}, 2000);
+	});
+
+	charityBgRight.removeEventListener('loopComplete');
 });
+
 
 
 let charityBgLeft = bodymovin.loadAnimation({
