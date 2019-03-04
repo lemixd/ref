@@ -9,11 +9,31 @@
 
     <style>
         body{
-            display: flex;
-            background-image: linear-gradient(#228FD7, #F1F5F8);
-            margin: 0px;
-            height: 100vh;
+            margin: 0;
             overflow: hidden;
+        }
+
+        .loader__wrap {
+            position: relative;
+            display: flex;
+            background: linear-gradient(#228FD7, #F1F5F8);
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            z-index: 100;
+        }
+
+        .loaderNightGlow::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: '';
+            width: 310px;
+            height: 310px;
+            margin: 0 auto;
+            box-shadow: 0 0 200px #314a79;
+            border-radius: 50%;
         }
 
         #travelLoader{
@@ -25,14 +45,53 @@
             margin: 0 auto;
         }
 
-        .loader__rockClr--light {
-            fill: red;
+        #travelLoader::before {
+            /* background: linear-gradient(#101028, #1f3a62); */
+            background: linear-gradient(#0f132a, #18224a);
+            content: '';    
+            display: block;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: -100;
+            pointer-events: none;
+            transition: opacity 1s ease;
         }
 
+        #travelLoader:hover:before {
+            opacity: 1;
+        }
+
+        .loader__rockClr--light,
+        .loader__rockClr--dark,
+        .loader__rockShadowClr,
+        .loader__tree--light,
+        .loader__tree--dark,
+        .loader__oceanClr,
+        .loader__cloudClr,
+        .loader__swirlClr,
+        .loader__birdClr,
+        #loader__wrap,
+        #shiningCont,
+        #sun,
+        #moon,
+        #blick,
+        #stars__sky {
+            transition: fill 1s, transform 1s, opacity 1s ease;
+        }
+
+        stop {
+            transition: stop-color 1s ease;
+        }
     </style>
 </head>
 <body>
-    <div id="travelLoader"></div>
+    <div id="loader__wrap" class="loader__wrap">
+        <div id="travelLoader"></div>
+    </div>
 
     <script src="../js/lottie_svg.min.js"></script>
 
@@ -46,6 +105,124 @@
         path: 'data.json'
     });
 
+    travelLoaderParams.addEventListener('DOMLoaded', function() {
+
+        // Trees
+        let loader__tree__light = document.querySelectorAll('.loader__tree--light');
+        let loader__tree__dark = document.querySelectorAll('.loader__tree--dark');
+
+        // Birds
+        let loader__birdClr = document.querySelectorAll('.loader__birdClr');
+
+        // Rocks
+        let loader__rockClr__light = document.querySelectorAll('.loader__rockClr--light');
+        let loader__rockClr__dark = document.querySelectorAll('.loader__rockClr--dark');
+        let loader__rockShadowClr = document.querySelectorAll('.loader__rockShadowClr');
+
+        // Ocean
+        let loader__oceanClr = document.querySelectorAll('.loader__oceanClr');
+
+        // Clouds
+        let loader__cloudClr = document.querySelectorAll('.loader__cloudClr');
+        let loader__swirlClr = document.querySelectorAll('.loader__swirlClr');
+
+        let loader__wrap = document.getElementById('loader__wrap');
+
+        // loader gradients colors
+        let loader__bgGrd = document.getElementById('loader__bgGrd');
+        let loader__balloonGrd = document.getElementById('loader__balloonGrd');
+
+        // Sun, shining and water reflection
+        let shining = document.getElementById('shiningCont');        
+        let sun = document.getElementById('sun');
+        let moon = document.getElementById('moon');
+        let blick = document.getElementById('blick');
+        let stars = document.getElementById('stars__sky');
+
+
+        // Apply fill and stroke to SVG elements
+        function applyNewFillStroke(element, fillClr, strokeClr) {
+            for (i = 0; i < element.length; ++i) {
+                element[i].setAttribute('style', 'fill:' + fillClr +';' + 'stroke:' + strokeClr +';');
+            }
+        }
+
+        // Apply styles to an element
+        function applyStyles(element, cssDisplay, transformation, visibility) {
+            element.setAttribute('style', 'display:' + cssDisplay +';' + 'transform:' + transformation +';' + 'opacity:' + visibility +';');
+        }
+
+        // Search for SVG gradient IDs. Apply styles to stops 
+        function grdColors(element, ...grdStopsClrs) {
+
+            let getGrdID = element.getAttribute('fill').replace(/(url)[(]|[)]/g, '');
+            let getGrdStops = document.querySelectorAll(getGrdID + '> stop');
+
+            for (i=0; i < getGrdStops.length; ++i) {
+                getGrdStops[i].style.stopColor = grdStopsClrs[i];
+            }
+        }
+
+
+        travelLoaderContainer.addEventListener("mouseenter", function() {
+
+            // loader wrap night mode backround gradient and glow
+            loader__wrap.classList.add('loaderNightGlow');
+
+            // element, grdStopClr0, grdStopClr1, grdStopClr2
+            grdColors(loader__bgGrd, '#1f3a62', '#182645', '#101028');
+            grdColors(loader__balloonGrd, '#001936', '#002f4d', '#ffcc00');
+
+            // fill, stroke
+            applyNewFillStroke(loader__swirlClr, '', '#141428');
+            applyNewFillStroke(loader__tree__dark, '#001936');
+            applyNewFillStroke(loader__tree__light, '#0E2E52');
+            applyNewFillStroke(loader__birdClr, '#141428');
+            applyNewFillStroke(loader__rockClr__light, '#1C2B4D');
+            applyNewFillStroke(loader__rockClr__dark, '#18233D');
+            applyNewFillStroke(loader__rockShadowClr, '#0E1A36');
+            applyNewFillStroke(loader__oceanClr, '#001036');
+            applyNewFillStroke(loader__cloudClr, '#141428');
+
+            // element, cssDisplay, transformation, visibility
+            applyStyles(shining, 'none', '', '');
+            applyStyles(blick, 'none', '', '');
+            applyStyles(sun, '', 'matrix(1,0,0,1,0,100)', '0');
+            applyStyles(moon, '', 'matrix(1,0,0,1,174,204)', '1');
+            applyStyles(stars, '', '', '1');
+
+        });
+
+
+        travelLoaderContainer.addEventListener("mouseleave", function() {
+
+            loader__wrap.classList.remove('loaderNightGlow');
+
+            // element, grdStopClr0, grdStopClr1, grdStopClr2
+            grdColors(loader__bgGrd, '', '', '');
+            grdColors(loader__balloonGrd, '', '', '');
+
+            // fill, stroke
+            applyNewFillStroke(loader__swirlClr, '', '');
+            applyNewFillStroke(loader__tree__dark, '');
+            applyNewFillStroke(loader__tree__light, '');
+            applyNewFillStroke(loader__birdClr, '');
+            applyNewFillStroke(loader__rockClr__light, '');
+            applyNewFillStroke(loader__rockClr__dark, '');
+            applyNewFillStroke(loader__rockShadowClr, '');
+            applyNewFillStroke(loader__oceanClr, '');
+            applyNewFillStroke(loader__cloudClr, '');
+
+            // element, cssDisplay, transformation, visibility
+            applyStyles(shining);
+            applyStyles(blick);
+            applyStyles(sun);
+            applyStyles(moon);
+            applyStyles(stars, '', '', '0');
+
+        });
+
+    });
 
     </script>
 </body>
