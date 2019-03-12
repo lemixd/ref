@@ -20,6 +20,10 @@ $font-size: 1.6rem;
 // There is an old version of Lato font family at Goole. Use Adobe typekit instead. 400, 700, 800, 900 
 // @import url("https://use.typekit.net/pzv3wmp.css");
 
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -30,6 +34,7 @@ html, body {
     background: color(bg-clr);
     font-family: 'Lato', sans-serif;
     color: color(primary-text);
+    box-sizing: border-box;
     overflow-x: hidden;
 }
 
@@ -55,6 +60,7 @@ html, body {
         width: 128rem;
         height: 72rem;
         margin: 0 auto;
+        border: 0;
     }
 
     a {
@@ -179,9 +185,12 @@ a {
     }
 
     .logo {
+        display: flex;
         width: 12.5rem;
+        height: auto;
         max-width: 16rem;
         max-height: 4rem;
+        align-self: center;
     }
 
     .nav-link {
@@ -624,7 +633,7 @@ footer {
         }
 
         .grid-item {
-            max-width: 29.2rem;
+            max-width: 32rem;
             margin: 1.2rem;
             background: #fff;
             border-radius: $border-radius;
@@ -762,7 +771,12 @@ footer {
 
 .swiper-container {
     width: 100%;
-    padding: 7.2rem 0; 
+    padding: 7.2rem 2.4rem 0 2.4rem;
+
+    .flex-container {
+        justify-content: center;
+        margin-top: 4rem;
+    }
 }
 
 .swiper-slide {
@@ -775,16 +789,82 @@ footer {
 }
 
 .swiper-slide:not(.swiper-slide-active) {
-    transform: scale(0.9);
+    transform: scale(0.95)!important;
     opacity: 0.8;
 }
 
 .swiper-slide-container {
-    padding: 3.4rem;
+    padding: 3.2rem;
 
     p {
         padding-top: 1.6rem;
     }
+}
+
+.swiper-pagination {
+    position: relative;
+}
+
+.swiper-pagination-bullet {
+    margin: 0.2rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: initial;
+    right: initial;
+    top: initial;
+    bottom: 0; 
+    width: 3.2rem;
+    height: 3.2rem;
+    margin: 3.2rem;
+    border-radius: 50%;
+    background: #DFE5EB;
+    transform: rotate(90deg);
+    transition: background 0.4s ease;
+}
+
+.swiper-button-prev {
+    transform: rotate(-90deg);
+}
+
+.icon-arrow--small {
+    align-self: center;
+    width: 3px;
+    height: 10px;
+}
+
+.icon-arrow--small:before,
+.icon-arrow--small:after {
+    content: "";
+    position: absolute;
+    background-color: color(secondary-text);
+    width: 3px;
+    height: 9px;
+    transition: background-color 0.4s ease;
+}
+
+.icon-arrow--small:before {
+    transform: translate(-2px, 0) rotate(45deg);
+}
+
+.icon-arrow--small:after {
+    transform: translate(2px, 0) rotate(-45deg);
+}
+
+.swiper-button-next:hover .icon-arrow--small:before,
+.swiper-button-next:hover .icon-arrow--small:after,
+.swiper-button-prev:hover .icon-arrow--small:before,
+.swiper-button-prev:hover .icon-arrow--small:after {
+    background-color: color(accent);
+}
+
+.swiper-button-next:active,
+.swiper-button-prev:active {
+    background: #D1D9E0;
 }
 
 .feedback-user-info {
@@ -795,6 +875,7 @@ footer {
     ul {
         list-style: none;
         padding: 0 2.4rem;
+        max-width: 40%;
     }
 
     .user-pic {
@@ -805,7 +886,11 @@ footer {
     }
 
     .feedback-user-name {
+        display: block;
         font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     .feedback-date {
@@ -829,6 +914,44 @@ footer {
 .swiper-pagination-bullet-active {
     background: color(accent);
     transition: background 0.6s;
+}
+
+
+
+// SECTION DoubleCashback
+
+#doubleCashback {
+
+    .soon-label {
+        display: flex;
+        justify-content: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: #ffd83a;
+        max-width: 8rem;
+        padding: 0.8rem 1.6rem;
+        margin: 0 auto;
+        clip-path: polygon(100% 0,88% 50%,100% 100%,0 100%,12% 54%,0 0);
+    }
+
+
+    .flex-container {
+        padding: 7.2rem 7% 0 7%;
+        align-items: center;
+    }
+
+    #pacman {
+        max-width: 40rem;
+        justify-self: center;
+        flex-basis: 50%;
+    }
+
+
+    .doubleCashback__p {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        flex-basis: 50%;
+    }
 }
 
 
@@ -991,7 +1114,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 0 7% 8rem 7%;
+    padding: 0 0 8rem 0;
 
     h2 {
         text-align: left;
@@ -1062,6 +1185,7 @@ footer {
             height: 4rem;
             padding: 1.2rem;
             border-radius: 50%;
+            box-sizing: content-box;
         }
 
         & [aria-label="fk"] {
@@ -1147,7 +1271,12 @@ footer {
         background-position: center -100px, right 120%, 99% 70%;
 
         nav {
-            padding: 2.4rem;
+            padding: 1.6rem;
+
+            .logo {
+                width: 10rem;
+                height: auto;
+            }
         }
 
         .counter + span {
@@ -1281,6 +1410,15 @@ footer {
         }
     }
 
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+
+    .swiper-slide:not(.swiper-slide-active) {
+        transform: scale(1)!important;
+    }
+
 
     #who {
 
@@ -1307,6 +1445,17 @@ footer {
                     font-size: 1.6rem;
                 }
             }
+        }
+    }
+
+    #doubleCashback {
+        
+        .flex-container {
+            flex-direction: column;
+        }
+
+        .doubleCashback__p {
+            font-size: 1.4rem;
         }
     }
 

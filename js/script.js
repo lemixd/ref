@@ -50,6 +50,18 @@ let splashParam = {
 // 	});
 
 
+// Pacman animation
+let pacmanParams = {
+	container: document.getElementById('pacman'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: true,
+	path: 'js/pacman.json'
+};
+
+let pacmanAnim = lottie.loadAnimation(pacmanParams);
+
+
 // Thousands separator for numbers
 function numberFormatting(numberToFormat) {
 
@@ -128,9 +140,16 @@ var swiper = new Swiper('.swiper-container', {
 	centeredSlides: true,
 	loop: true,
 	roundLengths : true,
+	grabCursor: true,
+	a11y: true,
+	keyboardControl: true,
 	pagination: {
 	  el: '.swiper-pagination',
 	  clickable: true,
+	},
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
 	},
 	breakpoints: {
         1024: {
