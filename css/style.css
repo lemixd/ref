@@ -51,9 +51,13 @@ html, body {
   height: 72rem;
   margin: 0 auto;
   border: 0;
-  width: 100%;
-  height: 30%;
-  border: 0;
+}
+
+@media screen and (max-width: 768px) {
+  #popup-video iframe {
+    width: 100%;
+    height: 30%;
+  }
 }
 
 #popup-video a {
@@ -87,7 +91,7 @@ html, body {
 }
 
 .content-align {
-  max-width: 120rem;
+  max-width: 121.6rem;
   margin: 0 auto;
 }
 
@@ -809,7 +813,7 @@ h4 + p {
 .grid {
   display: -ms-grid;
   display: grid;
-  max-width: 120rem;
+  max-width: 121.6rem;
   margin: 0 auto;
   -ms-grid-column-align: center;
       justify-self: center;
@@ -1037,7 +1041,7 @@ footer {
 
 @media screen and (max-width: 768px) {
   #who .grid .grid-item {
-    padding: 0 3.2rem;
+    padding: 0;
   }
 }
 
@@ -1355,7 +1359,7 @@ footer {
 
 #faq ul {
   list-style: none;
-  padding: 4rem 4rem 0 7%;
+  padding: 4rem 7% 4rem 7%;
   margin: 0;
 }
 
@@ -1616,9 +1620,9 @@ footer .social-conatiner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1678,7 +1682,7 @@ footer .contact-phone {
   font-size: 2.2rem;
   -ms-flex-preferred-size: 33%;
       flex-basis: 33%;
-  text-align: center;
+  text-align: left;
 }
 
 @media screen and (max-width: 768px) {
@@ -1715,7 +1719,7 @@ footer .contact-phone a:before {
 footer .securedBy {
   -ms-flex-preferred-size: 33%;
       flex-basis: 33%;
-  text-align: center;
+  text-align: right;
 }
 
 @media screen and (max-width: 768px) {
