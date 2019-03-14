@@ -1183,7 +1183,7 @@ footer {
 .icon-arrow--small:after {
   content: "";
   position: absolute;
-  background-color: rgba(48, 69, 92, 0.8);
+  background-color: #788392;
   width: 3px;
   height: 9px;
   -webkit-transition: background-color 0.4s ease;
@@ -1320,56 +1320,42 @@ footer {
   }
 }
 
-#faq .transition, #faq p,
-#faq ul li i:before,
-#faq ul li i:after {
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
+#faq .transition, #faq .faq__question-content,
+#faq .faq__question i:before,
+#faq .faq__question i:after {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-#faq .flipIn,
 #faq h3 {
-  line-height: 1.6rem;
+  display: block;
+  padding: 2.4rem 3.2rem;
+  line-height: 1.4;
   font-weight: 400;
   letter-spacing: 1px;
-  display: block;
-  background-color: #fefffa;
   margin: 0;
+  background-color: #fefffa;
   border-radius: 0.8rem;
-  padding: 3.2rem;
   -webkit-box-shadow: 0px 6px 32px rgba(29, 107, 178, 0.12);
           box-shadow: 0px 6px 32px rgba(29, 107, 178, 0.12);
-  cursor: pointer;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
+  cursor: pointer;
 }
 
-#faq p {
-  color: rgba(48, 69, 92, 0.8);
-  font-size: 1.8rem;
-  line-height: 1.4;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-  max-height: 800px;
-  margin-top: 1.6rem;
-  padding: 0 3.2rem;
-  z-index: 2;
-}
-
-#faq ul {
+#faq .faq__question-wrap {
   list-style: none;
   padding: 4rem 7% 4rem 7%;
   margin: 0;
 }
 
 @media screen and (max-width: 768px) {
-  #faq ul {
+  #faq .faq__question-wrap {
     padding: 4rem 1.6rem 0 1.6rem;
   }
 }
 
-#faq ul li {
+#faq .faq__question-wrap .faq__question {
   position: relative;
   padding: 0;
   margin: 0;
@@ -1378,57 +1364,83 @@ footer {
   border-top: 1px dotted #dce7eb;
 }
 
-#faq ul li:hover h3 {
+#faq .faq__question-wrap .faq__question:hover h3 {
   background-color: #f4f8fb;
 }
 
-#faq ul li:nth-of-type(1) {
+#faq .faq__question-wrap .faq__question:nth-of-type(1) {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
 
-#faq ul li:nth-of-type(2) {
+#faq .faq__question-wrap .faq__question:nth-of-type(2) {
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
 }
 
-#faq ul li:nth-of-type(3) {
+#faq .faq__question-wrap .faq__question:nth-of-type(3) {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
 
-#faq ul li:last-of-type {
+#faq .faq__question-wrap .faq__question:last-of-type {
   padding-bottom: 0;
 }
 
-#faq li i {
-  position: absolute;
-  -webkit-transform: translate(-6px, 0);
-          transform: translate(-6px, 0);
-  margin-top: 3.2rem;
-  right: 3.2rem;
+#faq ul.faq__question-content {
+  margin: 3.2rem 2.4rem 1.6rem 2.4rem;
 }
 
-#faq i:before,
-#faq i:after {
-  content: "";
+#faq .faq__question-content {
+  color: rgba(48, 69, 92, 0.8);
+  font-size: 1.6rem;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  max-height: 80rem;
+  margin: 3.2rem 2.4rem 1.6rem 0;
+  padding: 0 3.2rem;
+  z-index: 2;
+}
+
+#faq .faq__question-content--list {
+  list-style: none;
+  margin: 3.2rem 2.4rem 1.6rem 2.4rem;
+}
+
+#faq .faq__question-content--list li {
+  padding: 0.6rem 0;
+}
+
+#faq .faq__question-content--list li::before {
+  display: inline-block;
+  content: "\2022";
+  color: #0A994A;
+  width: 2.4rem;
+  margin-left: -2.4rem;
+}
+
+#faq .faq__question-content p:first-of-type {
+  margin: 0;
+}
+
+#faq .faq__question-content strong {
+  color: #374656;
+}
+
+#faq .faq__question .icon-arrow--small {
   position: absolute;
+  margin-top: 3.4rem;
+  right: 4rem;
+}
+
+#faq .faq__question .icon-arrow--small:before,
+#faq .faq__question .icon-arrow--small:after {
   background-color: #0A994A;
-  width: 3px;
-  height: 9px;
 }
 
-#faq i:before {
-  -webkit-transform: translate(-2px, 0) rotate(45deg);
-          transform: translate(-2px, 0) rotate(45deg);
-}
-
-#faq i:after {
-  -webkit-transform: translate(2px, 0) rotate(-45deg);
-          transform: translate(2px, 0) rotate(-45deg);
-}
-
-#faq li input[type=checkbox] {
+#faq .faq__question input[type=checkbox] {
   position: absolute;
   cursor: pointer;
   width: 100%;
@@ -1437,7 +1449,7 @@ footer {
   opacity: 0;
 }
 
-#faq li input[type=checkbox]:checked ~ p {
+#faq .faq__question input[type=checkbox]:checked ~ .faq__question-content {
   margin-top: 0;
   max-height: 0;
   opacity: 0;
@@ -1445,76 +1457,14 @@ footer {
           transform: translate(0, 50%);
 }
 
-#faq li input[type=checkbox]:checked ~ i:before {
+#faq .faq__question input[type=checkbox]:checked ~ .icon-arrow--small:before {
   -webkit-transform: translate(2px, 0) rotate(45deg);
           transform: translate(2px, 0) rotate(45deg);
 }
 
-#faq li input[type=checkbox]:checked ~ i:after {
+#faq .faq__question input[type=checkbox]:checked ~ .icon-arrow--small:after {
   -webkit-transform: translate(-2px, 0) rotate(-45deg);
           transform: translate(-2px, 0) rotate(-45deg);
-}
-
-@-webkit-keyframes flipdown {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: top center;
-            transform-origin: top center;
-    -webkit-transform: rotateX(-90deg);
-            transform: rotateX(-90deg);
-  }
-  5% {
-    opacity: 1;
-  }
-  80% {
-    -webkit-transform: rotateX(8deg);
-            transform: rotateX(8deg);
-  }
-  83% {
-    -webkit-transform: rotateX(6deg);
-            transform: rotateX(6deg);
-  }
-  92% {
-    -webkit-transform: rotateX(-3deg);
-            transform: rotateX(-3deg);
-  }
-  100% {
-    -webkit-transform-origin: top center;
-            transform-origin: top center;
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-  }
-}
-
-@keyframes flipdown {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: top center;
-            transform-origin: top center;
-    -webkit-transform: rotateX(-90deg);
-            transform: rotateX(-90deg);
-  }
-  5% {
-    opacity: 1;
-  }
-  80% {
-    -webkit-transform: rotateX(8deg);
-            transform: rotateX(8deg);
-  }
-  83% {
-    -webkit-transform: rotateX(6deg);
-            transform: rotateX(6deg);
-  }
-  92% {
-    -webkit-transform: rotateX(-3deg);
-            transform: rotateX(-3deg);
-  }
-  100% {
-    -webkit-transform-origin: top center;
-            transform-origin: top center;
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-  }
 }
 
 #ready {
