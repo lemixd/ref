@@ -4,7 +4,8 @@ $colors: (
     accent-dark: #09803e,
     bg-clr: #F1F5F8,
     primary-text: #374656,
-    secondary-text: #788392,
+    // secondary-text: #788392,
+    secondary-text: rgba(48, 69, 92, 0.8),
     bg-text: #fff
 );
 
@@ -15,6 +16,15 @@ $font-size: 1.6rem;
 @function color($color-name) {
     @return map-get($colors, $color-name)
 };
+
+
+$tablet: 768px;
+
+@mixin tablet {
+    @media screen and (max-width: #{$tablet}) {
+        @content;
+    }
+}
 
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
 // There is an old version of Lato font family at Goole. Use Adobe typekit instead. 400, 700, 800, 900 
@@ -61,6 +71,11 @@ html, body {
         height: 72rem;
         margin: 0 auto;
         border: 0;
+
+        @include tablet {}
+            width: 100%;
+            height: 30%;
+            border: 0;
     }
 
     a {
@@ -119,6 +134,21 @@ a {
     }
 }
 
+.hideOnMobile {
+    @include tablet {
+        display: none;
+    }
+}
+
+.showOnMobile {
+    display: none;
+
+    @include tablet {
+        display: block;
+    }
+}
+
+
 
 // HEADER
 
@@ -130,6 +160,12 @@ a {
     background-attachment: fixed;
     overflow: hidden;
     z-index: 2;
+
+    @include tablet {
+        min-height: 100vh;
+        background-position: center -100px, right 120%, 99% 70%;
+        background-attachment: initial;
+    }
 
     &:before {
         content: '';
@@ -152,7 +188,11 @@ a {
         bottom: -50%;
         margin: 0px auto;
         z-index: -1;
-        max-width: 55rem;    
+        max-width: 55rem;
+        
+        @include tablet {
+            display: none;
+        }
     }
 
     & h1 {
@@ -169,10 +209,40 @@ a {
         font-size: 1vmin;
         padding: 0 1.6rem;
         padding-bottom: 6rem;
+
+        @include tablet {
+            font-size: 1.4vmin;
+        }
     }
 
     .mobile-nav-container {
         display: none;
+
+        @include tablet {
+            display: flex;
+            justify-self: end;
+            transform: translateX(1.6rem);
+        }
+
+        .nav-link-mobile {
+            @include tablet {
+                width: 4.8rem;
+                height: 4.8rem;
+                display: inline-block;
+            }
+
+            &:nth-of-type(1) {
+                @include tablet {
+                    background: url(../img/icon-user.svg) no-repeat center;
+                }
+            }
+
+            &:nth-of-type(2) {
+                @include tablet {
+                    background: url(../img/icon-menu.svg) no-repeat center;
+                }
+            }
+        }
     }
 
 
@@ -182,6 +252,10 @@ a {
         padding: 7.2rem 2.4rem;
         display: flex;
         justify-content: space-between;
+
+        @include tablet {
+            padding: 1.6rem;
+        }
     }
 
     .logo {
@@ -191,6 +265,11 @@ a {
         max-width: 16rem;
         max-height: 4rem;
         align-self: center;
+
+        @include tablet {
+            width: 10rem;
+            height: auto;
+        }
     }
 
     .nav-link {
@@ -215,6 +294,10 @@ a {
 
     .nav-link-container {
         text-align: right;
+
+        @include tablet {
+            display: none;
+        }
     }
 
 
@@ -242,6 +325,11 @@ a {
             text-align: center;
             color: color(bg-clr);
             opacity: 0.8;
+
+            @include tablet {
+                font-size: 1.4rem;
+                line-height: 2.4rem;
+            }
         }
     }
 
@@ -256,11 +344,20 @@ a {
             width: 120px;
             left: 4%;
             top: 20%;
+
+            @include tablet {
+                left: -20%;
+            }
         }
     
         &:last-of-type {
             right: 4%;
             top: 40%;
+
+            @include tablet {
+                right: -30%;
+                transform: scale(0.5);
+            }
         }
     }
 }
@@ -279,9 +376,20 @@ a {
     text-align: center;
     padding: 11.2rem 1.6rem;
 
+    @include tablet {
+        flex-direction: column;
+        padding: 1.6rem 1.6rem 8rem 1.6rem;
+        margin-top: 3.2rem;
+    }
+
     img {
         justify-self: center;
         transform: translateY(-2rem);
+
+        @include tablet {
+            padding: 1.6rem 0;
+            transform: translateY(0);
+        }
     }
 
     & h2 {
@@ -289,18 +397,40 @@ a {
         font-size: 3.5rem;
         letter-spacing: initial;
         line-height: initial;
+
+        @include tablet {
+            margin-bottom: 0.2rem;
+        }
     }
 
     & p {
         margin: 0.8rem 0;
+
+        @include tablet {
+            padding: 0 3% 0.8rem 3%;
+        }
     }
 
     &__two {
         display: grid;
         transform: translateY(-6.4rem);
 
+        @include tablet {
+            display: flex;
+            flex-flow: column-reverse;
+            transform: initial;
+        }
+
         & h2 {
             order: 1;
+        }
+    }
+
+    & > div {
+        @include tablet {
+            background: hsla(203, 100%, 20%, 0.4);
+            border-radius: 8px;
+            mix-blend-mode: hard-light;
         }
     }
 }
@@ -497,6 +627,10 @@ ul.language-switch {
     border-radius: 50%;
     margin: 6.4rem auto;
 
+    @include tablet {
+        margin-top: 0;
+    }
+
     &:before,
     &:after {
        content: '';
@@ -547,17 +681,30 @@ h1, h2 {
     letter-spacing: 0.02em;
     font-weight: 700;
 
+    @include tablet {
+        font-size: 2.8rem;
+        padding: 0 0.8rem;
+    }
+
     & + span {
         display: block;
         font-size: 1.8rem;
         text-align: center;
         color: color(secondary-text);
         padding: 0 1.6rem;
+
+        @include tablet {
+            font-size: 1.6rem;
+        }
     }
 }
 
 h3 {
     font-size: 2.2rem;
+
+    @include tablet {
+        font-size: 1.6rem;
+    }
 
     & + p {
         font-size: $font-size;
@@ -614,6 +761,12 @@ footer {
     z-index: 1;
 }
 
+section {
+    @include tablet {
+        padding: 3.2rem 0;
+    }
+}
+
 // SECTION 'BENEFITS'
 
 #benefits {
@@ -632,6 +785,12 @@ footer {
             grid-gap: 2.4rem;
         }
 
+        @include tablet {
+            grid-template-columns: initial;
+            padding-left: 1.6rem;
+            padding-right: 1.6rem;
+        }
+
         .grid-item {
             max-width: 32rem;
             margin: 1.2rem;
@@ -644,9 +803,18 @@ footer {
                 margin: initial;
             }
 
+            @include tablet {
+                max-width: 100%;
+            }
+
             &:nth-of-type(even) {
                 background-color: #FFD83A;
                 box-shadow: 0px 6px 24px rgba(255, 216, 58, 0.26);
+            }
+
+            img {
+                height: 4.8rem;
+                width: auto;
             }
         }
     }
@@ -683,17 +851,29 @@ footer {
 
             .svg-object {
                 order: 1;
+
+                @include tablet {
+                    order: initial;
+                }
             }
         }
 
         div {
             padding: 2rem 0;
+
+            @include tablet {
+                padding-bottom: 4rem;
+            }
         }
     }
 
     .svg-object {
         max-height: 520px;
         justify-self: center;
+
+        @include tablet {
+            max-height: 320px;
+        }
     }
 
     .ref-bgEl {
@@ -727,11 +907,30 @@ footer {
             grid-auto-flow: column;
         }
 
+        @include tablet {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(5, auto);
+            grid-auto-flow: row;
+            padding: 3.2rem 1.6rem;
+            text-align: center;
+        }
+
         ul {
             list-style: none;
 
             &:nth-of-type(1) {
                 text-align: right;
+
+                @include tablet {
+                    text-align: center;
+                }
+            }
+
+            &:nth-of-type(2) {
+
+                @include tablet {
+                    text-align: center;
+                }
             }
 
             li {
@@ -743,12 +942,26 @@ footer {
         .grid-item {
             padding: 0 4rem;
 
+            @include tablet {
+                padding: 0 3.2rem;
+            }
+
             &:nth-of-type(1) {
                 align-self: center;
             }
 
             img {
                 max-width: 100%;
+
+                @include tablet {
+                    width: 75%;
+                }
+            }
+
+            h4, p {
+                @include tablet {
+                    font-size: 1.6rem;
+                }
             }
         }
     }
@@ -791,6 +1004,10 @@ footer {
 .swiper-slide:not(.swiper-slide-active) {
     transform: scale(0.95)!important;
     opacity: 0.8;
+
+    @include tablet {
+        transform: scale(1)!important;
+    }
 }
 
 .swiper-slide-container {
@@ -825,6 +1042,10 @@ footer {
     background: #DFE5EB;
     transform: rotate(90deg);
     transition: background 0.4s ease;
+
+    @include tablet {
+        display: none;
+    }
 }
 
 .swiper-button-prev {
@@ -938,6 +1159,10 @@ footer {
     .flex-container {
         padding: 7.2rem 7% 0 7%;
         align-items: center;
+
+        @include tablet {
+            flex-direction: column;
+        }
     }
 
     #pacman {
@@ -951,6 +1176,10 @@ footer {
         font-size: 1.8rem;
         line-height: 1.6;
         flex-basis: 50%;
+
+        @include tablet {
+            font-size: 1.4rem;
+        }
     }
 }
 
@@ -1001,6 +1230,10 @@ footer {
         list-style: none;
         padding: 4rem 4rem 0 7%;
         margin: 0;
+
+        @include tablet {
+            padding: 4rem 1.6rem 0 1.6rem;
+        }
 
         li {
             position: relative;
@@ -1116,11 +1349,20 @@ footer {
     justify-content: space-around;
     padding: 0 0 8rem 0;
 
+    @include tablet {
+        padding: 0 1.6rem 8rem 1.6rem;
+        text-align: center;
+    }
+
     h2 {
         text-align: left;
         font-weight: 400;
         color: color(accent);
         margin-bottom: -0.8rem;
+
+        @include tablet {
+            text-align: center;
+        }
     }
 
     p {
@@ -1131,6 +1373,10 @@ footer {
         padding: 2rem;
         justify-content: right;
         align-self: center;
+
+        @include tablet {
+            justify-content: center;
+        }
     }
 }
 
@@ -1149,7 +1395,11 @@ footer {
         display: flex;
         justify-content: center;
         text-align: center;
-        margin-top: 4rem; 
+        margin-top: 4rem;
+
+        @include tablet {
+            flex-direction: column;
+        }
 
         .menu-link {
             color: color(primary-text);
@@ -1171,6 +1421,16 @@ footer {
         justify-content: space-between;
         align-items: center;
         padding: 3.2rem;
+
+        @include tablet {
+            flex-direction: column;
+        }
+
+        & > div {
+            @include tablet {
+                padding: 1.6rem 0;
+            }
+        }
     }
 
     .social {
@@ -1206,6 +1466,10 @@ footer {
         flex-basis: 33%;
         text-align: center;
 
+        @include tablet {
+            order: 1;
+        }
+
         a {
             position: relative;
             color: color(primary-text);
@@ -1216,11 +1480,14 @@ footer {
                 position: relative;
                 top: 0.8rem;
                 margin-right: 1.6rem;
-            
                 content: '';
                 width: 3.6rem;
                 height: 3.4rem;
                 background: url(../img/help.svg) no-repeat center;
+
+                @include tablet {
+                    display: none;
+                }
             }
         }
     }
@@ -1229,279 +1496,18 @@ footer {
         flex-basis: 33%;
         text-align: center;
 
+        @include tablet {
+            order: 2;
+        }
+
         img {
             margin: 0 0.8rem;
         }
     }
 }
 
-
-.showOnMobile {
-    display: none;
-}
-
 @media screen and (max-width: 1280px) {
     #rocket {
         display: none;
-    }
-}
-
-// TABLET & MOBILE
-@media screen and (max-width: 768px) {
-
-    section {
-        padding: 3.2rem 0;
-    }
-
-    h1, h2 {
-        font-size: 2.8rem;
-        padding: 0 0.8rem;
-
-        & + span {
-            font-size: 1.6rem;
-        }
-    }
-
-    h3 {
-        font-size: 1.6rem;
-    }
-
-    .header {
-        min-height: 100vh;
-        background-position: center -100px, right 120%, 99% 70%;
-
-        nav {
-            padding: 1.6rem;
-
-            .logo {
-                width: 10rem;
-                height: auto;
-            }
-        }
-
-        .counter + span {
-            font-size: 1.4rem;
-            line-height: 2.4rem;
-        }
-
-        .content {
-            font-size: 1.4vmin;
-        }
-
-        .cloud:first-of-type {
-            left: -20%;
-        }
-
-        .cloud:last-of-type {
-            right: -30%;
-            transform: scale(0.5);
-        }
-
-        .video-btn {
-            margin-top: 0;
-        }
-
-        #spacegirl {
-            display: none;
-            // bottom: -10%;
-            // max-width: 30rem;
-        }
-    }
-
-    .step {
-        flex-direction: column;
-        padding: 1.6rem 1.6rem 8rem 1.6rem;
-        margin-top: 3.2rem;
-
-        & > div {
-            background: hsla(203, 100%, 20%, 0.4);
-            border-radius: 8px;
-            mix-blend-mode: hard-light;
-        }
-
-        h2 {
-            margin-bottom: 0.2rem;
-        }
-
-        p {
-            padding: 0 3% 0.8rem 3%;
-        }
-
-        .step__two {
-            display: flex;
-            flex-flow: column-reverse;
-            transform: initial;
-        }
-
-        img {
-            padding: 1.6rem 0;
-            transform: translateY(0);
-        }
-    }
-
-    #popup-video {
-        iframe {
-            width: 100%;
-            height: 30%;
-            border: 0;
-        }
-    }
-
-    .hideOnMobile {
-        display: none;
-    }
-
-    .showOnMobile {
-        display: block;
-    }
-
-    .header {
-        background-attachment: initial;
-
-        .nav-link-container {
-            display: none;
-        }
-
-        .mobile-nav-container {
-            display: flex;
-            justify-self: end;
-            transform: translateX(1.6rem);
-
-            .nav-link-mobile {
-                width: 4.8rem;
-                height: 4.8rem;
-                display: inline-block;
-
-                &:nth-of-type(1) {
-                    background: url(../img/icon-user.svg) no-repeat center;
-                }
-
-                &:nth-of-type(2) {
-                    background: url(../img/icon-menu.svg) no-repeat center;
-                }
-            }
-        }
-    }
-
-    #benefits {
-        .grid {
-            grid-template-columns: initial;
-            padding-left: 1.6rem;
-            padding-right: 1.6rem;
-
-            .grid-item {
-                max-width: 100%;
-            }
-        }
-    }
-
-
-    #how {
-        .svg-object {
-            max-height: 320px;
-        }
-
-        .grid:nth-of-type(even) .svg-object {
-            order: initial;
-        }
-
-        .grid div {
-            padding-bottom: 4rem;
-        }
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none;
-    }
-
-    .swiper-slide:not(.swiper-slide-active) {
-        transform: scale(1)!important;
-    }
-
-
-    #who {
-
-        .grid {
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(5, auto);
-            grid-auto-flow: row;
-            padding: 3.2rem 1.6rem;
-            text-align: center;
-
-            .grid-item {
-                padding: 0 3.2rem;
-
-                img {
-                    width: 75%;
-                }
-
-                &:nth-of-type(1),
-                &:nth-of-type(2) {
-                    text-align: center;
-                }
-
-                h4, p {
-                    font-size: 1.6rem;
-                }
-            }
-        }
-    }
-
-    #doubleCashback {
-        
-        .flex-container {
-            flex-direction: column;
-        }
-
-        .doubleCashback__p {
-            font-size: 1.4rem;
-        }
-    }
-
-    #faq {
-
-        ul {
-            padding: 4rem 1.6rem 0 1.6rem;
-        }
-    }
-
-    #ready {
-        padding: 0 1.6rem 8rem 1.6rem;
-        text-align: center;
-
-        h2 {
-            text-align: center;
-        }
-
-        .btn-wrap {
-            justify-content: center;
-        }
-    }
-
-    footer {
-        .menu,
-        .social-conatiner {
-            flex-direction: column;
-        }
-
-        .contact-phone {
-            order: 1;
-
-            a::before {
-                display: none;
-            }
-        }
-
-        .social-conatiner {
-
-            & > div {
-                padding: 1.6rem 0;
-            }
-        }
-
-        .securedBy {
-            order: 2;
-        }
     }
 }
