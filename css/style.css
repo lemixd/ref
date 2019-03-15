@@ -1330,6 +1330,7 @@ footer {
 #faq h3 {
   display: block;
   padding: 2.4rem 3.2rem;
+  padding-right: 7.2rem;
   line-height: 1.4;
   font-weight: 400;
   letter-spacing: 1px;
@@ -1341,6 +1342,13 @@ footer {
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  #faq h3 {
+    padding: 2.4rem;
+    padding-right: 4.8rem;
+  }
 }
 
 #faq .faq__question-wrap {
@@ -1421,6 +1429,12 @@ footer {
   margin-left: -2.4rem;
 }
 
+@media screen and (max-width: 768px) {
+  #faq .faq__question-content--list li::before {
+    font-weight: 700;
+  }
+}
+
 #faq .faq__question-content p:first-of-type {
   margin: 0;
 }
@@ -1433,6 +1447,13 @@ footer {
   position: absolute;
   margin-top: 3.4rem;
   right: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  #faq .faq__question .icon-arrow--small {
+    right: 2.4rem;
+    margin-top: 3.1rem;
+  }
 }
 
 #faq .faq__question .icon-arrow--small:before,

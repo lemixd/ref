@@ -1196,6 +1196,7 @@ section {
     h3 {
         display: block;
         padding: 2.4rem 3.2rem;
+        padding-right: 7.2rem;
         line-height: 1.4;
         font-weight: 400;
         letter-spacing: 1px;
@@ -1205,6 +1206,11 @@ section {
         box-shadow: 0px 6px 32px rgba(29, 107, 178, 0.12);
         transition: background-color 0.5s ease;
         cursor: pointer;
+
+        @include tablet {
+            padding: 2.4rem;
+            padding-right: 4.8rem;
+        }
     }
       
     .faq__question-wrap {
@@ -1275,6 +1281,10 @@ section {
                     color: color(accent);
                     width: 2.4rem;
                     margin-left: -2.4rem;
+
+                    @include tablet {
+                        font-weight: 700;
+                    }
                 }
             }
         }
@@ -1292,6 +1302,11 @@ section {
         position: absolute;
         margin-top: 3.4rem;
         right: 4rem;
+
+        @include tablet {
+            right: 2.4rem;
+            margin-top: 3.1rem;
+        }
     }
 
     .faq__question .icon-arrow--small:before,
