@@ -8,14 +8,68 @@
     <!-- <link href="css/style.css" rel="stylesheet"> -->
 
     <style>
+		*, *::before, *::after {
+			box-sizing: inherit;
+		}
+
         body{
             margin: 0;
             overflow: hidden;
+			box-sizing: border-box;
         }
+
+        /*  */
+
+        .nightMode {
+            position: absolute;
+            bottom: 10%;
+        }
+
+        .nightModeSwitch {
+			display: block;
+			width: 80px;
+			height: 48px;
+			border-radius: 24px;
+			background-color: #fff4dd;
+			padding: 4px;
+			cursor: pointer;
+            box-shadow: 0px 6px 24px rgba(29, 107, 178, 0.26);
+			transition: background-color 500ms ease;
+		}
+
+		.nightModeSwitch::before {
+			content: '';
+			position: absolute;
+			border-top: 20px solid;
+			border-top-color: #feb01b;
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			transform: rotate(-45deg);
+			transition: transform 500ms ease, border-top-color 500ms ease;
+		}
+
+		input[name="nightMode"] {
+			display: none;
+		}
+
+		input[name="nightMode"]:checked + .nightModeSwitch::before {
+			transform: translateX(80%) rotate(45deg);
+			border-top-color: #d4edff;
+		}
+
+		input[name="nightMode"]:checked + .nightModeSwitch {
+			background-color: #1f3a62;
+		}
+
+        /*  */
 
         .loader__wrap {
             position: relative;
             display: flex;
+            justify-content: center;
+		    align-items: center;
+            flex-direction: column;
             background: linear-gradient(#228FD7, #F1F5F8);
             height: 100vh;
             margin: 0;
@@ -40,29 +94,23 @@
             display:block;
             width:416px;
             height:320px;
-            align-self: center;
             overflow: hidden;
-            margin: 0 auto;
         }
 
-        #travelLoader::before {
+        .travelLoader__bg {
             /* background: linear-gradient(#101028, #1f3a62); */
             background: linear-gradient(#0f132a, #18224a);
             content: '';    
             display: block;
-            width: 100%;
-            height: 100vh;
             position: absolute;
             top: 0;
+            bottom: 0;
             left: 0;
+            right: 0;
             opacity: 0;
             z-index: -100;
             pointer-events: none;
             transition: opacity 1s ease;
-        }
-
-        #travelLoader:hover:before {
-            opacity: 1;
         }
 
         .loader__rockClr--light,
@@ -90,8 +138,14 @@
 </head>
 <body>
     <div id="loader__wrap" class="loader__wrap">
+        <div class="travelLoader__bg"></div>
         <div id="travelLoader"></div>
+        <label class="nightMode">
+            <input type="checkbox" name="nightMode">
+            <span class="nightModeSwitch"></span>
+        </label>
     </div>
+
 
     <script src="../js/lottie_svg.min.js"></script>
 
@@ -127,6 +181,7 @@
         let loader__swirlClr = document.querySelectorAll('.loader__swirlClr');
 
         let loader__wrap = document.getElementById('loader__wrap');
+        let travelLoader__bg = document.querySelector('.travelLoader__bg');
 
         // loader gradients colors
         let loader__bgGrd = document.getElementById('loader__bgGrd');
@@ -138,6 +193,8 @@
         let moon = document.getElementById('moon');
         let blick = document.getElementById('blick');
         let stars = document.getElementById('stars__sky');
+
+        let nightMode = document.querySelector('input[name="nightMode"]');
 
 
         // Apply fill and stroke to SVG elements
@@ -164,64 +221,67 @@
         }
 
 
-        travelLoaderContainer.addEventListener("mouseenter", function() {
+        nightMode.addEventListener('change', function() {
 
-            // loader wrap night mode backround gradient and glow
-            loader__wrap.classList.add('loaderNightGlow');
+            if (nightMode.checked) {
 
-            // element, grdStopClr0, grdStopClr1, grdStopClr2
-            grdColors(loader__bgGrd, '#1f3a62', '#182645', '#101028');
-            grdColors(loader__balloonGrd, '#001936', '#002f4d', '#ffcc00');
+                travelLoader__bg.setAttribute('style', 'opacity: 1;');
 
-            // fill, stroke
-            applyNewFillStroke(loader__swirlClr, '', '#141428');
-            applyNewFillStroke(loader__tree__dark, '#001936');
-            applyNewFillStroke(loader__tree__light, '#0E2E52');
-            applyNewFillStroke(loader__birdClr, '#141428');
-            applyNewFillStroke(loader__rockClr__light, '#1C2B4D');
-            applyNewFillStroke(loader__rockClr__dark, '#18233D');
-            applyNewFillStroke(loader__rockShadowClr, '#0E1A36');
-            applyNewFillStroke(loader__oceanClr, '#001036');
-            applyNewFillStroke(loader__cloudClr, '#141428');
+                // loader wrap night mode backround gradient and glow
+                loader__wrap.classList.add('loaderNightGlow');
 
-            // element, cssDisplay, transformation, visibility
-            applyStyles(shining, 'none', '', '');
-            applyStyles(blick, 'none', '', '');
-            applyStyles(sun, '', 'matrix(1,0,0,1,0,100)', '0');
-            applyStyles(moon, '', 'matrix(1,0,0,1,174,204)', '1');
-            applyStyles(stars, '', '', '1');
+                // element, grdStopClr0, grdStopClr1, grdStopClr2
+                grdColors(loader__bgGrd, '#1f3a62', '#182645', '#101028');
+                grdColors(loader__balloonGrd, '#001936', '#002f4d', '#ffcc00');
 
+                // fill, stroke
+                applyNewFillStroke(loader__swirlClr, '', '#141428');
+                applyNewFillStroke(loader__tree__dark, '#001936');
+                applyNewFillStroke(loader__tree__light, '#0E2E52');
+                applyNewFillStroke(loader__birdClr, '#141428');
+                applyNewFillStroke(loader__rockClr__light, '#1C2B4D');
+                applyNewFillStroke(loader__rockClr__dark, '#18233D');
+                applyNewFillStroke(loader__rockShadowClr, '#0E1A36');
+                applyNewFillStroke(loader__oceanClr, '#001036');
+                applyNewFillStroke(loader__cloudClr, '#141428');
+
+                // element, cssDisplay, transformation, visibility
+                applyStyles(shining, 'none', '', '');
+                applyStyles(blick, 'none', '', '');
+                applyStyles(sun, '', 'matrix(1,0,0,1,0,100)', '0');
+                applyStyles(moon, '', 'matrix(1,0,0,1,174,204)', '1');
+                applyStyles(stars, '', '', '1');
+            } 
+            
+            else {
+
+                travelLoader__bg.setAttribute('style', 'opacity: 0;');
+
+                loader__wrap.classList.remove('loaderNightGlow');
+
+                // element, grdStopClr0, grdStopClr1, grdStopClr2
+                grdColors(loader__bgGrd, '', '', '');
+                grdColors(loader__balloonGrd, '', '', '');
+
+                // fill, stroke
+                applyNewFillStroke(loader__swirlClr, '', '');
+                applyNewFillStroke(loader__tree__dark, '');
+                applyNewFillStroke(loader__tree__light, '');
+                applyNewFillStroke(loader__birdClr, '');
+                applyNewFillStroke(loader__rockClr__light, '');
+                applyNewFillStroke(loader__rockClr__dark, '');
+                applyNewFillStroke(loader__rockShadowClr, '');
+                applyNewFillStroke(loader__oceanClr, '');
+                applyNewFillStroke(loader__cloudClr, '');
+
+                // element, cssDisplay, transformation, visibility
+                applyStyles(shining);
+                applyStyles(blick);
+                applyStyles(sun);
+                applyStyles(moon);
+                applyStyles(stars, '', '', '0');
+            }
         });
-
-
-        travelLoaderContainer.addEventListener("mouseleave", function() {
-
-            loader__wrap.classList.remove('loaderNightGlow');
-
-            // element, grdStopClr0, grdStopClr1, grdStopClr2
-            grdColors(loader__bgGrd, '', '', '');
-            grdColors(loader__balloonGrd, '', '', '');
-
-            // fill, stroke
-            applyNewFillStroke(loader__swirlClr, '', '');
-            applyNewFillStroke(loader__tree__dark, '');
-            applyNewFillStroke(loader__tree__light, '');
-            applyNewFillStroke(loader__birdClr, '');
-            applyNewFillStroke(loader__rockClr__light, '');
-            applyNewFillStroke(loader__rockClr__dark, '');
-            applyNewFillStroke(loader__rockShadowClr, '');
-            applyNewFillStroke(loader__oceanClr, '');
-            applyNewFillStroke(loader__cloudClr, '');
-
-            // element, cssDisplay, transformation, visibility
-            applyStyles(shining);
-            applyStyles(blick);
-            applyStyles(sun);
-            applyStyles(moon);
-            applyStyles(stars, '', '', '0');
-
-        });
-
     });
 
     </script>

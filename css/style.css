@@ -72,7 +72,7 @@ html, body {
   line-height: 2.5;
 }
 
-#popup-video a:before, #popup-video a:after {
+#popup-video a::before, #popup-video a::after {
   position: absolute;
   left: 0;
   right: 0;
@@ -153,7 +153,7 @@ a {
   }
 }
 
-.header:before {
+.header::before {
   content: '';
   display: block;
   position: absolute;
@@ -316,7 +316,7 @@ a {
   margin-top: 5rem;
 }
 
-.header .counter:before {
+.header .counter::before {
   content: attr(data-text);
   font-weight: 700;
 }
@@ -563,7 +563,7 @@ ul.language-switch input[type=radio]:checked ~ label {
   z-index: -1;
 }
 
-#rocket:before {
+#rocket::before {
   content: '';
   display: block;
   background: #F1F5F8;
@@ -676,7 +676,7 @@ ul.language-switch input[type=radio]:checked ~ label {
   }
 }
 
-.video-btn:before, .video-btn:after {
+.video-btn::before, .video-btn::after {
   content: '';
   display: block;
   width: 6.4rem;
@@ -1179,8 +1179,8 @@ footer {
   height: 10px;
 }
 
-.icon-arrow--small:before,
-.icon-arrow--small:after {
+.icon-arrow--small::before,
+.icon-arrow--small::after {
   content: "";
   position: absolute;
   background-color: #788392;
@@ -1200,10 +1200,10 @@ footer {
           transform: translate(2px, 0) rotate(-45deg);
 }
 
-.swiper-button-next:hover .icon-arrow--small:before,
-.swiper-button-next:hover .icon-arrow--small:after,
-.swiper-button-prev:hover .icon-arrow--small:before,
-.swiper-button-prev:hover .icon-arrow--small:after {
+.swiper-button-next:hover .icon-arrow--small::before,
+.swiper-button-next:hover .icon-arrow--small::after,
+.swiper-button-prev:hover .icon-arrow--small::before,
+.swiper-button-prev:hover .icon-arrow--small::after {
   background-color: #0A994A;
 }
 
@@ -1321,8 +1321,8 @@ footer {
 }
 
 #faq .transition, #faq .faq__question-content,
-#faq .faq__question i:before,
-#faq .faq__question i:after {
+#faq .faq__question i::before,
+#faq .faq__question i::after {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
@@ -1456,8 +1456,8 @@ footer {
   }
 }
 
-#faq .faq__question .icon-arrow--small:before,
-#faq .faq__question .icon-arrow--small:after {
+#faq .faq__question .icon-arrow--small::before,
+#faq .faq__question .icon-arrow--small::after {
   background-color: #0A994A;
 }
 
@@ -1478,12 +1478,12 @@ footer {
           transform: translate(0, 50%);
 }
 
-#faq .faq__question input[type=checkbox]:checked ~ .icon-arrow--small:before {
+#faq .faq__question input[type=checkbox]:checked ~ .icon-arrow--small::before {
   -webkit-transform: translate(2px, 0) rotate(45deg);
           transform: translate(2px, 0) rotate(45deg);
 }
 
-#faq .faq__question input[type=checkbox]:checked ~ .icon-arrow--small:after {
+#faq .faq__question input[type=checkbox]:checked ~ .icon-arrow--small::after {
   -webkit-transform: translate(-2px, 0) rotate(-45deg);
           transform: translate(-2px, 0) rotate(-45deg);
 }
@@ -1670,7 +1670,7 @@ footer .contact-phone a {
   font-weight: 700;
 }
 
-footer .contact-phone a:before {
+footer .contact-phone a::before {
   display: inline-block;
   position: relative;
   top: 0.8rem;
@@ -1682,7 +1682,7 @@ footer .contact-phone a:before {
 }
 
 @media screen and (max-width: 768px) {
-  footer .contact-phone a:before {
+  footer .contact-phone a::before {
     display: none;
   }
 }
