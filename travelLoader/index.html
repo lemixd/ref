@@ -209,9 +209,15 @@
 
 
         // Apply fill and stroke to SVG elements
-        function applyNewFillStroke(element, fillClr, strokeClr) {
+        function applyFill(element, fillClr) {
             for (i = 0; i < element.length; ++i) {
-                element[i].setAttribute('style', 'fill:' + fillClr +';' + 'stroke:' + strokeClr +';');
+                element[i].setAttribute('style', 'fill:' + fillClr +';');
+            }
+        }
+
+        function applyStroke(element, strokeClr) {
+            for (i = 0; i < element.length; ++i) {
+                element[i].setAttribute('style', 'stroke:' + strokeClr +';');
             }
         }
 
@@ -222,8 +228,8 @@
         }
 
         // Apply styles to an element
-        function applyStyles(element, cssDisplay, transformation, visibility) {
-            element.setAttribute('style', 'display:' + cssDisplay +';' + 'transform:' + transformation +';' + 'opacity:' + visibility +';');
+        function applyStyles(element, transformation, visibility) {
+            element.setAttribute('style', 'transform:' + transformation +';' + 'opacity:' + visibility +';');
         }
 
         // Search for SVG gradient IDs. Apply styles to stops 
@@ -251,23 +257,23 @@
                 grdColors(loader__bgGrd, '#1f3a62', '#182645', '#101028');
                 grdColors(loader__balloonGrd, '#001936', '#002f4d', '#ffcc00');
 
-                // fill, stroke
-                applyNewFillStroke(loader__swirlClr, '', '#141428');
-                applyNewFillStroke(loader__tree_dark, '#001936');
-                applyNewFillStroke(loader__tree_light, '#0E2E52');
-                applyNewFillStroke(loader__birdClr, '#141428');
-                applyNewFillStroke(loader__rockClr_light, '#1C2B4D');
-                applyNewFillStroke(loader__rockClr_dark, '#18233D');
-                applyNewFillStroke(loader__rockShadowClr, '#0E1A36');
-                applyNewFillStroke(loader__oceanClr, '#001036');
-                applyNewFillStroke(loader__cloudClr, '#141428');
+                // fill
+                applyStroke(loader__swirlClr, '#141428');
+                applyFill(loader__tree_dark, '#001936');
+                applyFill(loader__tree_light, '#0E2E52');
+                applyFill(loader__birdClr, '#141428');
+                applyFill(loader__rockClr_light, '#1C2B4D');
+                applyFill(loader__rockClr_dark, '#18233D');
+                applyFill(loader__rockShadowClr, '#0E1A36');
+                applyFill(loader__oceanClr, '#001036');
+                applyFill(loader__cloudClr, '#141428');
 
                 // element, cssDisplay, transformation, visibility
-                applyStyles(shining, 'none', '', '');
-                applyStyles(blick, 'none', '', '');
-                applyStyles(sun, '', 'matrix(1,0,0,1,0,100)', '0');
-                applyStyles(moon, '', 'matrix(1,0,0,1,174,204)', '1');
-                applyStyles(stars, '', '', '1');
+                applyStyles(shining, '', '0');
+                applyStyles(blick, '', '0');
+                applyStyles(sun, 'matrix(1,0,0,1,0,100)', '0');
+                applyStyles(moon, 'matrix(1,0,0,1,174,204)', '1');
+                applyStyles(stars, '', '1');
             } 
             
             else {
@@ -280,23 +286,20 @@
                 grdColors(loader__bgGrd, '', '', '');
                 grdColors(loader__balloonGrd, '', '', '');
 
-                // fill, stroke
-                clearStyle(loader__swirlClr);
-                clearStyle(loader__tree_dark);
-                clearStyle(loader__tree_light);
-                clearStyle(loader__birdClr);
-                clearStyle(loader__rockClr_light);
-                clearStyle(loader__rockClr_dark);
-                clearStyle(loader__rockShadowClr);
-                clearStyle(loader__oceanClr);
-                clearStyle(loader__cloudClr);
+                // clear fill, stroke
+                let bgElementsArray = [loader__swirlClr, loader__tree_dark, loader__tree_light, loader__birdClr, loader__rockClr_light, loader__rockClr_dark, loader__rockShadowClr, loader__oceanClr, loader__cloudClr];
 
-                // element, cssDisplay, transformation, visibility
+                let i, len;
+                for (i = 0, len = bgElementsArray.length; i < len; ++i) {
+                    clearStyle(bgElementsArray[i]);
+                }
+
+                // element, transformation, visibility
                 applyStyles(shining);
                 applyStyles(blick);
                 applyStyles(sun);
                 applyStyles(moon);
-                applyStyles(stars, '', '', '0');
+                applyStyles(stars, '', '0');
             }
         });
     });
