@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>travel loader</title>
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
 
     <style>
 		*, *::before, *::after {
@@ -46,7 +45,8 @@
 			width: 40px;
 			height: 40px;
 			transform: rotate(-45deg);
-			transition: transform 500ms ease, border-top-color 500ms ease;
+            transition-property: transform, border-top-color;
+            transition-duration: 500ms
 		}
 
 		input[name="nightMode"] {
@@ -98,7 +98,6 @@
         }
 
         .travelLoader__bg {
-            /* background: linear-gradient(#101028, #1f3a62); */
             background: linear-gradient(#0f132a, #18224a);
             content: '';    
             display: block;
@@ -110,7 +109,7 @@
             opacity: 0;
             z-index: -100;
             pointer-events: none;
-            transition: opacity 1s ease;
+            transition: opacity 1s;
         }
 
         .loader__rockClr--light,
@@ -128,12 +127,14 @@
         #moon,
         #blick,
         #stars__sky {
-            transition: fill 1s, transform 1s, opacity 1s ease;
+            transition-property: fill, transform, opacity;
+            transition-duration: 1000ms;
         }
 
         stop {
-            transition: stop-color 1s ease;
+            transition: stop-color 1000ms;
         }
+
     </style>
 </head>
 <body>
@@ -161,46 +162,62 @@
 
     travelLoaderParams.addEventListener('DOMLoaded', function() {
 
+        let select = function(selector) {
+            return document.querySelector(selector);
+        },        
+        selectAll = function(selector) {
+            return document.querySelectorAll(selector);
+        },
+        selectID = function(id) {
+            return document.getElementById(id);
+        },
+
         // Trees
-        let loader__tree__light = document.querySelectorAll('.loader__tree--light');
-        let loader__tree__dark = document.querySelectorAll('.loader__tree--dark');
+        loader__tree_light = selectAll('.loader__tree--light'),
+        loader__tree_dark = selectAll('.loader__tree--dark'),
 
         // Birds
-        let loader__birdClr = document.querySelectorAll('.loader__birdClr');
+        loader__birdClr = selectAll('.loader__birdClr'),
 
         // Rocks
-        let loader__rockClr__light = document.querySelectorAll('.loader__rockClr--light');
-        let loader__rockClr__dark = document.querySelectorAll('.loader__rockClr--dark');
-        let loader__rockShadowClr = document.querySelectorAll('.loader__rockShadowClr');
+        loader__rockClr_light = selectAll('.loader__rockClr--light'),
+        loader__rockClr_dark = selectAll('.loader__rockClr--dark'),
+        loader__rockShadowClr = selectAll('.loader__rockShadowClr')
 
         // Ocean
-        let loader__oceanClr = document.querySelectorAll('.loader__oceanClr');
+        loader__oceanClr = selectAll('.loader__oceanClr'),
 
         // Clouds
-        let loader__cloudClr = document.querySelectorAll('.loader__cloudClr');
-        let loader__swirlClr = document.querySelectorAll('.loader__swirlClr');
+        loader__cloudClr = selectAll('.loader__cloudClr'),
+        loader__swirlClr = selectAll('.loader__swirlClr'),
 
-        let loader__wrap = document.getElementById('loader__wrap');
-        let travelLoader__bg = document.querySelector('.travelLoader__bg');
+        loader__wrap = selectID('loader__wrap'),
+        travelLoader__bg = select('.travelLoader__bg'),
 
         // loader gradients colors
-        let loader__bgGrd = document.getElementById('loader__bgGrd');
-        let loader__balloonGrd = document.getElementById('loader__balloonGrd');
+        loader__bgGrd = selectID('loader__bgGrd'),
+        loader__balloonGrd = selectID('loader__balloonGrd')
 
         // Sun, shining and water reflection
-        let shining = document.getElementById('shiningCont');        
-        let sun = document.getElementById('sun');
-        let moon = document.getElementById('moon');
-        let blick = document.getElementById('blick');
-        let stars = document.getElementById('stars__sky');
+        shining = selectID('shiningCont'),
+        sun = selectID('sun'),
+        moon = selectID('moon'),
+        blick = selectID('blick'),
+        stars = selectID('stars__sky'),
 
-        let nightMode = document.querySelector('input[name="nightMode"]');
+        nightMode = select('input[name="nightMode"]')
 
 
         // Apply fill and stroke to SVG elements
         function applyNewFillStroke(element, fillClr, strokeClr) {
             for (i = 0; i < element.length; ++i) {
                 element[i].setAttribute('style', 'fill:' + fillClr +';' + 'stroke:' + strokeClr +';');
+            }
+        }
+
+        function clearStyle(element) {
+            for (i = 0; i < element.length; ++i) {
+                element[i].removeAttribute('style');
             }
         }
 
@@ -236,11 +253,11 @@
 
                 // fill, stroke
                 applyNewFillStroke(loader__swirlClr, '', '#141428');
-                applyNewFillStroke(loader__tree__dark, '#001936');
-                applyNewFillStroke(loader__tree__light, '#0E2E52');
+                applyNewFillStroke(loader__tree_dark, '#001936');
+                applyNewFillStroke(loader__tree_light, '#0E2E52');
                 applyNewFillStroke(loader__birdClr, '#141428');
-                applyNewFillStroke(loader__rockClr__light, '#1C2B4D');
-                applyNewFillStroke(loader__rockClr__dark, '#18233D');
+                applyNewFillStroke(loader__rockClr_light, '#1C2B4D');
+                applyNewFillStroke(loader__rockClr_dark, '#18233D');
                 applyNewFillStroke(loader__rockShadowClr, '#0E1A36');
                 applyNewFillStroke(loader__oceanClr, '#001036');
                 applyNewFillStroke(loader__cloudClr, '#141428');
@@ -264,15 +281,15 @@
                 grdColors(loader__balloonGrd, '', '', '');
 
                 // fill, stroke
-                applyNewFillStroke(loader__swirlClr, '', '');
-                applyNewFillStroke(loader__tree__dark, '');
-                applyNewFillStroke(loader__tree__light, '');
-                applyNewFillStroke(loader__birdClr, '');
-                applyNewFillStroke(loader__rockClr__light, '');
-                applyNewFillStroke(loader__rockClr__dark, '');
-                applyNewFillStroke(loader__rockShadowClr, '');
-                applyNewFillStroke(loader__oceanClr, '');
-                applyNewFillStroke(loader__cloudClr, '');
+                clearStyle(loader__swirlClr);
+                clearStyle(loader__tree_dark);
+                clearStyle(loader__tree_light);
+                clearStyle(loader__birdClr);
+                clearStyle(loader__rockClr_light);
+                clearStyle(loader__rockClr_dark);
+                clearStyle(loader__rockShadowClr);
+                clearStyle(loader__oceanClr);
+                clearStyle(loader__cloudClr);
 
                 // element, cssDisplay, transformation, visibility
                 applyStyles(shining);
