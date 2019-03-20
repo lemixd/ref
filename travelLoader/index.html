@@ -241,7 +241,7 @@
             function grdColors(element, ...grdStopsClrs) {
 
                 let getGrdID = element.getAttribute('fill').replace(/(url)[(]|[)]/g, ''),
-                getGrdStops = document.querySelectorAll(getGrdID + '> stop');
+                getGrdStops = selectAll(getGrdID + '> stop');
 
                 for (i=0; i < getGrdStops.length; ++i) {
                     getGrdStops[i].style.stopColor = grdStopsClrs[i];
@@ -263,8 +263,7 @@
                     grdColors(loader__balloonGrd, '#001936', '#002f4d', '#ffcc00');
 
                     // apply style attributes
-                    let i, len;
-                    for (i = 0, len = bgElementsArray.length; i < len; ++i) {
+                    for (let i = 0; i < bgElementsArray.length; ++i) {
                         applyFill(bgElementsArray[i], bgElementsClrs[i]);
                     }
 
@@ -287,8 +286,7 @@
                     grdColors(loader__balloonGrd, '', '', '');
 
                     // clear style attribute
-                    let i, len;
-                    for (i = 0, len = bgElementsArray.length; i < len; ++i) {
+                    for (let i = 0; i < bgElementsArray.length; ++i) {
                         clearStyle(bgElementsArray[i]);
                     }
                 }
