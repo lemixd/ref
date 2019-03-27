@@ -394,6 +394,7 @@ a {
 
 @media screen and (max-width: 768px) {
   .step {
+    position: initial;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
