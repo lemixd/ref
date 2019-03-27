@@ -378,6 +378,7 @@ a {
     padding: 11.2rem 1.6rem;
 
     @include tablet {
+        position: initial;
         flex-direction: column;
         padding: 1.6rem 1.6rem 8rem 1.6rem;
         margin-top: 3.2rem;
