@@ -54,15 +54,13 @@ html, body {
   }
 
 #popup-video {
-    position: fixed!important;
-    display: flex;
-    align-items: center;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
+    display: flex;
+    align-items: center;
     background-color: rgba($color: #000, $alpha: 0.7);
     z-index: 200;
 
@@ -363,6 +361,10 @@ a {
 
 .step {
     // grid-template-columns: repeat(auto-fit, minmax(10.6rem, 1fr));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
