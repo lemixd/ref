@@ -368,9 +368,9 @@ a {
   }
 }
 
-.step {
+.steps {
   position: absolute;
-  bottom: 0;
+  bottom: 4%;
   left: 0;
   right: 0;
   display: -webkit-box;
@@ -382,7 +382,10 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  max-width: 96rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 118.4rem;
   margin: 0 auto;
   color: #fff;
   font-size: 1.4rem;
@@ -393,7 +396,7 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .step {
+  .steps {
     position: initial;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -404,7 +407,28 @@ a {
   }
 }
 
-.step img {
+.steps .step__arrow {
+  background: url(../img/arrow-1.svg) no-repeat center;
+}
+
+@media screen and (max-width: 768px) {
+  .steps .step__arrow {
+    height: 5.2rem;
+    background: url(../img/icon-arr-back.svg) no-repeat center;
+  }
+}
+
+.steps .step__two + .step__arrow {
+  background: url(../img/arrow-2.svg) no-repeat center;
+}
+
+@media screen and (max-width: 768px) {
+  .steps .step__two + .step__arrow {
+    background: url(../img/icon-arr-back.svg) no-repeat center;
+  }
+}
+
+.steps img {
   -ms-grid-column-align: center;
       justify-self: center;
   -webkit-transform: translateY(-2rem);
@@ -412,14 +436,14 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .step img {
+  .steps img {
     padding: 1.6rem 0;
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
 }
 
-.step h2 {
+.steps h2 {
   margin-top: 1.6rem;
   font-size: 3.5rem;
   letter-spacing: initial;
@@ -427,50 +451,28 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .step h2 {
+  .steps h2 {
     margin-bottom: 0.2rem;
   }
 }
 
-.step p {
+.steps p {
   margin: 0.8rem 0;
 }
 
 @media screen and (max-width: 768px) {
-  .step p {
+  .steps p {
     padding: 0 3% 0.8rem 3%;
   }
 }
 
-.step__two {
-  display: -ms-grid;
-  display: grid;
-  -webkit-transform: translateY(-6.4rem);
-          transform: translateY(-6.4rem);
+.steps > div {
+  -ms-flex-preferred-size: calc(100% / 7);
+      flex-basis: calc(100% / 7);
 }
 
 @media screen and (max-width: 768px) {
-  .step__two {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-flow: column-reverse;
-            flex-flow: column-reverse;
-    -webkit-transform: initial;
-            transform: initial;
-  }
-}
-
-.step__two h2 {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-}
-
-@media screen and (max-width: 768px) {
-  .step > div {
+  .steps > div {
     background: rgba(0, 63, 102, 0.4);
     border-radius: 8px;
     mix-blend-mode: hard-light;

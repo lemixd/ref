@@ -359,16 +359,16 @@ a {
     }
 }
 
-.step {
-    // grid-template-columns: repeat(auto-fit, minmax(10.6rem, 1fr));
+.steps {
     position: absolute;
-    bottom: 0;
+    bottom: 4%;
     left: 0;
     right: 0;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    max-width: 96rem;
+    justify-content: center;
+    max-width: 118.4rem;
     margin: 0 auto;
     color: #fff;
     font-size: 1.4rem;
@@ -382,6 +382,25 @@ a {
         flex-direction: column;
         padding: 1.6rem 1.6rem 8rem 1.6rem;
         margin-top: 3.2rem;
+    }
+
+    .step {
+        &__arrow {
+            background: url(../img/arrow-1.svg) no-repeat center;
+    
+            @include tablet {
+                height: 5.2rem;
+                background: url(../img/icon-arr-back.svg) no-repeat center;
+            }
+        }
+    
+        &__two + .step__arrow {
+            background: url(../img/arrow-2.svg) no-repeat center;
+    
+            @include tablet {
+                background: url(../img/icon-arr-back.svg) no-repeat center;
+            }
+        }
     }
 
     img {
@@ -413,22 +432,9 @@ a {
         }
     }
 
-    &__two {
-        display: grid;
-        transform: translateY(-6.4rem);
-
-        @include tablet {
-            display: flex;
-            flex-flow: column-reverse;
-            transform: initial;
-        }
-
-        & h2 {
-            order: 1;
-        }
-    }
-
     & > div {
+        flex-basis: calc(100% / 7);
+
         @include tablet {
             background: hsla(203, 100%, 20%, 0.4);
             border-radius: 8px;
