@@ -1,0 +1,77 @@
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100%;
+}
+
+html, body {
+    margin: 0;
+    position: relative;
+    background: color(bg-clr);
+    font-family: 'Lato', sans-serif;
+    color: color(primary-text);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.content-align {
+    max-width: $content-max-width;
+    margin: 0 auto;
+}
+
+// FLEX & GRID CONTAINERS
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &--column {
+        flex-direction: column;
+    }
+
+    &--row {
+        flex-direction: row;
+    }
+}
+
+.grid {
+    display: grid;
+    max-width: $content-max-width;
+    margin: 0 auto;
+    justify-self: center;
+}
+
+.hideOnMobile {
+    @include tablet {
+        display: none;
+    }
+}
+
+.showOnMobile {
+    display: none;
+
+    @include tablet {
+        display: block;
+    }
+}
+
+
+section,
+footer {
+    position: relative;
+    padding: 6.4rem 0;
+    z-index: 1;
+}
+
+section {
+    @include tablet {
+        padding: 3.2rem 0;
+    }
+}

@@ -1,0 +1,59 @@
+// SECTION 'BENEFITS'
+
+#benefits {
+
+    .grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 5.6rem 0;
+
+        @supports (display: grid) {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 32.4rem);
+            grid-gap: 2.4rem;
+        }
+
+        @include tablet {
+            grid-template-columns: initial;
+            padding-left: 1.6rem;
+            padding-right: 1.6rem;
+        }
+
+        .grid-item {
+            max-width: 32rem;
+            margin: 1.2rem;
+            background: #fff;
+            border-radius: $border-radius;
+            padding: 5.6rem 2.4rem 1.6rem;
+            box-shadow: 0px 6px 24px rgba(29, 107, 178, 0.26);
+
+            @supports (display: grid) {
+                margin: initial;
+            }
+
+            @include tablet {
+                max-width: 100%;
+            }
+
+            &:nth-of-type(even) {
+                background-color: #FFD83A;
+                box-shadow: 0px 6px 24px rgba(255, 216, 58, 0.26);
+            }
+
+            img {
+                height: 4.8rem;
+                width: auto;
+            }
+        }
+    }
+
+    .ref-bgEl {
+        position: absolute;
+        top: 20%;
+        right: -25%;
+        z-index: -1;
+    }
+}
