@@ -1,0 +1,137 @@
+// SECTION 'FEEDBACK'
+// Swiper slider extra styles
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-container {
+    width: 100%;
+    padding: 7.2rem 2.4rem 0 2.4rem;
+
+    .flex-container {
+        justify-content: center;
+        margin-top: 4rem;
+    }
+}
+
+.swiper-slide {
+    font-size: 1.4rem;
+    line-height: 1.75;
+    background-color: #fff;
+    border-radius: $border-radius;
+    box-shadow: 0px 6px 32px rgba(29, 107, 178, 0.12);
+    transition: all 0.4s ease;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+    transform: scale(0.95)!important;
+    opacity: 0.8;
+
+    @include tablet {
+        transform: scale(1)!important;
+    }
+}
+
+.swiper-slide-container {
+    padding: 3.2rem;
+
+    p {
+        padding-top: 1.6rem;
+    }
+}
+
+.swiper-pagination {
+    position: relative;
+}
+
+.swiper-pagination-bullet {
+    margin: 0.2rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: initial;
+    right: initial;
+    top: initial;
+    bottom: 0; 
+    width: 3.2rem;
+    height: 3.2rem;
+    margin: 3.2rem;
+    border-radius: 50%;
+    background: #DFE5EB;
+    transform: rotate(90deg);
+    transition: background 0.4s ease;
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.swiper-button-prev {
+    transform: rotate(-90deg);
+}
+
+.swiper-button-next:hover .icon-arrow--small::before,
+.swiper-button-next:hover .icon-arrow--small::after,
+.swiper-button-prev:hover .icon-arrow--small::before,
+.swiper-button-prev:hover .icon-arrow--small::after {
+    background-color: color(accent);
+}
+
+.swiper-button-next:active,
+.swiper-button-prev:active {
+    background: #D1D9E0;
+}
+
+.feedback-user-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    ul {
+        list-style: none;
+        padding: 0 2.4rem;
+        max-width: 40%;
+    }
+
+    .user-pic {
+        width: 6.4rem;
+        height: 6.4rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .feedback-user-name {
+        display: block;
+        font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .feedback-date {
+        font-size: 1.2rem;
+        color: color(secondary-text);
+    }
+
+    .social-link {
+        position: absolute;
+        right: 0;
+        padding: 0.8rem;
+    }
+}
+
+.swiper-pagination-bullet {
+    background: #dadfe7;
+    opacity: 1;
+}
+
+
+.swiper-pagination-bullet-active {
+    background: color(accent);
+    transition: background 0.6s;
+}

@@ -1,0 +1,39 @@
+// SECTION 'READY'
+
+#ready {
+    // grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 0 8rem 0;
+
+    @include tablet {
+        padding: 0 1.6rem 8rem 1.6rem;
+        text-align: center;
+    }
+
+    h2 {
+        text-align: left;
+        font-weight: 400;
+        color: color(accent);
+        margin-bottom: -0.8rem;
+
+        @include tablet {
+            text-align: center;
+        }
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    .btn-wrap {
+        padding: 2rem;
+        justify-content: right;
+        align-self: center;
+
+        @include tablet {
+            justify-content: center;
+        }
+    }
+}

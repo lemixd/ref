@@ -1,0 +1,30 @@
+// ROCKET
+
+#rocket {
+    position: absolute;
+    bottom: 15rem;
+    left: -10rem;
+    width: 600px;
+    height: 428px;
+    transform: rotate(45deg);
+    z-index: -1;
+
+    &::before {
+        content: '';
+        display: block;
+        background: color(bg-clr);
+        width: 105%;
+        height: 80%;
+        position: absolute;
+        bottom: -60%;
+        left: 0;
+        right: 0;
+        border-radius: 56px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    #rocket {
+        display: none;
+    }
+}

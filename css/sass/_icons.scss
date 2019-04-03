@@ -1,0 +1,30 @@
+.hide-svg-symbols {
+    position: absolute;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.icon-arrow--small {
+    align-self: center;
+    width: 3px;
+    height: 10px;
+}
+
+.icon-arrow--small::before,
+.icon-arrow--small::after {
+    content: "";
+    position: absolute;
+    background-color: #788392;
+    width: 3px;
+    height: 9px;
+    transition: background-color 0.4s ease;
+}
+
+.icon-arrow--small:before {
+    transform: translate(-2px, 0) rotate(45deg);
+}
+
+.icon-arrow--small:after {
+    transform: translate(2px, 0) rotate(-45deg);
+}
