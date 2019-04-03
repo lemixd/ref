@@ -27,9 +27,6 @@ $font-size: 1.6rem;
     height: 100vh;
     min-height: 100vh;
     background: url('../img/charity_bg.svg'), #0A62C7;
-    // background: radial-gradient(circle farthest-corner at 40% 85%, #2bb9de 0%, rgba(43, 185, 222, 0) 80%),
-    //             radial-gradient(circle farthest-corner at 12% 22%, #7fd1cc 0%, rgba(127, 209, 204, 0) 70%),
-    //             linear-gradient(to top, #fee215 0%, rgba(10, 98, 199, 0) 70%), #0A62C7;
     background-size: cover;
     overflow: hidden;
     box-sizing: border-box;
@@ -73,49 +70,35 @@ $font-size: 1.6rem;
         text-align: right;
     }
 
-    .scrollDown {
-        bottom: 4%;
-        pointer-events: initial;
-    }
-
     .charity_bg--tree {
         position: absolute;
-        bottom: -8%;
-        left: -28rem;
-        width: 125.6rem;
-        height: 140.4rem;
-        min-height: 100%;
+        top: 0;
+        left: 0;
+        max-height: 100%;
         z-index: -1;
     }
 
     .charity_bg--polisGirl {
         position: absolute;
-        left: 16rem;
-        bottom: -51.2rem;
-        width: 33.6rem;
-        height: 101.9rem;
-        max-width: 100%;
-        max-height: 100%;
+        left: 10%;
+        /* right: 0; */
+        bottom: -4%;
+        height: 48.0rem;
+        /* margin: 0 auto; */
     }
 
     .cat {
         position: absolute;
-        right: -22rem;
-        bottom: -22rem;
-        width: 73.6rem;
-        height: 63.2rem;
-        max-width: 100%;
-        max-height: 100%;
+        right: 0;
+        bottom: -10%;
+        max-width: 50rem;
+        max-height: 48rem;
         pointer-events: none;
-    }
-
-    .charity_header--h1 {
-        text-shadow: 0px 0px 6px rgba(29, 107, 178, 0.16);
     }
 
     .charity_header--p {
         font-size: 2rem;
-        padding-bottom: 5.6rem;
+        padding-bottom: 4rem;
     }
 
     .header-content_position {

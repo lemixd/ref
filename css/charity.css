@@ -59,49 +59,35 @@
   text-align: right;
 }
 
-.header--charity .scrollDown {
-  bottom: 4%;
-  pointer-events: initial;
-}
-
 .header--charity .charity_bg--tree {
   position: absolute;
-  bottom: -8%;
-  left: -28rem;
-  width: 125.6rem;
-  height: 140.4rem;
-  min-height: 100%;
+  top: 0;
+  left: 0;
+  max-height: 100%;
   z-index: -1;
 }
 
 .header--charity .charity_bg--polisGirl {
   position: absolute;
-  left: 16rem;
-  bottom: -51.2rem;
-  width: 33.6rem;
-  height: 101.9rem;
-  max-width: 100%;
-  max-height: 100%;
+  left: 10%;
+  /* right: 0; */
+  bottom: -4%;
+  height: 48.0rem;
+  /* margin: 0 auto; */
 }
 
 .header--charity .cat {
   position: absolute;
-  right: -22rem;
-  bottom: -22rem;
-  width: 73.6rem;
-  height: 63.2rem;
-  max-width: 100%;
-  max-height: 100%;
+  right: 0;
+  bottom: -10%;
+  max-width: 50rem;
+  max-height: 48rem;
   pointer-events: none;
-}
-
-.header--charity .charity_header--h1 {
-  text-shadow: 0px 0px 6px rgba(29, 107, 178, 0.16);
 }
 
 .header--charity .charity_header--p {
   font-size: 2rem;
-  padding-bottom: 5.6rem;
+  padding-bottom: 4rem;
 }
 
 .header--charity .header-content_position {

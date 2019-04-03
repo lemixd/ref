@@ -1,24 +1,24 @@
 // Lottie animation properties
 // Rocket
-// let rocketParams = {
-// 	container: document.getElementById('rocket'),
-// 	renderer: 'svg',
-// 	loop: true,
-// 	autoplay: true,
-// 	path: 'js/rocket.json'
-// };
+let rocketParams = {
+	container: document.getElementById('rocket'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: true,
+	path: 'js/rocket.json'
+};
 
 
 // Disable rocket Anim calculation when hidden
-// let rocketAnim = lottie.loadAnimation(rocketParams);
+let rocketAnim = lottie.loadAnimation(rocketParams);
 
-// window.onload = window.onresize = function() {
-// 	if (window.innerWidth < 1280) {
-// 		rocketAnim.pause();
-// 	} else {
-// 		rocketAnim.play();
-// 	}
-// };
+window.onload = window.onresize = function() {
+	if (window.innerWidth < 1280) {
+		rocketAnim.pause();
+	} else {
+		rocketAnim.play();
+	}
+};
 
 // Splash animation properties
 let splashParam = {
@@ -40,16 +40,14 @@ let splashParam = {
 		splashAnim.pause();
     });
 
-// Pacman animation
-let pacmanParams = {
-	container: document.getElementById('pacman'),
-	renderer: 'svg',
-	loop: true,
-	autoplay: true,
-	path: 'js/pacman.json'
-};
-
-let pacmanAnim = lottie.loadAnimation(pacmanParams);
+// Spacegirl animation properties. Used css animation instead
+// var spacegirlAnim = bodymovin.loadAnimation({
+// 	container: document.getElementById('spacegirl'),
+// 	renderer: 'svg',
+// 	loop: true,
+// 	autoplay: true,
+// 	path: 'js/spacegirl.json'
+// 	});
 
 
 // Thousands separator for numbers
@@ -78,15 +76,12 @@ window.addEventListener('scroll', function(e) {
 
 	const target = document.querySelectorAll('.scroll');
 
-	let spacegirl = document.getElementById('spacegirl');
-
 	var index = 0, length = target.length;
 	for (index; index < length; index++) {
 		var pos = window.pageYOffset * target[index].dataset.rate;
 
 		if(target[index].dataset.direction === 'vertical') {
 			target[index].style.transform = 'translate3d(0px,'+pos+'px, 0px)';
-			spacegirl.style.opacity = (pos / 500).toFixed(2);
 		} else {
 			var posX = window.pageYOffset * target[index].dataset.ratex;
 			// var posY = window.pageYOffset * target[index].dataset.ratey;
@@ -94,9 +89,8 @@ window.addEventListener('scroll', function(e) {
 			// target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
 		}
 
-		if (pos > 3000 || pos < -3000 || window.mobilecheck() == true) {
+		if (pos > 2000 || pos < -2000 || window.mobilecheck() == true) {
 			target[index].style.transform = 'none';
-			spacegirl.style.opacity = '0';
 		}
 	}
 });
@@ -134,16 +128,9 @@ var swiper = new Swiper('.swiper-container', {
 	centeredSlides: true,
 	loop: true,
 	roundLengths : true,
-	grabCursor: true,
-	a11y: true,
-	keyboardControl: true,
 	pagination: {
 	  el: '.swiper-pagination',
 	  clickable: true,
-	},
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
 	},
 	breakpoints: {
         1024: {
