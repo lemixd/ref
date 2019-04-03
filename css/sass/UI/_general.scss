@@ -1,0 +1,11 @@
+::selection {
+    color: color(primary-text);
+    background: #FFCC00;
+}
+
+.scroll {
+    @supports (will-change: transform) {
+        transition: transform 0.1s linear;
+        will-change: transform;
+    }
+}

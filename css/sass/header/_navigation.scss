@@ -1,0 +1,53 @@
+// NAVIGATION
+
+nav {
+    padding: 7.2rem 2.4rem;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+        padding: 1.6rem;
+    }
+}
+
+.logo {
+    display: flex;
+    width: 12.5rem;
+    height: auto;
+    max-width: 16rem;
+    max-height: 4rem;
+    align-self: center;
+
+    @include tablet {
+        width: 10rem;
+        height: auto;
+    }
+}
+
+.nav-link {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: color(bg-text);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.16);
+    padding: 0 0.8rem;
+    margin: 0 0.8rem;
+    line-height: 3.8rem;
+    border: 1px solid transparent;
+    border-radius: $border-radius;
+    transition: all 0.4s ease;
+
+    &:hover {
+        border-color: #fff;
+    }
+}
+
+.nav-link-container {
+    text-align: right;
+
+    @include tablet {
+        display: none;
+    }
+}

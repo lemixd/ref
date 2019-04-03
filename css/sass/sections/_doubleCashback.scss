@@ -1,0 +1,43 @@
+// SECTION DoubleCashback
+
+#doubleCashback {
+
+    .soon-label {
+        display: flex;
+        justify-content: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: #ffd83a;
+        max-width: 8rem;
+        padding: 0.8rem 1.6rem;
+        margin: 0 auto;
+        clip-path: polygon(100% 0,88% 50%,100% 100%,0 100%,12% 54%,0 0);
+    }
+
+
+    .flex-container {
+        padding: 7.2rem 7% 0 7%;
+        align-items: center;
+
+        @include tablet {
+            flex-direction: column;
+        }
+    }
+
+    #pacman {
+        max-width: 40rem;
+        justify-self: center;
+        flex-basis: 50%;
+    }
+
+
+    .doubleCashback__p {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        flex-basis: 50%;
+
+        @include tablet {
+            font-size: 1.4rem;
+        }
+    }
+}

@@ -10,7 +10,7 @@
 	<meta name="theme-color" content="#1487cf">
 	<title>Ref</title>
 	<link rel="icon" type="image/x-icon" href="img/favicon-32x32.png">
-	<link rel="preload" as="style" href="https://use.typekit.net/pzv3wmp.css">
+	<link href="https://use.typekit.net/pzv3wmp.css">
 	<link href="css/swiper.min.css" rel="stylesheet">
 	<link href="css/aos.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
@@ -79,54 +79,54 @@
 
 		<!-- End of main navigation -->
 
-		<!-- <div id="spacegirl" class="scroll" data-rate="-1.5" data-direction="vertical"></div> -->
-		<object id="spacegirl" type="image/svg+xml" data="img/spacegirl.svg" class="scroll" data-rate="-1.5" data-direction="vertical"></object>
+		<!-- <object id="spacegirl" type="image/svg+xml" data="img/spacegirl.svg" class="scroll" data-rate="-1.5" data-direction="vertical"></object> -->
 
 
 		<!-- Header main content -->
 
 		<div class="content scroll" data-rate="-1" data-direction="vertical">
 			<h1>Возвращаем 10% от платежей!</h1>
-			<p class="counter" id="paymentCounter" data-text="₴ "></p>
-			<span>Выплачено кешбека по партнёрской программе</span>
-			<div class="btn-wrap">
-				<a href="#" id="splashAnimBtn" class="btn btn--secondary" aria-label="button">Присоединиться</a>
-				<div id="splash" class="splash"></div>
-			</div>
-			<a href="#" onClick="toggleVideo();" class="video-btn" aria-label="video button"></a>
-			<span>Как это работает? Жми!</span>
-		</div>
 
 		<!-- Steps -->
 
-		<div class="step" data-aos="fade-up">
-			<div class="step__one">
+		<div class="steps">
+			<div class="step step__one">
 				<h2 class="number">01</h2>
 				<p>Получи промокоды в личном кабинете</p>
 			</div>
+			<div class="step__arrow"></div>
 
-			<img class="hideOnMobile" src="img/arrow-1.svg"
-									  alt="arrow-up">
-
-			<img class="showOnMobile" src="img/icon-arr-back.svg" alt="arrow-down">
-
-			<div class="step__two">
+			<div class="step step__two">
 				<h2 class="number">02</h2>
 				<p>Рекомендуй оформлять автогражданку на PolisUA</p>
 			</div>
+			<div class="step__arrow"></div>
 
-			<img class="hideOnMobile" src="img/arrow-2.svg"
-									  alt="arrow-down">
-
-			<img class="showOnMobile" src="img/icon-arr-back.svg" alt="arrow-down">
-
-			<div class="step__three">
+			<div class="step step__three">
 				<h2 class="number">03</h2>
-				<p>Получай кешбек 10% от успешных платежей</p>
+				<p>Кто оформил по твоей рекомендации получит 10% кешбека</p>
+			</div>
+			<div class="step__arrow"></div>
+
+			<div class="step step__four">
+				<h2 class="number">04</h2>
+				<p>Получай вознаграждение 10% от платежа за привлечение</p>
 			</div>
 		</div>
 
 		<!-- End of Steps -->
+
+			<p class="counter" id="paymentCounter" data-text="₴ " style="display:none"></p>
+			<span style="display:none">Выплачено кешбека по партнёрской программе</span>
+			<div class="btn-wrap">
+				<a href="#" id="splashAnimBtn" class="btn btn--secondary" aria-label="button">Присоединиться</a>
+				<div id="splash" class="splash"></div>
+			</div>
+
+			<div class="mouseScroll"></div>
+			<!-- <a href="#" onClick="toggleVideo();" class="video-btn" aria-label="video button"></a> -->
+			<!-- <span>Как это работает? Жми!</span> -->
+		</div>
 
 		<!-- <a href="#" class="scrollDown" aria-label="scroll down"></a> -->
 
@@ -134,22 +134,24 @@
 		
 		<!-- Video popup. Need refactoring -->
 
-		<div id="popup-video" style="display:none;">
+		<!-- <div id="popup-video" style="display:none;">
 			<iframe src="https://www.youtube.com/embed/nKMCy-MI69c?enablejsapi=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<a href="javascript:;" onClick="toggleVideo('hide');">закрыть</a>
-		</div>
+		</div> -->
 
 		<!-- End of video popup -->
 
 		<!-- Rocket, clouds, decorations -->
 
-		<div id="rocket"></div>
+		<!-- <div id="rocket"></div> -->
 		<svg class="cloud scroll" viewBox="0 0 184 48" data-rate="1.2" data-direction="vertical">
 			<use xlink:href="#cloud"></use>
 		</svg>
 		<svg class="cloud scroll" viewBox="0 0 184 48"  data-rate="1.2" data-direction="vertical">
 			<use xlink:href="#cloud"></use>
 		</svg>
+
+		<img class="header-mask" src="../img/mask.svg" alt="">
 	</div>
 
 	<!-- Header End -->
@@ -159,7 +161,7 @@
 	<section id="benefits" class="content-align" data-aos="fade-up">
 
 		<h2>Преимущества</h2>
-		<span>Подзаголовок</span>
+		<!-- <span>Подзаголовок</span> -->
 
 		<div class="grid">
 			<div class="grid-item">
@@ -196,7 +198,7 @@
 	<section id="how" class="content-align" data-aos="fade-up">
 
 		<h2>Как это работает?</h2>
-		<span>Подзаголовок</span>
+		<!-- <span>Подзаголовок</span> -->
 
 			<div class="grid" data-aos="fade-up">
 				<object class="grid-item svg-object" type="image/svg+xml" data="img/laptop.svg"></object>
@@ -241,18 +243,18 @@
 	<section id="who" class="content-align" data-aos="fade-up">
 
 		<h2>Для кого эта программа?</h2>
-		<span>Подзаголовок</span>
+		<!-- <span>Подзаголовок</span> -->
 
 			<div class="grid">
 				<ul class="grid-item">
 					<li>
 						<h4>Для активных</h4>
-						<p>Второй клиент по рекомендации оформляет полис осаго</p>
+						<p>Кто хочет зарабатывать дополнительный доход</p>
 					</li>
 
 					<li>
 						<h4>Для целеустремлённых</h4>
-						<p>Второй клиент по рекомендации оформляет полис осаго</p>
+						<p>Привлекая много клиентов зарабатывайте в 2 раза больше</p>
 					</li>
 				</ul>
 
@@ -263,12 +265,12 @@
 				<ul class="grid-item">
 					<li>
 						<h4>Для особенных</h4>
-						<p>Второй клиент по рекомендации оформляет полис осаго</p>
+						<p>Не нужны специальные знания. Главное иметь много друзей и знакомых ;)</p>
 					</li>
 
 					<li>
 						<h4>Для тебя</h4>
-						<p>Второй клиент по рекомендации оформляет полис осаго</p>
+						<p>Не теряй времени. Начни зарабатывать</p>
 					</li>
 				</ul>
 
@@ -318,6 +320,26 @@
 					</div>
 
 					<div class="swiper-slide" data-aos="flip-up">
+						<div class="swiper-slide-container">
+							<div class="feedback-user-info">
+								<img class="user-pic" src="img/person-7@2x.jpg" alt="user">
+								<ul>
+									<li>
+										<span class="feedback-user-name">Василиса Прекрасная</span>
+									</li>
+									<li>
+										<span class="feedback-date">17.12.2018</span>
+									</li>
+								</ul>
+								<a href="#" class="social-link">
+									<img src="img/fk-rect.svg" alt="fb">
+								</a>
+							</div>
+							<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. С другой стороны, постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке новых предложений.</p>
+						</div>
+					</div>
+
+						<div class="swiper-slide" data-aos="flip-up">
 							<div class="swiper-slide-container">
 								<div class="feedback-user-info">
 									<img class="user-pic" src="img/person-7@2x.jpg" alt="user">
@@ -336,35 +358,38 @@
 								<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. С другой стороны, постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке новых предложений.</p>
 							</div>
 						</div>
-
-						<div class="swiper-slide" data-aos="flip-up">
-								<div class="swiper-slide-container">
-									<div class="feedback-user-info">
-										<img class="user-pic" src="img/person-7@2x.jpg" alt="user">
-										<ul>
-											<li>
-												<span class="feedback-user-name">Василиса Прекрасная</span>
-											</li>
-											<li>
-												<span class="feedback-date">17.12.2018</span>
-											</li>
-										</ul>
-										<a href="#" class="social-link">
-											<img src="img/fk-rect.svg" alt="fb">
-										</a>
-									</div>
-									<p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. С другой стороны, постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке новых предложений.</p>
-								</div>
-							</div>
-
-				</div>
+					</div>
 				<!-- Add Pagination -->
-				<div class="swiper-pagination"></div>
+				<div class="flex-container">
+					<div class="swiper-button-prev"><i class="icon-arrow--small"></i></div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-next"><i class="icon-arrow--small"></i></div>
+				</div>
+
 			</div>
 				
 		</section>
 
 		<!-- Feedback section end -->
+
+		<!-- DoubleCashback section start -->
+
+		<section id="doubleCashback" class="content-align" data-aos="fade-up">
+
+			<span class="soon-label">скоро</span>
+			<h2>Двойной кешбек</h2>
+			<span>Кто много привлекает, тот зарабатывает в два раза больше ;)</span>
+
+			<div class="flex-container">
+				<!-- <img id="temp" src="img/temp.svg" alt=""> -->
+				<div id="pacman"></div>
+				<p class="doubleCashback__p">Если за месяц Ваши бонусы от привлечения составят 1000&nbsp;грн и более, то мы эту сумму <strong>удваиваем!</strong></p>
+			</div>
+
+
+		</section>
+
+		<!-- DoubleCashback section end -->
 
 		<!-- FAQ section start -->
 
@@ -372,26 +397,141 @@
 
 			<h2>Часто задаваемые вопросы</h2>
 
-			<ul>
-				<li class="flipdown" data-aos="flip-down">
+			<ul class="faq__question-wrap">
+
+				<li class="faq__question" data-aos="flip-down">
 					<input type="checkbox" checked>
-					<i></i>
-					<h3>Languages Used</h3>
-					<p>This page was written in HTML and CSS. The CSS was compiled from SASS. I used Normalize as my CSS reset and -prefix-free to save myself some headaches. I haven't quite gotten the hang of Slim for compiling into HTML, but someday I'll use it since its syntax compliments that of SASS. Regardless, this could all be done in plain HTML and CSS.</p>
+					<i class="icon-arrow--small"></i>
+					<h3>Что такое реферальная программа?</h3>
+					<div class="faq__question-content">
+						<p><strong>Реферальная программа</strong> – это вид сотрудничества между компанией и партнером (Вами), где партнер рекомендует воспользоваться услугами компании, а та, в свою очередь, выплачивает вознаграждение за каждую покупку, совершенную привлеченным рефералом – клиентом партнера.</p>
+						<p><strong>Реферер (referrer — «приглашающий»)</strong> — человек, который приглашает в проект.</p>
+						<p><strong>Реферал (referral — «направление»)</strong> — человек, которого пригласили в проект.</p>
+					</div>
 				</li>
-				<li class="flipdown" data-aos="flip-down">
+
+				<li class="faq__question" data-aos="flip-down">
 					<input type="checkbox" checked>
-					<i></i>
-					<h3>How it Works</h3>
-					<p>Using the sibling and checked selectors, we can determine the styling of sibling elements based on the checked state of the checkbox input element. One use, as demonstrated here, is an entirely CSS and HTML accordion element. Media queries are used to make the element responsive to different screen sizes.</p>
+					<i class="icon-arrow--small"></i>
+					<h3>В чем преимущества реферальной программы Polis.UA?</h3>
+					<ul class="faq__question-content faq__question-content--list">
+						<li>Возможность дополнительного заработка, не отрываясь от основной работы</li>
+						<li>Ни один страховой агрегатор в Украине не дает такой возможности</li>
+						<li>Реферальная программа распространяется на все страховые продукты, которые есть на сайте polisUA</li>
+						<li>Быстрые выплаты. Вы получаете вознаграждение за привлечение в день старта страхового договора</li>
+						<li>Работаем только «по-белому»! При выплате вознаграждения мы удерживае НДФЛ и военый сбор и удваиваем вознаграждение, в случае месячного бонуса свыше 1 тыс. грн.</li>
+					</ul>
 				</li>
-				<li class="flipdown" data-aos="flip-down">
+
+				<li class="faq__question" data-aos="flip-down">
 					<input type="checkbox" checked>
-					<i></i>
-					<h3>Points of Interest</h3>
-					<p>By making the open state default for when :checked isn't detected, we can make this system accessable for browsers that don't recognize :checked. The fallback is simply an open accordion. The accordion can be manipulated with Javascript (if needed) by changing the "checked" property of the input element.</p>
+					<i class="icon-arrow--small"></i>
+					<h3>Как начать зарабатывать?</h3>
+					<ul class="faq__question-content faq__question-content--list">
+						<li>Зарегистрироваться на сайте (покупать страховку не обязательно) или купить страховку на сайте</li>
+						<li>В личном кабинете заполнить необходимые данные. Если вы покупали страховку, эти данные будут автоматически заполнены</li>
+						<li>В личном кабинете в меню «Реферальная программа» получить реферальную ссылку или промокод</li>
+						<li>Делиться этим промокодом или ссылкой с друзьями и знакомыми</li>
+						<li>Друзья и знакомые при оформлении с вашим промокодом или ссылкой получат 10% кешбека</li>
+					</ul>
 				</li>
-				</ul>
+
+				<li class="faq__question" data-aos="flip-down">
+					<input type="checkbox" checked>
+					<i class="icon-arrow--small"></i>
+					<h3>Сколько я получу за привлечение клиента?</h3>
+					<div class="faq__question-content">
+						<p>В случае оформления страхового полиса по Вашей рекомендации (реферальная ссылка или промокод), Вы получаете 10% от страхового платежа.</p>
+					</div>
+				</li>
+
+				<li class="faq__question" data-aos="flip-down">
+					<input type="checkbox" checked>
+					<i class="icon-arrow--small"></i>
+					<h3>Что получат те клиенты кому я рекомендую сервис polisUA?</h3>
+					<ul class="faq__question-content faq__question-content--list">
+						<li>Удобный сервис покупки электронных страховых продуктов</li>
+						<li>Большой выбор страховых компаний</li>
+						<li>Возможность оформить страховку на 10% дешевле. При оформлении страховки по вашему промокоду или реферальной ссылке клиенты получат 10% кешбек</li>
+						<li>Возможность принять участие в различных акциях и розыгрышах ценных призов</li>
+					</ul>
+				</li>
+				
+				<li class="faq__question" data-aos="flip-down">
+					<input type="checkbox" checked>
+					<i class="icon-arrow--small"></i>
+					<h3>Удерживается НДФЛ и военный сбор при выплате кешбека?</h3>
+					<div class="faq__question-content">
+						<p>Да. Вы получаете вознаграждение за минусом налога на прибыль и военного сбора. </p>
+						<p><em>Например</em>: </p>
+						<p>Страховой платеж - 1000 грн</p>
+						<p>Начисленный кешбек за привлечение - 100 грн (10% от страхового платежа)</p>
+						<p>НДФЛ+военный сбор - 19,5 грн</p>
+						<p>Зачисление на Ваш карточный счет - 80,5 грн</p>
+				</li>
+
+				<li class="faq__question" data-aos="flip-down">
+					<input type="checkbox" checked>
+					<i class="icon-arrow--small"></i>
+					<h3>Когда выплачивается вознаграждение?</h3>
+					<div class="faq__question-content">
+						<p>Вознаграждение всем участникам реферальной программы (рефералу и рефереру) зачисляется в день старта страхового полиса.</p>
+						<p><em>Например</em>:</p>
+						<p>Оформление полиса - 01.01.2019 г</p>
+						<p>Дата старта полиса - 27.01.2019 г</p>
+						<p>Зачисление кешбека на карту - 27.01.2019 г</p>
+						<p>Повышенный кешбек (см.ниже) выплачивается в следующем месяце до 10 числа.</p>
+				</li>
+
+				<li class="faq__question" data-aos="flip-down">
+					<input type="checkbox" checked>
+					<i class="icon-arrow--small"></i>
+					<h3>Какое количество клиентов я могу привлечь?</h3>
+					<div class="faq__question-content">
+						<p>Вы можете привлекать неограниченное количество клиентов.</p>
+					</div>
+				</li>
+
+				<li class="faq__question" data-aos="flip-down">
+					<input type="checkbox" checked>
+					<i class="icon-arrow--small"></i>
+					<h3>Что такое повышенный кешбек?</h3>
+					<div class="faq__question-content">
+						<p>Повышенный кешбек - это кешбек, который мы для вас удваиваем в случае вашего общего месячного кешбека 1000 грн и свыше.</p>
+					</div>
+				</li>
+
+				<li class="faq__question" data-aos="flip-down">
+					<input type="checkbox" checked>
+					<i class="icon-arrow--small"></i>
+					<h3>Как рассчитывается повышенный кешбек?</h3>
+					<ul class="faq__question-content faq__question-content--list">
+						<p>Повышенный кешбек рассчитывается за предыдущий календарный месяц. В расчет берется начисленный бонус, а не выплачиваемый, т.е. бонус до налога. Если за предыдущий месяц вам был начислено вознаграждение 1000 и более гривен, то бонус увеличивается в 2 раза. Повышенный кешбек выплачивается разово в следующем месяце до 10 числа.</p>
+						<p><em>Например</em>:</p>
+						<li>По итогам января Вам начислено вознаграждение 1200 грн (до налогов);</li>
+						<li>До 5 февраля мы считаем вознаграждения всех рефереров;</li>
+						<li>До 10 февраля вы получаете дополнительные 1200 грн на карту (до налогов).</li>
+					</ul>
+				</li>
+
+				<li class="faq__question" data-aos="flip-down">
+					<input type="checkbox" checked>
+					<i class="icon-arrow--small"></i>
+					<h3>Если клиент ранее оформлял страховку на сайте polis.ua засчитается ли мне привлечение такого клиента?</h3>
+					<div class="faq__question-content">
+						<p>Да, засчитается. Повторные оформления клиентов на следующие периоды, также будут считаться за привлечение.</p>
+						<p>Важно: клиент должен при каждом оформлении указывать Ваш реферальный промокод или переходить по реферальной ссылке. Если клиент при повторном оформлении не укажет Ваш промокод или не перейдет по вашей ссылке, то вам не засчитается привлечение.</p>					</div>
+				</li>
+
+				<li class="faq__question" data-aos="flip-down">
+					<input type="checkbox" checked>
+					<i class="icon-arrow--small"></i>
+					<h3>Если я сам себе выдам реферальный промокод или реферальную ссылку и куплю страховку, засчитается мне такая продажа?</h3>
+					<div class="faq__question-content">
+						<p>Нет. В таком случае не будет засчитано реферальное оформление.</p>
+					</div>
+				</li>
+			</ul>
 				
 		</section>
 
@@ -431,7 +571,7 @@
 				<a href="#" class="menu-link">Контакты</a>
 			</div>
 
-			<div class="social-conatiner">
+			<div class="social-conatiner content-align">
 
 				<div class="contact-phone">
 					<a href="tel:0800508857">0 800 508 857</a>
