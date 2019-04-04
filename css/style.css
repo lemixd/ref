@@ -319,8 +319,8 @@ footer {
 .header {
   position: relative;
   width: 100%;
-  background: url(../img/bg.svg) repeat center -200px, url(../img/city-symbol.svg) repeat-x bottom 10% left, url(../img/planet.svg) no-repeat 85% 50%, -webkit-gradient(linear, left bottom, left top, from(#0771b2), to(#1487cf));
-  background: url(../img/bg.svg) repeat center -200px, url(../img/city-symbol.svg) repeat-x bottom 10% left, url(../img/planet.svg) no-repeat 85% 50%, linear-gradient(to top, #0771b2 0%, #1487cf 100%);
+  background: url(../img/bg.svg) repeat center -200px, url(../img/city-symbol.svg) repeat-x bottom left, url(../img/planet.svg) no-repeat 85% 40%, -webkit-gradient(linear, left bottom, left top, from(#0771b2), to(#1487cf));
+  background: url(../img/bg.svg) repeat center -200px, url(../img/city-symbol.svg) repeat-x bottom left, url(../img/planet.svg) no-repeat 85% 40%, linear-gradient(to top, #0771b2 0%, #1487cf 100%);
   background-attachment: fixed;
   overflow: hidden;
   z-index: 2;
