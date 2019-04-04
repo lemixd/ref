@@ -5,6 +5,14 @@
     border: 2px solid #fff;
     border-radius: 1.75rem;
     margin: 3.2rem auto 0 auto;
+    animation: moveY 1200ms ease-in-out infinite alternate;
+    animation-delay: 1000ms;
+
+    @keyframes moveY {
+        to {
+            transform: translateY(30%);
+        }
+    }
 
     &::after {
         content: '|';
