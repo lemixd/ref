@@ -727,8 +727,8 @@ ul.language-switch input[type=radio]:checked ~ label {
   border: 2px solid #fff;
   border-radius: 1.75rem;
   margin: 3.2rem auto 0 auto;
-  -webkit-animation: moveY 1200ms ease-in-out infinite alternate;
-          animation: moveY 1200ms ease-in-out infinite alternate;
+  -webkit-animation: moveY 1100ms ease-in-out infinite alternate;
+          animation: moveY 1100ms ease-in-out infinite alternate;
   -webkit-animation-delay: 1000ms;
           animation-delay: 1000ms;
 }
@@ -756,8 +756,8 @@ ul.language-switch input[type=radio]:checked ~ label {
   -webkit-transform: translate(-50%, 0) scaleY(0.6);
           transform: translate(-50%, 0) scaleY(0.6);
   top: 2px;
-  -webkit-animation: mouseWheel 2500ms ease infinite;
-          animation: mouseWheel 2500ms ease infinite;
+  -webkit-animation: mouseWheel 2200ms ease infinite;
+          animation: mouseWheel 2200ms ease infinite;
   -webkit-animation-delay: 1000ms;
           animation-delay: 1000ms;
 }

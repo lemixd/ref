@@ -5,7 +5,7 @@
     border: 2px solid #fff;
     border-radius: 1.75rem;
     margin: 3.2rem auto 0 auto;
-    animation: moveY 1200ms ease-in-out infinite alternate;
+    animation: moveY 1100ms ease-in-out infinite alternate;
     animation-delay: 1000ms;
 
     @keyframes moveY {
@@ -22,7 +22,7 @@
         left: 50%;
         transform: translate(-50%, 0) scaleY(0.6);
         top: 2px;
-        animation: mouseWheel 2500ms ease infinite;
+        animation: mouseWheel 2200ms ease infinite;
         animation-delay: 1000ms;
 
         @keyframes mouseWheel {
