@@ -3,8 +3,8 @@
 .header {
     position: relative;
     width: 100%;
-    min-height: 134vh;
-    background: url(../img/bg.svg) repeat center -200px, url(../img/city-symbol.svg) repeat-x right 150%, url(../img/planet.svg) no-repeat 85% 70%, linear-gradient(to top, #0771b2 0%, #1487cf 100%);
+    // min-height: 134vh;
+    background: url(../img/city-symbol.svg) repeat-x bottom left, url(../img/bg.svg) repeat center -200px, url(../img/planet.svg) no-repeat 85% 40%, linear-gradient(to top, #0771b2 0%, #1487cf 100%);
     background-attachment: fixed;
     overflow: hidden;
     z-index: 2;
@@ -15,19 +15,26 @@
         background-attachment: initial;
     }
 
-    &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: -2px;
-        left: 0;
-        background: url(../img/mask.svg) no-repeat center bottom;
-        background-size: 101% auto;
-        box-sizing: border-box;
-        pointer-events: none;
+    .header-mask {
+        display: flex;
+        width: 106%;
+        position: relative;
+        bottom: -0.2rem;
     }
+
+    // &::before {
+    //     content: '';
+    //     display: block;
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     bottom: -2px;
+    //     left: 0;
+    //     background: url(../img/mask.svg) no-repeat center bottom;
+    //     background-size: 101% auto;
+    //     box-sizing: border-box;
+    //     pointer-events: none;
+    // }
 
     #spacegirl {
         position: absolute;

@@ -1,8 +1,8 @@
 .steps {
-    position: absolute;
-    bottom: 4%;
-    left: 0;
-    right: 0;
+    // position: absolute;
+    // bottom: 4%;
+    // left: 0;
+    // right: 0;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -14,7 +14,7 @@
     line-height: 1.75;
     text-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.16);
     text-align: center;
-    padding: 11.2rem 1.6rem;
+    padding: 4rem 1.6rem;
 
     @include tablet {
         position: initial;

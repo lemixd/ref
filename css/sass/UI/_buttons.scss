@@ -47,7 +47,7 @@ a {
 
     &--secondary {
         color: color(primary-text);
-        background: #FFF;
+        background: #ffd63b;
 
         &:hover {
             background-color: #fff;
@@ -63,12 +63,11 @@ a {
     & + div {
         display: none;
         position: absolute;
-        top: 0;
         left: 0;
         right: 0;
         margin: 0 auto;
-        width: 16.8rem;
-        height: 16.8rem;
+        width: 100%;
+        height: 100%;
         z-index: -1;
     }
 

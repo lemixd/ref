@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    height: 100%;
+    overflow-x: hidden;
 }
 
 html, body {
@@ -17,7 +17,6 @@ html, body {
     font-family: 'Lato', sans-serif;
     color: color(primary-text);
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 .content-align {

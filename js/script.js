@@ -74,32 +74,32 @@ window.mobilecheck = function() {
 
 
 // Parallax
-window.addEventListener('scroll', function(e) {
+// window.addEventListener('scroll', function(e) {
 
-	const target = document.querySelectorAll('.scroll');
+// 	const target = document.querySelectorAll('.scroll');
 
-	let spacegirl = document.getElementById('spacegirl');
+// 	let spacegirl = document.getElementById('spacegirl');
 
-	var index = 0, length = target.length;
-	for (index; index < length; index++) {
-		var pos = window.pageYOffset * target[index].dataset.rate;
+// 	var index = 0, length = target.length;
+// 	for (index; index < length; index++) {
+// 		var pos = window.pageYOffset * target[index].dataset.rate;
 
-		if(target[index].dataset.direction === 'vertical') {
-			target[index].style.transform = 'translate3d(0px,'+pos+'px, 0px)';
-			spacegirl.style.opacity = (pos / 500).toFixed(2);
-		} else {
-			var posX = window.pageYOffset * target[index].dataset.ratex;
-			// var posY = window.pageYOffset * target[index].dataset.ratey;
+// 		if(target[index].dataset.direction === 'vertical') {
+// 			target[index].style.transform = 'translate3d(0px,'+pos+'px, 0px)';
+// 			spacegirl.style.opacity = (pos / 500).toFixed(2);
+// 		} else {
+// 			var posX = window.pageYOffset * target[index].dataset.ratex;
+// 			// var posY = window.pageYOffset * target[index].dataset.ratey;
 			
-			// target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
-		}
+// 			// target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+// 		}
 
-		if (pos > 3000 || pos < -3000 || window.mobilecheck() == true) {
-			target[index].style.transform = 'none';
-			spacegirl.style.opacity = '0';
-		}
-	}
-});
+// 		if (pos > 3000 || pos < -3000 || window.mobilecheck() == true) {
+// 			target[index].style.transform = 'none';
+// 			spacegirl.style.opacity = '0';
+// 		}
+// 	}
+// });
 
 
 

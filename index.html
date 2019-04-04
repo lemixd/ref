@@ -79,26 +79,17 @@
 
 		<!-- End of main navigation -->
 
-		<object id="spacegirl" type="image/svg+xml" data="img/spacegirl.svg" class="scroll" data-rate="-1.5" data-direction="vertical"></object>
+		<!-- <object id="spacegirl" type="image/svg+xml" data="img/spacegirl.svg" class="scroll" data-rate="-1.5" data-direction="vertical"></object> -->
 
 
 		<!-- Header main content -->
 
 		<div class="content scroll" data-rate="-1" data-direction="vertical">
 			<h1>Возвращаем 10% от платежей!</h1>
-			<p class="counter" id="paymentCounter" data-text="₴ "></p>
-			<span>Выплачено кешбека по партнёрской программе</span>
-			<div class="btn-wrap">
-				<a href="#" id="splashAnimBtn" class="btn btn--secondary" aria-label="button">Присоединиться</a>
-				<div id="splash" class="splash"></div>
-			</div>
-			<a href="#" onClick="toggleVideo();" class="video-btn" aria-label="video button"></a>
-			<span>Как это работает? Жми!</span>
-		</div>
 
 		<!-- Steps -->
 
-		<div class="steps" data-aos="fade-up">
+		<div class="steps">
 			<div class="step step__one">
 				<h2 class="number">01</h2>
 				<p>Получи промокоды в личном кабинете</p>
@@ -125,16 +116,28 @@
 
 		<!-- End of Steps -->
 
+			<p class="counter" id="paymentCounter" data-text="₴ " style="display:none"></p>
+			<span style="display:none">Выплачено кешбека по партнёрской программе</span>
+			<div class="btn-wrap">
+				<a href="#" id="splashAnimBtn" class="btn btn--secondary" aria-label="button">Присоединиться</a>
+				<div id="splash" class="splash"></div>
+			</div>
+
+			<div class="mouseScroll"></div>
+			<!-- <a href="#" onClick="toggleVideo();" class="video-btn" aria-label="video button"></a> -->
+			<!-- <span>Как это работает? Жми!</span> -->
+		</div>
+
 		<!-- <a href="#" class="scrollDown" aria-label="scroll down"></a> -->
 
 		<!-- End of header main content -->
 		
 		<!-- Video popup. Need refactoring -->
 
-		<div id="popup-video" style="display:none;">
+		<!-- <div id="popup-video" style="display:none;">
 			<iframe src="https://www.youtube.com/embed/nKMCy-MI69c?enablejsapi=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<a href="javascript:;" onClick="toggleVideo('hide');">закрыть</a>
-		</div>
+		</div> -->
 
 		<!-- End of video popup -->
 
@@ -147,6 +150,8 @@
 		<svg class="cloud scroll" viewBox="0 0 184 48"  data-rate="1.2" data-direction="vertical">
 			<use xlink:href="#cloud"></use>
 		</svg>
+
+		<img class="header-mask" src="img/mask.svg" alt="">
 	</div>
 
 	<!-- Header End -->
