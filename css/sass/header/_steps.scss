@@ -30,6 +30,7 @@
             @include tablet {
                 height: 5.2rem;
                 background: url(../img/icon-arr-back.svg) no-repeat center;
+                lex-basis: auto;
             }
         }
     
@@ -37,6 +38,7 @@
             background: url(../img/arrow-2.svg) no-repeat center;
     
             @include tablet {
+                flex-basis: auto;
                 background: url(../img/icon-arr-back.svg) no-repeat center;
             }
         }
