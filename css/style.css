@@ -746,14 +746,16 @@ ul.language-switch input[type=radio]:checked ~ label {
 }
 
 .mouseScroll::after {
-  content: '|';
+  content: '';
+  width: 2px;
+  height: 6px;
   font-weight: 900;
-  color: #fff;
+  background-color: #fff;
   position: absolute;
   left: 50%;
-  -webkit-transform: translate(-50%, 0) scaleY(0.6);
-          transform: translate(-50%, 0) scaleY(0.6);
-  top: 2px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  top: 4px;
   -webkit-animation: mouseWheel 2200ms ease infinite;
           animation: mouseWheel 2200ms ease infinite;
   -webkit-animation-delay: 1000ms;
@@ -763,12 +765,12 @@ ul.language-switch input[type=radio]:checked ~ label {
 @-webkit-keyframes mouseWheel {
   60%, 61% {
     opacity: 0;
-    -webkit-transform: translate(-50%, 0) scaleY(0.6);
-            transform: translate(-50%, 0) scaleY(0.6);
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
   }
   59% {
-    -webkit-transform: translate(-50%, 30%) scaleY(0.6);
-            transform: translate(-50%, 30%) scaleY(0.6);
+    -webkit-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
     opacity: 0;
   }
   80%, 100% {
@@ -779,12 +781,12 @@ ul.language-switch input[type=radio]:checked ~ label {
 @keyframes mouseWheel {
   60%, 61% {
     opacity: 0;
-    -webkit-transform: translate(-50%, 0) scaleY(0.6);
-            transform: translate(-50%, 0) scaleY(0.6);
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
   }
   59% {
-    -webkit-transform: translate(-50%, 30%) scaleY(0.6);
-            transform: translate(-50%, 30%) scaleY(0.6);
+    -webkit-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
     opacity: 0;
   }
   80%, 100% {
