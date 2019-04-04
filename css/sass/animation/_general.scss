@@ -15,23 +15,25 @@
     }
 
     &::after {
-        content: '|';
+        content: '';
+        width: 2px;
+        height: 6px;
         font-weight: 900;
-        color: #fff;
+        background-color: #fff;
         position: absolute;
         left: 50%;
-        transform: translate(-50%, 0) scaleY(0.6);
-        top: 2px;
+        transform: translate(-50%, 0);
+        top: 4px;
         animation: mouseWheel 2200ms ease infinite;
         animation-delay: 1000ms;
 
         @keyframes mouseWheel {
 			60%, 61% {
 				opacity: 0;
-				transform: translate(-50%, 0) scaleY(0.6);
+				transform: translate(-50%, 0);
 			}
 			59% {
-				transform: translate(-50%, 30%) scaleY(0.6);
+				transform: translate(-50%, 50%);
 				opacity: 0;
 			}
 			80%, 100% {
