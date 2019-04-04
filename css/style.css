@@ -654,7 +654,8 @@ ul.language-switch input[type=radio]:checked ~ label {
   .steps .step__arrow {
     height: 5.2rem;
     background: url(../img/icon-arr-back.svg) no-repeat center;
-    lex-basis: auto;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
   }
 }
 
