@@ -1,12 +1,25 @@
 // NAVIGATION
 
-nav {
+.nav {
+    color: color(bg-text);
+    max-width: $content-max-width;
     padding: 7.2rem 2.4rem;
     display: flex;
     justify-content: space-between;
+    will-change: transform;
+    transition: transform 200ms linear;
 
     @include tablet {
         padding: 1.6rem;
+    }
+
+    &--fixed {
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        margin: 0 auto;
+        z-index: 100;
     }
 }
 
@@ -28,10 +41,9 @@ nav {
     display: inline-block;
     font-size: 1.2rem;
     font-weight: 900;
-    color: color(bg-text);
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    text-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.16);
+    
     padding: 0 0.8rem;
     margin: 0 0.8rem;
     line-height: 3.8rem;
@@ -50,4 +62,34 @@ nav {
     @include tablet {
         display: none;
     }
+}
+
+
+
+.nav--pinned,
+.nav--unpinned {
+    padding: 1.6rem 2.4rem;
+    border-radius: 3.6rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: color(primary-text);
+    box-shadow: 0px 4px 16px rgba(55, 70, 86, 0.05);
+    transform: translateY(0.8rem);
+}
+
+.nav--unpinned {
+    transform: translateY(-100%);
+}
+
+.nav--top {
+    color: #FFF;
+    box-shadow: none;
+    max-width: 121.6rem;
+    margin: 0 auto;
+    padding: 7.2rem 2.4rem;
+    background: transparent;
+}
+
+
+.nav--not-top .nav-link-container .language-switch li .check {
+    background-color: color(primary-text);
 }

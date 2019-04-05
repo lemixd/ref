@@ -1,3 +1,34 @@
+// Fixed header options
+
+(function() {
+	new Headroom(document.querySelector("nav"), {
+			tolerance : {
+				up : 0,
+				down : 0
+		},
+			offset : 200,
+		classes : {
+				// when element is initialised
+				initial : "nav",
+				// when scrolling up
+				pinned : "nav--pinned",
+				// when scrolling down
+				unpinned : "nav--unpinned",
+				// when above offset
+				top : "nav--top",
+				// when below offset
+				notTop : "nav--not-top",
+				// when at bottom of scoll area
+				bottom : "nav--bottom",
+				// when not at bottom of scroll area
+				notBottom : "nav--not-bottom"
+		}
+	}).init();
+
+}());
+
+
+
 // Lottie animation properties
 // Rocket
 // let rocketParams = {

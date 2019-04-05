@@ -172,6 +172,7 @@ a {
   text-decoration: none;
   outline: none;
   cursor: pointer;
+  color: inherit;
 }
 
 .btn {
@@ -319,6 +320,7 @@ a {
 .header {
   position: relative;
   width: 100%;
+  padding-top: 18.4rem;
   background: url(../img/city-symbol.svg) repeat-x bottom left, url(../img/bg.svg) repeat center 7%, url(../img/planet.svg) no-repeat 85% 40%, -webkit-gradient(linear, left bottom, left top, from(#0771b2), to(#1487cf));
   background: url(../img/city-symbol.svg) repeat-x bottom left, url(../img/bg.svg) repeat center 7%, url(../img/planet.svg) no-repeat 85% 40%, linear-gradient(to top, #0771b2 0%, #1487cf 100%);
   background-attachment: fixed;
@@ -413,7 +415,9 @@ a {
   }
 }
 
-nav {
+.nav {
+  color: #fff;
+  max-width: 121.6rem;
   padding: 7.2rem 2.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -421,12 +425,26 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  will-change: transform;
+  -webkit-transition: -webkit-transform 200ms linear;
+  transition: -webkit-transform 200ms linear;
+  transition: transform 200ms linear;
+  transition: transform 200ms linear, -webkit-transform 200ms linear;
 }
 
 @media screen and (max-width: 768px) {
-  nav {
+  .nav {
     padding: 1.6rem;
   }
+}
+
+.nav--fixed {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  z-index: 100;
 }
 
 .logo {
@@ -452,10 +470,8 @@ nav {
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 900;
-  color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  text-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.16);
   padding: 0 0.8rem;
   margin: 0 0.8rem;
   line-height: 3.8rem;
@@ -477,6 +493,37 @@ nav {
   .nav-link-container {
     display: none;
   }
+}
+
+.nav--pinned,
+.nav--unpinned {
+  padding: 1.6rem 2.4rem;
+  border-radius: 3.6rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: #374656;
+  -webkit-box-shadow: 0px 4px 16px rgba(55, 70, 86, 0.05);
+          box-shadow: 0px 4px 16px rgba(55, 70, 86, 0.05);
+  -webkit-transform: translateY(0.8rem);
+          transform: translateY(0.8rem);
+}
+
+.nav--unpinned {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.nav--top {
+  color: #FFF;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  max-width: 121.6rem;
+  margin: 0 auto;
+  padding: 7.2rem 2.4rem;
+  background: transparent;
+}
+
+.nav--not-top .nav-link-container .language-switch li .check {
+  background-color: #374656;
 }
 
 ul.language-switch {
