@@ -28,6 +28,16 @@
 }());
 
 
+let mouseScroll = document.querySelector('.mouseScroll');
+
+mouseScroll.onclick = function() {
+	mouseScroll.scrollIntoView({
+		behavior: "smooth",
+		block:    "start" 
+	});
+}
+
+
 
 // Lottie animation properties
 // Rocket

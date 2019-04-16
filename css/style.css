@@ -776,6 +776,7 @@ ul.language-switch input[type=radio]:checked ~ label {
   border: 2px solid #fff;
   border-radius: 1.75rem;
   margin: 3.2rem auto 0 auto;
+  cursor: pointer;
   -webkit-animation: moveY 1100ms ease-in-out infinite alternate;
           animation: moveY 1100ms ease-in-out infinite alternate;
   -webkit-animation-delay: 1000ms;
