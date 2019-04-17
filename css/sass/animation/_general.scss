@@ -5,36 +5,25 @@
     border: 2px solid #fff;
     border-radius: 1.75rem;
     margin: 3.2rem auto 0 auto;
-    cursor: pointer;
-    animation: moveY 1100ms ease-in-out infinite alternate;
-    animation-delay: 1000ms;
-
-    @keyframes moveY {
-        to {
-            transform: translateY(30%);
-        }
-    }
 
     &::after {
-        content: '';
-        width: 2px;
-        height: 6px;
+        content: '|';
         font-weight: 900;
-        background-color: #fff;
+        color: #fff;
         position: absolute;
         left: 50%;
-        transform: translate(-50%, 0);
-        top: 4px;
-        animation: mouseWheel 2200ms ease infinite;
+        transform: translate(-50%, 0) scaleY(0.6);
+        top: 2px;
+        animation: mouseWheel 2500ms ease infinite;
         animation-delay: 1000ms;
 
         @keyframes mouseWheel {
 			60%, 61% {
 				opacity: 0;
-				transform: translate(-50%, 0);
+				transform: translate(-50%, 0) scaleY(0.6);
 			}
 			59% {
-				transform: translate(-50%, 50%);
+				transform: translate(-50%, 30%) scaleY(0.6);
 				opacity: 0;
 			}
 			80%, 100% {

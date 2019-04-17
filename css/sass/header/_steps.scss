@@ -30,7 +30,6 @@
             @include tablet {
                 height: 5.2rem;
                 background: url(../img/icon-arr-back.svg) no-repeat center;
-                flex-basis: auto;
             }
         }
     
@@ -39,7 +38,6 @@
     
             @include tablet {
                 background: url(../img/icon-arr-back.svg) no-repeat center;
-                flex-basis: auto;
             }
         }
     }

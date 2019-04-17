@@ -26,10 +26,10 @@ $tablet: 768px;
     }
 }
 
+@import "sass/UI/buttons";
+@import "sass/UI/headers";
 @import "sass/UI/layout";
 @import "sass/UI/general";
-@import "sass/UI/headers";
-@import "sass/UI/buttons";
 
 @import "sass/header/header";
 @import "sass/header/navigation";
