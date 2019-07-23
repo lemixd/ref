@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://use.typekit.net/pzv3wmp.css">
+    <style>
+        * {
+            margin: 0;
+        }
+
+        html, body {
+            font-family: 'Lato', sans-serif;
+            color: #374656;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #F1F5F8;
+            height: 100vh;
+        }
+        #lottie {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            padding: 16px;
+        }
+
+        #lottie::before {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            display: block;
+            content: '';
+            width: 164px;
+            height: 164px;
+            background: linear-gradient(to right, #1487cf 0%, #1487cf 29.28%, #ffd83a 100%);
+            border-radius: 50%;
+        }
+
+        #lottie svg {
+            border-radius: 50%;
+        }
+        
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 32px;
+            min-width: 400px;
+            /* min-height: 456px; */
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0px 4px 16px rgba(29, 107, 178, 0.26);
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h4 {
+            padding: 16px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        input {
+            position: relative;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            width: 60%;
+            padding: 8px 16px;
+            outline: none;
+            border: unset;
+            border-bottom: 2px solid #E6ECF2;
+            transition: border-bottom-color 100ms linear;
+        }
+
+        input:focus {
+            border-bottom-color: #0A994A;
+        }
+
+        button {
+            margin: 48px;
+        }
+
+        label {
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: 900;
+            width: 60%;
+            text-align: left;
+            margin-top: 32px;
+            opacity: 0.8;
+        }
+
+        #lottie svg * {
+            will-change: transform;
+            transition: transform 500ms ease-out;
+        }
+
+        svg #mouth * {
+            transition: d 400ms ease-in-out;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            margin: 48px 0 24px 0!important;
+            font-weight: 700;
+            font-size: 16px;
+            border: 0;
+            border-radius: 8px;
+            outline: none;
+            transition: 0.2s ease;
+            cursor: pointer;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+        .btn--primary {
+            color: #fff;
+            background-color: #0A994A;
+            box-shadow: 0px 20px 32px rgba(10, 153, 74, 0.25);
+        }
+
+        .btn--primary:hover {
+            background-color: #0cb257;
+        }
+
+        .btn--primary:active {
+            background-color: #09803e;
+            box-shadow: 0px 10px 16px rgba(10, 153, 74, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="auth-form">
+        <div id="lottie"></div>
+        <h4>Вхід до особистого кабінету</h4>
+        <form action="">
+            <label for="email">Email</label>
+            <input type="email" class="input-email" name="email">
+            <label for="password">Password</label>
+            <input type="password" class="input-password" name="password">
+            <button class="btn btn--primary">Увійти до системи</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.7/lottie_svg.min.js"></script>
+    <script src="../js/lottie_api.min.js"></script>
+
+    <script>
+
+    var anim, animationAPI;
+    function init() {
+        var viewPos = [0,0]
+        animationAPI = lottie_api.createAnimationApi(anim);
+        var positionProperty = animationAPI.getKeyPath('#JoyStkCtrl01,Transform,Position');
+        animationAPI.addValueCallback(positionProperty, function(currentValue) {
+            return viewPos;
+        });
+
+        var lookDown = 200;
+
+        var inpF = document.querySelector('.input-email');
+        var inpPass = document.querySelector('.input-password');
+
+        inpF.addEventListener("focus", function() {
+            viewPos[0] = lookDown * -1;
+            viewPos[1] = lookDown;
+        })
+
+        inpF.addEventListener("blur", function() {
+            viewPos[0] = 0;
+            viewPos[1] = 0;
+        })
+
+        inpPass.addEventListener("focus", function() {
+            anim.animationData.layers[0].ks.p.x.k = 100;
+        })
+
+        inpPass.addEventListener("blur", function() {
+            anim.animationData.layers[0].ks.p.x.k = 0;
+        })
+
+        inpF.addEventListener("input", function() {
+            var posX = 0, posY = 0;
+            var inp = inpF.value;
+            var at = inp.indexOf("@");
+
+            if(inp.length > 0) {
+                var posX = inp.length*14 - lookDown;
+                var posY = lookDown; 
+            } else if(inp !== undefined) {
+                posX = lookDown * -1;
+                posY = lookDown;
+            }
+
+            if(at > 0) {
+                anim.animationData.assets[1].layers[0].ks.p.x.k = 100;
+            } else {
+                anim.animationData.assets[1].layers[0].ks.p.x.k = 0;
+            }
+
+            viewPos[0] = posX;
+            viewPos[1] = posY;
+        })
+
+    }
+    var animData = {
+        container: document.getElementById('lottie'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid meet'
+        },
+        path: 'polisGirl.json'
+    };
+    anim = lottie.loadAnimation(animData);
+    anim.addEventListener('DOMLoaded', init);
+
+    </script>
+</body>
+</html>
